@@ -34,3 +34,5 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+.vs/gopher-2.0/v15/Server/sqlite3/storage.ide-shm
+.vs/gopher-2.0/v15/Server/sqlite3/storage.ide-wal
