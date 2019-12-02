@@ -1,5 +1,5 @@
 Level 1
-(animation of stuart waking up) "I slept like a log.." (stuart look around) "What happened here? why is it so messy?"
+(animation of stuart waking up)*scene faded black and stuart standing* "I slept like a log.." (stuart look around) "What happened here? why is it so messy?"
 (pause)"..."
 "Let me change my clothes first"
 
@@ -76,4 +76,22 @@ Find Nicole's letter > In front of window
 
 Nicole's Letter:
 
+puzzle:
+1. find Nicole's letter (in front of window)
+2. collect 6 pieces of paper:
+	a. in sofa
+	b. in mug
+	c. in vase
+	d. in carpet
+	e. in bookcase
+	f. in hanger
+3. go to tape on top of table. press tape = "use tape?" > yes or no
+4. paper become a music score with title song on it
+5. go to gramaphone: "play music?" (3 choices of title, pick the title on the music sheet)
+6. the bars are raised and stuart can go out
+------------------------------------------------------------------------------------------------------------
+ENDING
+*all white*
 
+
+	
