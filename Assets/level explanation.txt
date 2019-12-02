@@ -1,0 +1,97 @@
+Level 1
+(animation of stuart waking up)*scene faded black and stuart standing* "I slept like a log.." (stuart look around) "What happened here? why is it so messy?"
+(pause)"..."
+"Let me change my clothes first"
+
+TUTORIAL
+[Highlight floor in front of Wardrobe]
+Right Click anywhere in the room to move Stuart. (player click dulu)
+[Highlight Wardrobe]
+Right Click an object to interact with it. (player click dulu)
+
+left wardrobe clicked > Stuart changed clothes 
+
+after changing clothes(automatic) > What's this? A note?
+[Checks note]
+"Dear Stuart,
+
+Since you wouldn't wake up, I decided to play a little prank on you :D
+I've locked all the rooms and hid the keys.
+I'm sure you noticed the mess in our bedroom.
+So here's a hint: Clean and organize the room.
+
+Goodluck in finding the way out. I'll be waiting for you outside.
+
+Love, Nicole <3" 
+(note is voiced)
+
+stuart:"Guess I'll have to do what Nicole wants me to do."
+
+Puzzle:
+1. Find item "basket"
+2. Collect the scattered clothes(3 set of clothes) using "basket"
+3. find hidden ladder and door
+4. Use ladder in front of wardrobe to reach the key ontop
+5. get key.
+6. open the door with the key.
+
+The dialogue when interacting with objects is here: https://docs.google.com/spreadsheets/d/1H1Ino_KrXQVQRYOXtkOtBL-sGlF8R8G3Mquf4zVmxpg/edit?usp=sharing
+
+Level 1 finished
+------------------------------------------------------------------------------------------------------------------------
+Level 2
+
+dialog start:"Where is Nicole..? Maybe she left another letter here too."
+
+Find Nicole's letter > in front of the map
+Nicole's letter:
+"Dear Stuart,
+
+Congrats on getting out of the bedroom, but its not over yet.
+
+I've rearrange the furnitures of our kitchen to hide the exit.
+I suggest you should follow the Directions.
+
+Goodluck! :)
+
+Love, Nicole"
+(Letter is fully voiced)
+
+Puzzle:
+1. Open the map, discover an arrow behind it pointing to the right
+2. search around the area in the right for clue to way out
+3. find key under the mug on the table
+4. get water on a pot in the stove to put out the fire in the porch
+5. find door to way out on the porch
+6. use key to go out
+
+The dialogue when interacting with objects is here: https://docs.google.com/spreadsheets/d/1H1Ino_KrXQVQRYOXtkOtBL-sGlF8R8G3Mquf4zVmxpg/edit?usp=sharing
+
+---------------------------------------------------------------------------------------------------------
+Level 3
+
+Dialog start:"I'm starting to get hungry.. I have to finish the riddle soon to find Nicole."
+
+Find Nicole's letter > In front of window
+
+Nicole's Letter:
+
+puzzle:
+1. find Nicole's letter (in front of window)
+2. collect 6 pieces of paper:
+	a. in sofa
+	b. in mug
+	c. in vase
+	d. in carpet
+	e. in bookcase
+	f. in hanger
+3. go to tape on top of table. press tape = "use tape?" > yes or no
+4. paper become a music score with title song on it
+5. go to gramaphone: "play music?" (3 choices of title, pick the title on the music sheet)
+6. the bars are raised and stuart can go out
+------------------------------------------------------------------------------------------------------------
+ENDING
+*all white*
+
+
+	
