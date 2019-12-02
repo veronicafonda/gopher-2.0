@@ -76,6 +76,13 @@ Find Nicole's letter > In front of window
 
 Nicole's Letter:
 
+"Dear Stuart,
+
+If you're reading this that mean you've figured out the two little puzzles I left you.
+Keep it up, Cuz this is the last one. If you manage to get out, there is a pleasant surprise waiting for you! Here a hint: Maybe a melody could wake you up.
+
+Love, Nicole"
+
 puzzle:
 1. find Nicole's letter (in front of window)
 2. collect 6 pieces of paper:
