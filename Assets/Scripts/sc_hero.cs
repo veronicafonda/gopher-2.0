@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class sc_hero : MonoBehaviour
 {
     float speed = 6f;
+
+    public Camera cam;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +18,19 @@ public class sc_hero : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButton(0))
+        {
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                Debug.Log("we hit " + hit.collider.name + " " + hit.point);
+                this.GetComponent<NavMeshAgent>().SetDestination(hit.point);
+                //move
+            }
+        }
+
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         Vector3 targetDirection = new Vector3(h, 0f, v);
