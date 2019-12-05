@@ -9,15 +9,21 @@ public class sc_hero : MonoBehaviour
 
     public Camera cam;
 
+    public Interactable focus;
+
+    NavMeshAgent agent;
+    
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        agent = this.GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //left mouse
         if (Input.GetMouseButton(0))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -26,33 +32,74 @@ public class sc_hero : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 Debug.Log("we hit " + hit.collider.name + " " + hit.point);
-                this.GetComponent<NavMeshAgent>().SetDestination(hit.point);
+                agent.SetDestination(hit.point);
+
+                //anim
+                this.GetComponent<Animator>().SetBool("is_walk", true);
+
                 //move
+                RemoveFocus();
             }
+
         }
 
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
-        Vector3 targetDirection = new Vector3(h, 0f, v);
-        targetDirection =
-        Camera.main.transform.TransformDirection(targetDirection);
-        targetDirection.y = 0.0f;
-        if (h != 0f || v != 0)
+        //right mouse
+        if (Input.GetMouseButton(1))
         {
-            this.GetComponent<Animator>().SetBool("is_walk", true);
-            Quaternion targetRotation =
-            Quaternion.LookRotation(targetDirection, Vector3.up);
-            this.transform.rotation = targetRotation;
-            this.transform.position +=
-            Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up) * v * speed
-            * Time.deltaTime;
-            this.transform.position +=
-            Vector3.ProjectOnPlane(Camera.main.transform.right, Vector3.up) * h * speed *
-            Time.deltaTime;
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                Debug.Log("we hit " + hit.collider.name + " " + hit.point);
+                agent.SetDestination(hit.point);
+
+                //anim
+                this.GetComponent<Animator>().SetBool("is_walk", true);
+
+                //move
+                Interactable interactable = hit.collider.GetComponent<Interactable>();
+                if (interactable != null)
+                {
+                    SetFocus(interactable);
+                }
+            }
+
         }
-        else
+
+        if (focus.Interacted())
         {
+            RemoveFocus();
             this.GetComponent<Animator>().SetBool("is_walk", false);
         }
     }
+
+    void SetFocus(Interactable newFocus)
+    {
+        if(newFocus != focus)
+        {
+            if(focus !=null)
+            {
+                focus.OnDefocused();
+            }
+            
+            focus = newFocus;
+            agent.stoppingDistance = newFocus.radius * 1f;
+        }
+
+        newFocus.OnFocused(transform);
+    }
+
+    void RemoveFocus()
+    {
+        if( focus != null)
+        {
+            focus.OnDefocused();
+        }
+        
+        agent.stoppingDistance = 0;
+        focus = null;
+    }
+
+
 }
