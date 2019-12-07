@@ -7,21 +7,23 @@ public class Interactable : MonoBehaviour
     bool isFocus = false;
     Transform player;
 
-    bool hasInteracted = false;
+    public bool hasInteracted = false;
+
+    float distance;
 
 
     void Update()
-    {
+    {        
         if (isFocus && !hasInteracted)
         {
-            float distance = Vector3.Distance(player.position, transform.position);
+            distance = Vector3.Distance(player.position, transform.position);
             if(distance <= radius)
             {
-                Debug.Log("stio");
+                Debug.Log("Interacted with " + this.gameObject.name);
                 hasInteracted = true;
                 Interacted();
             }
-        }   
+        }
     }
 
     public void OnFocused (Transform playerTransform)

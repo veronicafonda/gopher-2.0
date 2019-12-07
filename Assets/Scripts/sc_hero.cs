@@ -12,6 +12,8 @@ public class sc_hero : MonoBehaviour
     public Interactable focus;
 
     NavMeshAgent agent;
+
+    float distance;
     
     // Start is called before the first frame update
     void Start()
@@ -31,33 +33,13 @@ public class sc_hero : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 //TRIGGER DIALOGUE ON OBJECT
-                hit.collider.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+                if(hit.collider.gameObject.tag == "interactable")
+                {
+                    hit.collider.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+                }                
 
-                Debug.Log("we hit " + hit.collider.name + " " + hit.point);
+                //Debug.Log("we hit " + hit.collider.name + " " + hit.point);
                 agent.SetDestination(hit.point);
-
-                //anim
-                this.GetComponent<Animator>().SetBool("is_walk", true);
-
-                //move
-                RemoveFocus();
-            }
-
-        }
-
-        //right mouse
-        if (Input.GetMouseButton(1))
-        {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit))
-            {
-                Debug.Log("we hit " + hit.collider.name + " " + hit.point);
-                agent.SetDestination(hit.point);
-
-                //anim
-                this.GetComponent<Animator>().SetBool("is_walk", true);
 
                 //move
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
@@ -69,10 +51,24 @@ public class sc_hero : MonoBehaviour
 
         }
 
-        if (focus.Interacted())
+        if(focus != null)
+        {
+            distance = Vector3.Distance(focus.gameObject.transform.position, transform.position);
+        }
+
+        if ( focus != null && focus.Interacted() == true)
         {
             RemoveFocus();
             this.GetComponent<Animator>().SetBool("is_walk", false);
+        }
+
+        if(agent.velocity.magnitude < 1)
+        {
+            this.GetComponent<Animator>().SetBool("is_walk", false);
+        }
+        else
+        {
+            this.GetComponent<Animator>().SetBool("is_walk", true);
         }
     }
 
