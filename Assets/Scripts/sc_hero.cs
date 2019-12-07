@@ -11,11 +11,8 @@ public class sc_hero : MonoBehaviour
 
     public Interactable focus;
 
-    //public Dialogue dialogue;
-
     NavMeshAgent agent;
     
-
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +30,9 @@ public class sc_hero : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                //FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+                //TRIGGER DIALOGUE ON OBJECT
+                hit.collider.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+
                 Debug.Log("we hit " + hit.collider.name + " " + hit.point);
                 agent.SetDestination(hit.point);
 
