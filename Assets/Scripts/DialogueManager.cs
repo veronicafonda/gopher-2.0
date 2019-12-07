@@ -12,9 +12,8 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartDialogue (Dialogue dialogue)
     {
-        
+        Debug.Log("Dialogue: " + dialogue.name);
     }
 }

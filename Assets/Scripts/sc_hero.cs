@@ -11,6 +11,8 @@ public class sc_hero : MonoBehaviour
 
     public Interactable focus;
 
+    //public Dialogue dialogue;
+
     NavMeshAgent agent;
     
 
@@ -31,6 +33,7 @@ public class sc_hero : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
+                //FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
                 Debug.Log("we hit " + hit.collider.name + " " + hit.point);
                 agent.SetDestination(hit.point);
 
