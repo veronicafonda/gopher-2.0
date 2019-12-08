@@ -2,7 +2,7 @@
 
 public class Interactable : MonoBehaviour
 {
-    public float radius = 10f;
+    public float radius = 5f;
 
     bool isFocus = false;
     Transform player;

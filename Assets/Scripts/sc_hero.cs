@@ -65,6 +65,7 @@ public class sc_hero : MonoBehaviour
         if(agent.velocity.magnitude < 1)
         {
             this.GetComponent<Animator>().SetBool("is_walk", false);
+            RemoveFocus();
         }
         else
         {
@@ -82,7 +83,7 @@ public class sc_hero : MonoBehaviour
             }
             
             focus = newFocus;
-            agent.stoppingDistance = newFocus.radius * 1f;
+            agent.stoppingDistance = newFocus.radius * 2f;
         }
 
         newFocus.OnFocused(transform);
