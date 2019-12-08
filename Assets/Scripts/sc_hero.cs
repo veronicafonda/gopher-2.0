@@ -25,7 +25,7 @@ public class sc_hero : MonoBehaviour
     void Update()
     {
         //left mouse
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -38,7 +38,11 @@ public class sc_hero : MonoBehaviour
                     hit.collider.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
                 }                
 
-                //Debug.Log("we hit " + hit.collider.name + " " + hit.point);
+                Debug.Log("we hit " + hit.collider.name + " " + hit.point);
+                if(hit.collider.name == "floor")
+                {
+                    agent.stoppingDistance = 0;
+                }
                 agent.SetDestination(hit.point);
 
                 //move
@@ -65,7 +69,6 @@ public class sc_hero : MonoBehaviour
         if(agent.velocity.magnitude < 1)
         {
             this.GetComponent<Animator>().SetBool("is_walk", false);
-            RemoveFocus();
         }
         else
         {
@@ -83,7 +86,7 @@ public class sc_hero : MonoBehaviour
             }
             
             focus = newFocus;
-            agent.stoppingDistance = newFocus.radius * 2f;
+            agent.stoppingDistance = newFocus.radius * 0.5f;
         }
 
         newFocus.OnFocused(transform);
@@ -95,8 +98,6 @@ public class sc_hero : MonoBehaviour
         {
             focus.OnDefocused();
         }
-        
-        agent.stoppingDistance = 0;
         focus = null;
     }
 

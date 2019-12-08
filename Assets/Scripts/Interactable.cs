@@ -2,7 +2,7 @@
 
 public class Interactable : MonoBehaviour
 {
-    public float radius = 5f;
+    public float radius;
 
     bool isFocus = false;
     Transform player;
@@ -10,6 +10,11 @@ public class Interactable : MonoBehaviour
     public bool hasInteracted = false;
 
     float distance;
+
+    public virtual void Interact()
+    {
+
+    }
 
 
     void Update()
@@ -19,10 +24,13 @@ public class Interactable : MonoBehaviour
             distance = Vector3.Distance(player.position, transform.position);
             if(distance <= radius)
             {
-                Debug.Log("Interacted with " + this.gameObject.name);
+
                 hasInteracted = true;
-                Interacted();
+                Debug.Log("Interacted with " + this.gameObject.name);
             }
+
+            //Debug.Log(distance + " " + (distance <= radius));
+
         }
     }
 
@@ -47,7 +55,7 @@ public class Interactable : MonoBehaviour
     }
 
     public bool Interacted()
-    {
+    {             
         return hasInteracted;
     }
 }
