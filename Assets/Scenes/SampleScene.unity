@@ -130,7 +130,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 0ce7bb4ea8f800a48bc72bb58ad8b8a6,
         type: 3}
       propertyPath: m_Name
-      value: PintuLv1Open
+      value: hatch
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 0ce7bb4ea8f800a48bc72bb58ad8b8a6,
         type: 3}
@@ -271,6 +271,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GlowColor: {r: 0.39894927, g: 0.990566, b: 0.2756764, a: 0}
   LerpFactor: 10
+--- !u!114 &4612061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4612054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bef9485c366aff429ee6d9ced51116f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 4
+  hasInteracted: 0
 --- !u!1 &102227167
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,9 +897,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 290230099}
-  - component: {fileID: 290230102}
-  - component: {fileID: 290230101}
-  - component: {fileID: 290230100}
   m_Layer: 0
   m_Name: mug
   m_TagString: Untagged
@@ -910,48 +921,6 @@ Transform:
   m_Father: {fileID: 829190321682139058}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &290230100
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 290230098}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 4.33
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0.63}
---- !u!114 &290230101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 290230098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bef9485c366aff429ee6d9ced51116f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 5
-  hasInteracted: 0
---- !u!114 &290230102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 290230098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f97577f7490be846abb026b83b52db0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlowColor: {r: 0.39894927, g: 0.990566, b: 0.2756764, a: 0}
-  LerpFactor: 10
 --- !u!1 &308100644
 GameObject:
   m_ObjectHideFlags: 0
@@ -2008,7 +1977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bef9485c366aff429ee6d9ced51116f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 7
+  radius: 7.2
   hasInteracted: 0
 --- !u!114 &505758732
 MonoBehaviour:
@@ -6822,7 +6791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bef9485c366aff429ee6d9ced51116f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
+  radius: 7
   hasInteracted: 0
 --- !u!114 &2017077183
 MonoBehaviour:
@@ -7021,7 +6990,7 @@ GameObject:
   - component: {fileID: 259800286990560151}
   - component: {fileID: 259800286990560149}
   m_Layer: 0
-  m_Name: tempat sampah
+  m_Name: trash_bin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10242,7 +10211,7 @@ GameObject:
   - component: {fileID: 5760400106874764813}
   - component: {fileID: 5760400106874764812}
   m_Layer: 0
-  m_Name: tangga
+  m_Name: ladder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10656,7 +10625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bef9485c366aff429ee6d9ced51116f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
+  radius: 5.2
   hasInteracted: 0
 --- !u!208 &6495698439006467668
 NavMeshObstacle:

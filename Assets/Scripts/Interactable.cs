@@ -29,7 +29,7 @@ public class Interactable : MonoBehaviour
                 Debug.Log("Interacted with " + this.gameObject.name);
             }
 
-            //Debug.Log(distance + " " + (distance <= radius));
+            Debug.Log(distance + " " + (distance <= radius));
 
         }
     }
