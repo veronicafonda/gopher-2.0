@@ -6,8 +6,11 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
+    float DisplayText_speed = .05f;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
+
+    public Animator animator;
 
     private Queue<string> sentences;
     // Start is called before the first frame update
@@ -18,6 +21,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue (Dialogue dialogue)
     {
+        animator.SetBool("DialogueOpen", true);
         Debug.Log("Dialogue: " + dialogue.name);
 
         //Judul dari text (Doesnt work somehow)
@@ -42,11 +46,24 @@ public class DialogueManager : MonoBehaviour
 
         string sentence = sentences.Dequeue();
         //Debug.Log(sentence);
-        dialogueText.text = sentence;
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(sentence));
+        
+    }
+
+    IEnumerator TypeSentence (string sentence)
+    {
+        dialogueText.text = "";
+        foreach (char letter in sentence.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(DisplayText_speed);
+        }
     }
 
     void EndDialogue()
     {
+        animator.SetBool("DialogueOpen", false);
         Debug.Log("End of Conversation");
     }
 }

@@ -35,7 +35,7 @@ public class sc_hero : MonoBehaviour
                 //TRIGGER DIALOGUE ON OBJECT
                 if(hit.collider.gameObject.tag == "interactable")
                 {
-                    hit.collider.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+                    //hit.collider.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
                 }                
 
                 Debug.Log("we hit " + hit.collider.name + " " + hit.point);

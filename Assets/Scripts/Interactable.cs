@@ -26,6 +26,7 @@ public class Interactable : MonoBehaviour
             {
 
                 hasInteracted = true;
+                this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
                 Debug.Log("Interacted with " + this.gameObject.name);
             }
 
