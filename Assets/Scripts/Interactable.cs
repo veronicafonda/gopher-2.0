@@ -16,6 +16,9 @@ public class Interactable : MonoBehaviour
 
     float distance;
 
+
+    public int test = 0;
+
     public virtual void Interact()
     {
 
@@ -37,6 +40,8 @@ public class Interactable : MonoBehaviour
                 hasInteracted = true;                
 
                 this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+                test++;
+                Debug.Log("terpanggil :" + test);
                 if (status_interactable < counter )
                 {   
                     if(add_progress_when[status_interactable] == sc_hero.levelProgress)

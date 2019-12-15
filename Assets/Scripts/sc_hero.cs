@@ -28,7 +28,7 @@ public class sc_hero : MonoBehaviour
     void Update()
     {
         //left mouse
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButtonDown(1))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -41,7 +41,7 @@ public class sc_hero : MonoBehaviour
                     //hit.collider.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
                 }                
 
-                //Debug.Log("we hit " + hit.collider.name + " " + hit.point);
+                Debug.Log("we hit " + hit.collider.name + " " + hit.point);
                 if(hit.collider.name == "floor")
                 {
                     agent.stoppingDistance = 0;
