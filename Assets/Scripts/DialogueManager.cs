@@ -23,6 +23,7 @@ public class DialogueManager : MonoBehaviour
     {
         animator.SetBool("DialogueOpen", true);
         Debug.Log("Dialogue: " + dialogue.name);
+        UI_Pause.pauseBool = true;
 
         //Judul dari text (Doesnt work somehow)
         //nameText.text = dialogue.name;
@@ -64,6 +65,7 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         animator.SetBool("DialogueOpen", false);
+        UI_Pause.pauseBool = false;
         Debug.Log("End of Conversation");
     }
 }

@@ -33,7 +33,7 @@ public class sc_hero : MonoBehaviour
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit) && UI_Pause.pauseBool == false)
             {
                 //TRIGGER DIALOGUE ON OBJECT
                 if(hit.collider.gameObject.tag == "interactable")

@@ -19,13 +19,13 @@ public class UI_Pause : MonoBehaviour
         {
             pauseUI.SetBool("PauseOpen", true);
             pauseBool = true;
-            Time.timeScale = 0f;
+            //Time.timeScale = 0f;
         }
         else
         {
             pauseUI.SetBool("PauseOpen", false);
             pauseBool = false;
-            Time.timeScale = 1;
+            //Time.timeScale = 1;
         }
         
     }
