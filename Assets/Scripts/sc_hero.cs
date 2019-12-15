@@ -14,11 +14,14 @@ public class sc_hero : MonoBehaviour
     NavMeshAgent agent;
 
     float distance;
+
+    public static int levelProgress;
     
     // Start is called before the first frame update
     void Start()
     {
         agent = this.GetComponent<NavMeshAgent>();
+        levelProgress = 0;
     }
 
     // Update is called once per frame
@@ -38,7 +41,7 @@ public class sc_hero : MonoBehaviour
                     //hit.collider.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
                 }                
 
-                Debug.Log("we hit " + hit.collider.name + " " + hit.point);
+                //Debug.Log("we hit " + hit.collider.name + " " + hit.point);
                 if(hit.collider.name == "floor")
                 {
                     agent.stoppingDistance = 0;

@@ -1,11 +1,16 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
     public float radius;
+    public int counter;
 
     bool isFocus = false;
     Transform player;
+    public List<int> add_progress_when;
+    public int status_interactable;
 
     public bool hasInteracted = false;
 
@@ -16,6 +21,11 @@ public class Interactable : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        status_interactable = 0;
+        counter = add_progress_when.Count;
+    }
 
     void Update()
     {        
@@ -24,13 +34,21 @@ public class Interactable : MonoBehaviour
             distance = Vector3.Distance(player.position, transform.position);
             if(distance <= radius)
             {
+                hasInteracted = true;                
 
-                hasInteracted = true;
                 this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+                if (status_interactable < counter )
+                {   
+                    if(add_progress_when[status_interactable] == sc_hero.levelProgress)
+                    {
+                        sc_hero.levelProgress++;
+                        status_interactable++;
+                    }
+                }
                 Debug.Log("Interacted with " + this.gameObject.name);
             }
 
-            Debug.Log(distance + " " + (distance <= radius));
+            //Debug.Log(distance + " " + (distance <= radius));
 
         }
     }
