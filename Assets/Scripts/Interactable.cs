@@ -41,16 +41,16 @@ public class Interactable : MonoBehaviour
 
                 this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
                 test++;
-                Debug.Log("terpanggil :" + test);
                 if (status_interactable < counter )
                 {   
                     if(add_progress_when[status_interactable] == sc_hero.levelProgress)
                     {
                         sc_hero.levelProgress++;
                         status_interactable++;
+                        Interact();
                     }
                 }
-                Debug.Log("Interacted with " + this.gameObject.name);
+                
             }
 
             //Debug.Log(distance + " " + (distance <= radius));
