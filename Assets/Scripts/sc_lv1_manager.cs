@@ -48,4 +48,16 @@ public class sc_lv1_manager : MonoBehaviour
         print("WaitAndPrint " + Time.time);
         
     }
+
+    public void onClickDialogueYes()
+    {
+        FindObjectOfType<DialogueManager>().DisplayNextSentence();
+        Debug.Log("Dialogue Clicked Yes");
+    }
+
+    public void onClickDialogueNo()
+    {
+        FindObjectOfType<DialogueManager>().DisplayNextSentence();
+        Debug.Log("Dialogue Clicked No");
+    }
 }
