@@ -6817,6 +6817,8 @@ GameObject:
   - component: {fileID: 259800286990560148}
   - component: {fileID: 259800286990560151}
   - component: {fileID: 259800286990560149}
+  - component: {fileID: 259800286990560152}
+  - component: {fileID: 259800286990560153}
   m_Layer: 0
   m_Name: trash_bin
   m_TagString: interactable
@@ -6874,7 +6876,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 259800286990560147}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9bef9485c366aff429ee6d9ced51116f, type: 3}
   m_Name: 
@@ -6885,6 +6887,43 @@ MonoBehaviour:
   status_interactable: 0
   hasInteracted: 0
   test: 0
+--- !u!114 &259800286990560152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259800286990560147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe60e693a4e6ca8448cf13ed79930d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 5
+  counter: 0
+  add_progress_when: 
+  status_interactable: 0
+  hasInteracted: 0
+  test: 0
+--- !u!114 &259800286990560153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259800286990560147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: []
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: 
+    sentences: []
+    when: 0
 --- !u!33 &287422880861407918
 MeshFilter:
   m_ObjectHideFlags: 0

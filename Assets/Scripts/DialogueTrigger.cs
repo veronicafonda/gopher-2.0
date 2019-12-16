@@ -16,8 +16,6 @@ public class DialogueTrigger : MonoBehaviour
         status_dialogue = 0;
         counter = dialogue.Count;
 
-        Debug.Log(counter);
-
     }
 
     public void TriggerDialogue ()

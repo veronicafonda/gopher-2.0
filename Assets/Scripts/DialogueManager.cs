@@ -12,15 +12,21 @@ public class DialogueManager : MonoBehaviour
 
     public Animator animator;
 
+    public static bool is_end;
+
+    
+
     private Queue<string> sentences;
     // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
+        is_end = false;
     }
 
     public void StartDialogue (Dialogue dialogue)
     {
+        is_end = false;   
         animator.SetBool("DialogueOpen", true);
         Debug.Log("Dialogue: " + dialogue.name);
         UI_Pause.pauseBool = true;
@@ -64,8 +70,10 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
+        is_end = true;
         animator.SetBool("DialogueOpen", false);
         UI_Pause.pauseBool = false;
         Debug.Log("End of Conversation");
+
     }
 }

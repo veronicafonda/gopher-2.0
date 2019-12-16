@@ -19,7 +19,7 @@ public class sc_lv1_manager : MonoBehaviour
         {
             case 0:
                 //player.GetComponent<Animator>().SetBool("is_lay", true);
-                StartCoroutine(WaitAndadvanced(2f));
+                //StartCoroutine(WaitAndadvanced(2f));
 
                 break;
             case 1:
