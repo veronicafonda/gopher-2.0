@@ -26,7 +26,6 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue (Dialogue dialogue)
     {
-
         if (dialogue.YesNoDialogue)
         {
             Debug.Log("YesNo is now true");
@@ -89,8 +88,6 @@ public class DialogueManager : MonoBehaviour
         UI_Pause.pauseBool = false;
 
         Debug.Log("End of Conversation ");
-
-        Debug.Log("End of Conversation");
         
     }
 }
