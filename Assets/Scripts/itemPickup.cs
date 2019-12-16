@@ -2,6 +2,8 @@
 
 public class itemPickup : Interactable
 {
+    public GameObject item;
+
     // Start is called before the first frame update
     public override void Interact()
     {
@@ -13,9 +15,10 @@ public class itemPickup : Interactable
     // Update is called once per frame
     void pickup()
     {
-        //this.GetComponent<GlowObjectCmd>().enabled = false;
-        Debug.Log("item is picked up");
-        //Destroy(gameObject);
+        Debug.Log("Picking up " + item.name);
+        
+        Inventory.instance.Add(item);
+
         gameObject.SetActive(false);
     }
 }
