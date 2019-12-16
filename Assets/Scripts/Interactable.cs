@@ -21,7 +21,7 @@ public class Interactable : MonoBehaviour
 
     public virtual void Interact()
     {
-
+        Debug.Log("keluar harusnya");
     }
 
     private void Start()
@@ -38,8 +38,8 @@ public class Interactable : MonoBehaviour
             if(distance <= radius)
             {
                 hasInteracted = true;                
-
-                this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+                if (this.gameObject.GetComponent<DialogueTrigger>() != null)
+                    this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
                 test++;
                 if (status_interactable < counter )
                 {   
@@ -47,13 +47,14 @@ public class Interactable : MonoBehaviour
                     {
                         sc_hero.levelProgress++;
                         status_interactable++;
-                        Interact();
+                        //Interact();
                     }
                 }
-                
+                Interact();
+
             }
 
-            //Debug.Log(distance + " " + (distance <= radius));
+            Debug.Log(distance + " " + (distance <= radius));
 
         }
     }
