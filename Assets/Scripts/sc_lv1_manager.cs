@@ -18,13 +18,13 @@ public class sc_lv1_manager : MonoBehaviour
         switch (sc_hero.levelProgress)
         {
             case 0:
-                player.GetComponent<Animator>().SetBool("is_lay", true);
+                //player.GetComponent<Animator>().SetBool("is_lay", true);
                 StartCoroutine(WaitAndadvanced(2f));
 
                 break;
             case 1:
-                player.GetComponent<Animator>().SetBool("is_lay", false);
-                player.GetComponent<Animator>().SetBool("is_jump", true);
+                //player.GetComponent<Animator>().SetBool("is_lay", false);
+                //player.GetComponent<Animator>().SetBool("is_jump", true);
                 break;
             case 2:
                 player.GetComponent<Animator>().SetBool("is_jump", false);
