@@ -36,8 +36,8 @@ public class DialogueManager : MonoBehaviour
             Debug.Log("Dialogue default");
             animator.SetBool("DialogueOpen", true);
         }
-        
-        is_end = false;   
+         
+        animator.SetBool("DialogueOpen", true);
         Debug.Log("Dialogue: " + dialogue.name);
         UI_Pause.pauseBool = true;
 
@@ -86,6 +86,7 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("DialogueOpen", false);
         animator.SetBool("DialogueYesNo", false);
         UI_Pause.pauseBool = false;
+
         Debug.Log("End of Conversation ");
         
     }
