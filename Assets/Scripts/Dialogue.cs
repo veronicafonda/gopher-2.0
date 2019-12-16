@@ -11,4 +11,6 @@ public class Dialogue
     public string[] sentences;
 
     public int when;
+
+    public bool YesNoDialogue;
 }

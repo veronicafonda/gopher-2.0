@@ -19,7 +19,7 @@ public class sc_lv1_manager : MonoBehaviour
         {
             case 0:
                 //player.GetComponent<Animator>().SetBool("is_lay", true);
-                StartCoroutine(WaitAndadvanced(2f));
+                //StartCoroutine(WaitAndadvanced(2f));
 
                 break;
             case 1:
@@ -47,5 +47,17 @@ public class sc_lv1_manager : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         print("WaitAndPrint " + Time.time);
         
+    }
+
+    public void onClickDialogueYes()
+    {
+        FindObjectOfType<DialogueManager>().DisplayNextSentence();
+        Debug.Log("Dialogue Clicked Yes");
+    }
+
+    public void onClickDialogueNo()
+    {
+        FindObjectOfType<DialogueManager>().DisplayNextSentence();
+        Debug.Log("Dialogue Clicked No");
     }
 }

@@ -21,7 +21,17 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue (Dialogue dialogue)
     {
-        animator.SetBool("DialogueOpen", true);
+        if (dialogue.YesNoDialogue)
+        {
+            Debug.Log("YesNo is now true");
+            animator.SetBool("DialogueYesNo", true);
+        }
+        else
+        {
+            Debug.Log("Dialogue default");
+            animator.SetBool("DialogueOpen", true);
+        }
+        
         Debug.Log("Dialogue: " + dialogue.name);
         UI_Pause.pauseBool = true;
 
@@ -54,18 +64,21 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeSentence (string sentence)
     {
+        Debug.Log("Typing Sentence");
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(DisplayText_speed);
         }
+
     }
 
-    void EndDialogue()
+    public void EndDialogue()
     {
         animator.SetBool("DialogueOpen", false);
+        animator.SetBool("DialogueYesNo", false);
         UI_Pause.pauseBool = false;
-        Debug.Log("End of Conversation");
+        Debug.Log("End of Conversation ");
     }
 }
