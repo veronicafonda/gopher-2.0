@@ -16,6 +16,8 @@ public class sc_hero : MonoBehaviour
     float distance;
 
     public static int levelProgress;
+
+    public GameObject walk_pointer;
     
     // Start is called before the first frame update
     void Start()
@@ -41,7 +43,12 @@ public class sc_hero : MonoBehaviour
                     //hit.collider.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
                 }                
 
-                Debug.Log("we hit " + hit.collider.name + " " + hit.point);
+                //Debug.Log("we hit " + hit.collider.name + " " + hit.point);
+                if(hit.collider.name == "floor")
+                {
+                    Instantiate(walk_pointer, hit.point, Quaternion.identity);
+                }
+                
                 if(hit.collider.name == "floor")
                 {
                     agent.stoppingDistance = 0;
