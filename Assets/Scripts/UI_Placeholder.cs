@@ -13,6 +13,10 @@ public class UI_Placeholder : MonoBehaviour
     {
         //Mengambil koordinat GameObject UI_PLACEHOLDER dari Stuart dan dikonversi menjadi koordinat untuk UI
         Vector3 namePos = Camera.main.WorldToScreenPoint(this.transform.position);
-        DialogBox.transform.position = namePos;
+        if (DialogBox != null)
+        {
+            DialogBox.transform.position = namePos;
+        }
+        
     }
 }

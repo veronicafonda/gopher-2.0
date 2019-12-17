@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 7153799}
   - component: {fileID: 7153798}
   m_Layer: 0
-  m_Name: Spot Light (1)
+  m_Name: Spot Light(sun)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 414631459}
   - component: {fileID: 414631460}
   m_Layer: 0
-  m_Name: Spot Light
+  m_Name: Spot Light(penerangKaca)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1265,9 +1265,9 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_Bias: 0
+    m_NormalBias: 3
+    m_NearPlane: 10
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
