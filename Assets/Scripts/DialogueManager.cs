@@ -36,8 +36,7 @@ public class DialogueManager : MonoBehaviour
             Debug.Log("Dialogue default");
             animator.SetBool("DialogueOpen", true);
         }
-         
-        animator.SetBool("DialogueOpen", true);
+
         Debug.Log("Dialogue: " + dialogue.name);
         UI_Pause.pauseBool = true;
 

@@ -236,7 +236,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &415895602
 GameObject:
@@ -327,7 +327,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -190.1, z: 0}
 --- !u!1 &511876470
 GameObject:
@@ -342,6 +342,7 @@ GameObject:
   - component: {fileID: 511876474}
   - component: {fileID: 511876473}
   - component: {fileID: 511876472}
+  - component: {fileID: 511876476}
   m_Layer: 0
   m_Name: ranjang_nicole
   m_TagString: Untagged
@@ -431,6 +432,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GlowColor: {r: 0.39894927, g: 0.990566, b: 0.2756764, a: 0}
   LerpFactor: 10
+--- !u!114 &511876476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511876470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: []
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: 
+    sentences:
+    - 'It''s Nicole''s bed. '
+    when: 0
+    YesNoDialogue: 0
 --- !u!1001 &559025806
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -528,6 +550,7 @@ GameObject:
   - component: {fileID: 962468170}
   - component: {fileID: 962468169}
   - component: {fileID: 962468172}
+  - component: {fileID: 962468173}
   m_Layer: 0
   m_Name: lamp
   m_TagString: Untagged
@@ -613,6 +636,74 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &962468173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962468167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: []
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: lampNIcole
+    sentences:
+    - It's Nicole's favorite night lamp.
+    - She hasn't turned it off.
+    when: 0
+    YesNoDialogue: 0
+--- !u!1 &969756325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 969756327}
+  - component: {fileID: 969756326}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &969756326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969756325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab2afacc538be144892c5d3268b1868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 0}
+  dialogueText: {fileID: 4938689908248154205}
+  animator: {fileID: 4938689908807460245}
+--- !u!4 &969756327
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969756325}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1372398795
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,7 +768,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1567564663 stripped
 GameObject:
@@ -696,6 +787,7 @@ GameObject:
   - component: {fileID: 1577467498}
   - component: {fileID: 1577467497}
   - component: {fileID: 1577467499}
+  - component: {fileID: 1577467500}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -729,7 +821,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1577467499
 MonoBehaviour:
@@ -744,6 +836,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1567564663}
+--- !u!114 &1577467500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577467496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - name: event1
+    sentences:
+    - 'I slept like a log. '
+    when: 0
+    YesNoDialogue: 0
+  - name: event2
+    sentences:
+    - What happend here, why is it so messy?
+    when: 0
+    YesNoDialogue: 0
+  - name: event3
+    sentences:
+    - Let me change my clothes first.
+    when: 0
+    YesNoDialogue: 0
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: 
+    sentences: []
+    when: 0
+    YesNoDialogue: 0
 --- !u!1 &1584086609
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,6 +884,7 @@ GameObject:
   - component: {fileID: 1584086613}
   - component: {fileID: 1584086612}
   - component: {fileID: 1584086611}
+  - component: {fileID: 1584086615}
   m_Layer: 0
   m_Name: Hatch
   m_TagString: Untagged
@@ -841,6 +969,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GlowColor: {r: 0.39894927, g: 0.990566, b: 0.2756764, a: 0}
   LerpFactor: 10
+--- !u!114 &1584086615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584086609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - name: haveKey
+    sentences:
+    - Open hatch?
+    when: 0
+    YesNoDialogue: 1
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: notHaveKey
+    sentences:
+    - 'The hatch is locked. '
+    - The key should be around here somewhere..
+    when: 0
+    YesNoDialogue: 0
 --- !u!1001 &1766456305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1056,6 +1211,36 @@ MonoBehaviour:
   hasInteracted: 0
   test: 0
   item: {fileID: 1766456307}
+--- !u!114 &1766456312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766456307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - name: beforeBasket
+    sentences:
+    - I need something to hold all this clothes.
+    when: 0
+    YesNoDialogue: 0
+  - name: afterBasket
+    sentences:
+    - Should I put the clothes in the basket?
+    when: 0
+    YesNoDialogue: 0
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: 
+    sentences: []
+    when: 0
+    YesNoDialogue: 0
 --- !u!1 &1824323138
 GameObject:
   m_ObjectHideFlags: 0
@@ -1137,7 +1322,7 @@ PrefabInstance:
     - target: {fileID: 3422041607453941068, guid: 87425c2d2bdf85444b2210c952f9cfd4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3422041607453941068, guid: 87425c2d2bdf85444b2210c952f9cfd4,
         type: 3}
@@ -1251,7 +1436,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &2015601105
 PrefabInstance:
@@ -1308,7 +1493,7 @@ PrefabInstance:
     - target: {fileID: 2531269765619424377, guid: 0c2f5e622e7879146b59084bb6ae7225,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2531269765619424377, guid: 0c2f5e622e7879146b59084bb6ae7225,
         type: 3}
@@ -1428,7 +1613,7 @@ PrefabInstance:
     - target: {fileID: 5422861276484707187, guid: 03a02a6ad2a94ed47b38f7809fa3631c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5422861276484707187, guid: 03a02a6ad2a94ed47b38f7809fa3631c,
         type: 3}
@@ -1449,6 +1634,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1945775056}
+    - target: {fileID: 1951932346, guid: 03a02a6ad2a94ed47b38f7809fa3631c, type: 3}
+      propertyPath: DialogBox
+      value: 
+      objectReference: {fileID: 4938689908807460267}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03a02a6ad2a94ed47b38f7809fa3631c, type: 3}
 --- !u!33 &10175770268516391
@@ -1492,6 +1681,7 @@ GameObject:
   - component: {fileID: 74970862134555049}
   - component: {fileID: 74970862134555048}
   - component: {fileID: 74970862134555051}
+  - component: {fileID: 74970862134555052}
   m_Layer: 0
   m_Name: tangga
   m_TagString: Untagged
@@ -1560,6 +1750,31 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0.358, y: -0.07924653, z: 0.00009918213}
   m_TimeToStationary: 0.5
+--- !u!114 &74970862134555052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74970862134555047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - name: pickLadder
+    sentences:
+    - Should I take the ladder?
+    when: 0
+    YesNoDialogue: 1
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: 
+    sentences: []
+    when: 0
+    YesNoDialogue: 0
 --- !u!33 &107146284846066710
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2617,6 +2832,7 @@ GameObject:
   - component: {fileID: 1579003327716274491}
   - component: {fileID: 1579003327716274490}
   - component: {fileID: 1579003327716274493}
+  - component: {fileID: 1579003327716274494}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -2685,6 +2901,28 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &1579003327716274494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579003327716274489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: []
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: chest
+    sentences:
+    - There a few tools inside..
+    - 'I don''t remember placing them here. '
+    when: 0
+    YesNoDialogue: 0
 --- !u!1 &1591789240194667916
 GameObject:
   m_ObjectHideFlags: 0
@@ -2981,6 +3219,7 @@ GameObject:
   - component: {fileID: 2177475543484180643}
   - component: {fileID: 2177475543484180642}
   - component: {fileID: 2177475543484180645}
+  - component: {fileID: 2177475543484180646}
   m_Layer: 0
   m_Name: MejaBangku
   m_TagString: Untagged
@@ -3049,6 +3288,27 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &2177475543484180646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2177475543484180641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: []
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: tableChair
+    sentences:
+    - There seems to be nothing here.
+    when: 0
+    YesNoDialogue: 0
 --- !u!33 &2186410980776471588
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3107,6 +3367,7 @@ GameObject:
   - component: {fileID: 2460645855544154495}
   - component: {fileID: 2460645855544154494}
   - component: {fileID: 2460645855544154493}
+  - component: {fileID: 2460645855544154496}
   m_Layer: 0
   m_Name: wardrobe
   m_TagString: Untagged
@@ -3159,6 +3420,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GlowColor: {r: 0.39894927, g: 0.990566, b: 0.2756764, a: 0}
   LerpFactor: 10
+--- !u!114 &2460645855544154496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2460645855544154492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - name: wardrobe
+    sentences:
+    - What's this? A note?
+    when: 0
+    YesNoDialogue: 0
+  - name: wardrobeAfterNote
+    sentences:
+    - Guess I'll have to do what Nicole wants me to do.
+    when: 1
+    YesNoDialogue: 0
+  - name: putLAdder
+    sentences:
+    - Should I put the ladder here?
+    when: 1
+    YesNoDialogue: 1
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: 
+    sentences: []
+    when: 0
+    YesNoDialogue: 0
 --- !u!4 &2479345075472497793
 Transform:
   m_ObjectHideFlags: 0
@@ -4015,6 +4311,7 @@ GameObject:
   - component: {fileID: 3805485952068071095}
   - component: {fileID: 3805485952068071094}
   - component: {fileID: 3805485952068071097}
+  - component: {fileID: 3805485952068071098}
   m_Layer: 0
   m_Name: Wastafel
   m_TagString: Untagged
@@ -4083,6 +4380,28 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &3805485952068071098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3805485952068071093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: []
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: faucet
+    sentences:
+    - The tap water is leaking.
+    - I have to fix this later.
+    when: 0
+    YesNoDialogue: 0
 --- !u!4 &3833594643739789496
 Transform:
   m_ObjectHideFlags: 0
@@ -4576,6 +4895,7 @@ GameObject:
   - component: {fileID: 4715424664149934570}
   - component: {fileID: 4715424664149934569}
   - component: {fileID: 4715424664149934568}
+  - component: {fileID: 4715424664149934571}
   m_Layer: 0
   m_Name: kunci
   m_TagString: Untagged
@@ -4628,6 +4948,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GlowColor: {r: 0.39894927, g: 0.990566, b: 0.2756764, a: 0}
   LerpFactor: 10
+--- !u!114 &4715424664149934571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4715424664149934567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - name: afterLadder
+    sentences:
+    - I found the key! Now I can unlock the door.
+    when: 0
+    YesNoDialogue: 0
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: noLadder
+    sentences:
+    - I think there's something on top of it but I can't reach it.
+    when: 0
+    YesNoDialogue: 0
 --- !u!4 &4732536772195745623
 Transform:
   m_ObjectHideFlags: 0
@@ -5811,7 +6157,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 969756326}
         m_MethodName: DisplayNextSentence
         m_Mode: 1
         m_Arguments:
@@ -6114,7 +6460,7 @@ RectTransform:
   - {fileID: 4938689908807460264}
   - {fileID: 4938689908157049872}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6156,7 +6502,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!223 &4938689909669429366
 Canvas:
   m_ObjectHideFlags: 0
@@ -6298,7 +6644,7 @@ Transform:
   - {fileID: 4331664411401269989}
   - {fileID: 1824323139}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &5046414305143183823
 Transform:
@@ -6327,6 +6673,7 @@ GameObject:
   - component: {fileID: 5051090773495882375}
   - component: {fileID: 5051090773495882374}
   - component: {fileID: 5051090773495882377}
+  - component: {fileID: 5051090773495882378}
   m_Layer: 0
   m_Name: Meja MAkeUp
   m_TagString: Untagged
@@ -6395,6 +6742,28 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &5051090773495882378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5051090773495882373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: []
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: dressTable
+    sentences:
+    - "There is Nicole\u2019s makeup kit on the table,"
+    - 'looks like it''s been used. '
+    when: 0
+    YesNoDialogue: 0
 --- !u!4 &5074921714708752879
 Transform:
   m_ObjectHideFlags: 0
@@ -6515,6 +6884,7 @@ GameObject:
   - component: {fileID: 5097226041025820839}
   - component: {fileID: 5097226041025820838}
   - component: {fileID: 5097226041025820837}
+  - component: {fileID: 5097226041025820840}
   m_Layer: 0
   m_Name: Bookcase
   m_TagString: Untagged
@@ -6567,6 +6937,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GlowColor: {r: 0.39894927, g: 0.990566, b: 0.2756764, a: 0}
   LerpFactor: 10
+--- !u!114 &5097226041025820840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5097226041025820836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: []
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: bookCase
+    sentences:
+    - Seems like there are more books here...
+    - Did Nicole add some new books?
+    when: 0
+    YesNoDialogue: 0
 --- !u!23 &5116131249989978811
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6678,6 +7070,7 @@ GameObject:
   - component: {fileID: 5315157993407539619}
   - component: {fileID: 5315157993407539618}
   - component: {fileID: 5315157993407539617}
+  - component: {fileID: 5315157993407539620}
   m_Layer: 0
   m_Name: jam
   m_TagString: Untagged
@@ -6730,6 +7123,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GlowColor: {r: 0.39894927, g: 0.990566, b: 0.2756764, a: 0}
   LerpFactor: 10
+--- !u!114 &5315157993407539620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5315157993407539616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: []
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: clockDialouge
+    sentences:
+    - 'It''s 9 AM. '
+    - 'I must hurry and get out, '
+    - Nicole must be waiting for me!
+    when: 0
+    YesNoDialogue: 0
 --- !u!1 &5323674519594324842
 GameObject:
   m_ObjectHideFlags: 0
@@ -6898,6 +7314,7 @@ GameObject:
   - component: {fileID: 5508617932584532791}
   - component: {fileID: 5508617932584532790}
   - component: {fileID: 5508617932584532789}
+  - component: {fileID: 5508617932584532792}
   m_Layer: 0
   m_Name: foto
   m_TagString: Untagged
@@ -6950,6 +7367,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GlowColor: {r: 0.39894927, g: 0.990566, b: 0.2756764, a: 0}
   LerpFactor: 10
+--- !u!114 &5508617932584532792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5508617932584532788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: []
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: nicolePhoto
+    sentences:
+    - 'It''s Nicole on her wedding dress. '
+    - She look so beautiful in it.
+    when: 0
+    YesNoDialogue: 0
 --- !u!33 &5525190498648714514
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6981,6 +7420,7 @@ GameObject:
   - component: {fileID: 5575924758738986048}
   - component: {fileID: 5575924758738986047}
   - component: {fileID: 5575924758738986050}
+  - component: {fileID: 5575924758738986051}
   m_Layer: 0
   m_Name: tempat sampah
   m_TagString: Untagged
@@ -7049,6 +7489,27 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &5575924758738986051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5575924758738986046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: []
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: trash
+    sentences:
+    - The trash can is empty.
+    when: 0
+    YesNoDialogue: 0
 --- !u!33 &5602475415333379543
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -7160,6 +7621,7 @@ GameObject:
   - component: {fileID: 5859872462284929584}
   - component: {fileID: 5859872462284929583}
   - component: {fileID: 5859872462284929586}
+  - component: {fileID: 5859872462284929587}
   m_Layer: 0
   m_Name: Ranjang Stuart
   m_TagString: Untagged
@@ -7228,6 +7690,27 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: -0.5, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &5859872462284929587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5859872462284929582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: []
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: 
+    sentences:
+    - I don't need to sleep now.
+    when: 0
+    YesNoDialogue: 0
 --- !u!33 &5876069876878950595
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8051,7 +8534,7 @@ RectTransform:
   m_Children:
   - {fileID: 6785908392278638660}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8120,7 +8603,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &6785908393098484055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9111,6 +9594,7 @@ GameObject:
   - component: {fileID: 3121488423733126120}
   - component: {fileID: 2642151623650474451}
   - component: {fileID: 8569488872584574258}
+  - component: {fileID: 7892664328302523275}
   m_Layer: 0
   m_Name: keranjang baju 1
   m_TagString: Untagged
@@ -9118,6 +9602,31 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7892664328302523275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7892664328302523274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - name: pickBasket
+    sentences:
+    - Should I bring the basket with me?
+    when: 0
+    YesNoDialogue: 1
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: 
+    sentences: []
+    when: 0
+    YesNoDialogue: 0
 --- !u!33 &7947007909290702659
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9234,6 +9743,7 @@ GameObject:
   - component: {fileID: 8017239665931548207}
   - component: {fileID: 8017239665931548206}
   - component: {fileID: 8017239665931548205}
+  - component: {fileID: 8017239665931548208}
   m_Layer: 0
   m_Name: foto001
   m_TagString: Untagged
@@ -9286,6 +9796,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GlowColor: {r: 0.39894927, g: 0.990566, b: 0.2756764, a: 0}
   LerpFactor: 10
+--- !u!114 &8017239665931548208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8017239665931548204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: []
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: stuartPhoto
+    sentences:
+    - 'It''s me on our wedding day. '
+    - When did Nicole hung these up?
+    when: 0
+    YesNoDialogue: 0
 --- !u!1 &8049956833126458359
 GameObject:
   m_ObjectHideFlags: 0
@@ -9300,6 +9832,7 @@ GameObject:
   - component: {fileID: 8049956833126458362}
   - component: {fileID: 8049956833126458361}
   - component: {fileID: 8049956833126458360}
+  - component: {fileID: 8049956833126458363}
   m_Layer: 0
   m_Name: bingkai kaca
   m_TagString: Untagged
@@ -9352,6 +9885,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GlowColor: {r: 0.39894927, g: 0.990566, b: 0.2756764, a: 0}
   LerpFactor: 10
+--- !u!114 &8049956833126458363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8049956833126458359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: []
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: mirror
+    sentences:
+    - 'Is it just me '
+    - or do I look older?
+    when: 0
+    YesNoDialogue: 0
 --- !u!1 &8059329055956969934
 GameObject:
   m_ObjectHideFlags: 0
@@ -9422,6 +9977,7 @@ GameObject:
   - component: {fileID: 315031975}
   - component: {fileID: 8296172669431732396}
   - component: {fileID: 8296172669431732397}
+  - component: {fileID: 8296172669431732398}
   m_Layer: 0
   m_Name: baju_pintu
   m_TagString: Untagged
@@ -9461,6 +10017,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 0078485b19e126d46931e77bb952132a, type: 3}
+--- !u!114 &8296172669431732398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296172669431732395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - name: beforeBasket
+    sentences:
+    - I need something to hold all this clothes.
+    when: 0
+    YesNoDialogue: 0
+  - name: afterBasket
+    sentences:
+    - Should I put the clothes in the basket?
+    when: 0
+    YesNoDialogue: 0
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: 
+    sentences: []
+    when: 0
+    YesNoDialogue: 0
 --- !u!4 &8301614750627518010
 Transform:
   m_ObjectHideFlags: 0
