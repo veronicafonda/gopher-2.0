@@ -38,6 +38,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         Debug.Log("Dialogue: " + dialogue.name);
+        Debug.Log("Sentences: " + dialogue.sentences);
         UI_Pause.pauseBool = true;
 
         //Judul dari text (Doesnt work somehow)
@@ -47,6 +48,7 @@ public class DialogueManager : MonoBehaviour
         foreach(string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
+            Debug.Log("Sentences: " + dialogue.sentences);
         }
 
         DisplayNextSentence();
