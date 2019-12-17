@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class itemPickup : Interactable
 {
@@ -9,16 +10,19 @@ public class itemPickup : Interactable
     {
         base.Interact();
         pickup();
-        
     }
 
     // Update is called once per frame
     void pickup()
     {
         Debug.Log("Picking up " + item.name);
-        
-        Inventory.instance.Add(item);
+        bool wasPickedUp = Inventory.instance.Add(item);
 
-        gameObject.SetActive(false);
+        Debug.Log("afasdfasdf");
+
+        if (wasPickedUp)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }
