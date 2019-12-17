@@ -15,7 +15,7 @@ public class sc_obj : MonoBehaviour
         }
         else if (sc_hero.levelProgress == 0)
         {
-
+            
         }
         else if (sc_hero.levelProgress == 0)
         {
