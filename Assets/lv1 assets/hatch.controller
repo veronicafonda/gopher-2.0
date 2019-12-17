@@ -58,7 +58,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: tutup_besi
+  m_Name: hatch
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: is_open
@@ -87,7 +87,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Take 001
+  m_Name: hatch
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []

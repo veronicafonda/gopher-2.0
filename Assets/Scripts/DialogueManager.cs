@@ -45,7 +45,7 @@ public class DialogueManager : MonoBehaviour
         foreach(string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
-            Debug.Log("Sentences: " + dialogue.sentences);
+            //Debug.Log("Sentences: " + dialogue.sentences);
         }
 
         DisplayNextSentence();
@@ -68,7 +68,7 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeSentence (string sentence)
     {
-        Debug.Log("Typing Sentence");
+        //Debug.Log("Typing Sentence");
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
@@ -85,6 +85,6 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("DialogueYesNo", false);
         UI_Pause.pauseBool = false;
 
-        Debug.Log("End of Conversation ");        
+        //Debug.Log("End of Conversation ");        
     }
 }

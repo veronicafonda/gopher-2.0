@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 
 public class sc_lv1_manager : MonoBehaviour
@@ -23,22 +25,41 @@ public class sc_lv1_manager : MonoBehaviour
     public GameObject canvas_tuts2;
     public GameObject canvas_letter;
 
+    public GameObject baju1;
+    public GameObject baju2;
+    public GameObject baju3;
+    public GameObject tangga;
+    public GameObject kunci;
+
+    public GameObject hatch;
+
+
+
+
 
     public bool is_run;
     public bool is_run2;
+    public bool is_run3;
+    public bool is_run4;
+
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        stuart_stand.SetActive(false);
-        player.SetActive(false);
+        FindObjectOfType<AudioManager>().Play("bgm");
+        //stuart_stand.SetActive(false);
+       // player.SetActive(false);
         current_prog = 0;
         is_dialog = true;
 
         is_run = true;
         is_run2 = true;
+        is_run3 = true;
+        is_run4 = true;
+
+
 
     }
 
@@ -53,9 +74,17 @@ public class sc_lv1_manager : MonoBehaviour
         //Debug.Log("level progress = " + sc_hero.levelProgress);
         switch (sc_hero.levelProgress)
         {
+            
             case 0:
-                main_camera.GetComponent<GlowController>().enabled = false;
-                StartCoroutine(WaitAndadvanced_1(1f,1));
+
+                if (is_dialog)
+                {
+                    FindObjectOfType<AudioManager>().Play("snore");
+                    is_dialog = false;
+                }
+
+                main_camera.GetComponent<GlowController>().enabled = true;
+                StartCoroutine(WaitAndadvanced_1(11f,1));
                 //sc_hero.levelProgress++;
 
                 break;
@@ -64,29 +93,14 @@ public class sc_lv1_manager : MonoBehaviour
                 if (is_dialog)
                 {
                     this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
-                    Debug.Log("Press 'right click' on the floor to move.");
+                    //Debug.Log("Press 'right click' on the floor to move.");
                     is_dialog = false;
                 }
 
                 black_panel.GetComponent<Animator>().SetBool("is_fade", false);
                 black_panel.GetComponent<Animator>().SetBool("is_done", true);
 
-                if (Input.GetMouseButtonDown(1))
-                {
-                    Ray ray = main_camera.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
-                    RaycastHit hit;
-
-                    if (Physics.Raycast(ray, out hit) && UI_Pause.pauseBool == false)
-                    {
-                        if (hit.collider.name == "floor")
-                        {
-                            Debug.Log("success 1");
-                            sc_hero.levelProgress++;
-                            //this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
-                        }
-                    }
-
-                }
+                sc_hero.levelProgress++;
 
                 break;
             case 2:
@@ -94,32 +108,34 @@ public class sc_lv1_manager : MonoBehaviour
                 main_camera.GetComponent<GlowController>().enabled = true;
                 if (is_dialog)
                 {
-                    Debug.Log("Press 'right click' on the glowing to object to interact.");
+                    //Debug.Log("Press 'right click' on the glowing to object to interact.");
                     this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
                     is_dialog = false;
                 }
 
-                if (Input.GetMouseButtonDown(1))
-                {
-                    Ray ray = main_camera.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
-                    RaycastHit hit;
-
-                    if (Physics.Raycast(ray, out hit) && UI_Pause.pauseBool == false)
-                    {
-                        if (hit.collider.name == "wardrobe")
-                        {
-                            Debug.Log("success 2");
-
-                        }
-                    }
-
-                }
                 break;
             case 3:
                 StartCoroutine(WaitAndadvanced_2(2f, 4));
                 break;
             case 4:
-
+                black_panel.GetComponent<Animator>().SetBool("is_fade", false);
+                black_panel.GetComponent<Animator>().SetBool("is_done", true);
+                break;
+            case 5:
+                if (is_dialog)
+                {
+                    this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+                    is_dialog = false;
+                }
+      
+                main_camera.GetComponent<GlowController>().enabled = true;
+                break;
+            case 10:
+                StartCoroutine(WaitAndadvanced_3(2f, 10));
+                break;
+            case 11:
+                StartCoroutine(WaitAndadvanced_4(2f, 11));
+                SceneManager.LoadScene("level2");
                 break;
             default:
                 print("Incorrect intelligence level.");
@@ -132,14 +148,18 @@ public class sc_lv1_manager : MonoBehaviour
 
         if (is_run)
         {
-            yield return new WaitForSeconds(waitTime);
+            yield return new WaitForSeconds(8f);
+            FindObjectOfType<AudioManager>().Stop("snore");
+            FindObjectOfType<AudioManager>().Mute("snore");
+
+            yield return new WaitForSeconds(3f);            
             black_panel.GetComponent<Animator>().SetBool("is_fade", true);
             yield return new WaitForSeconds(1f);
             stuart_stand.SetActive(true);
             stuart_sleep.SetActive(false);
             yield return new WaitForSeconds(1f);
             sc_hero.levelProgress = level;
-            Debug.Log("level = " + sc_hero.levelProgress);
+            //Debug.Log("level = " + sc_hero.levelProgress);
             is_run = false;
         }
         
@@ -154,14 +174,46 @@ public class sc_lv1_manager : MonoBehaviour
         {
             yield return new WaitForSeconds(waitTime);
             black_panel.GetComponent<Animator>().SetBool("is_fade", true);
+            FindObjectOfType<AudioManager>().Play("letter");
             yield return new WaitForSeconds(1f);
             player.SetActive(true);
             stuart_stand.SetActive(false);
             yield return new WaitForSeconds(1f);
             sc_hero.levelProgress = level;
-            Debug.Log("level = " + sc_hero.levelProgress);
+            //Debug.Log("level = " + sc_hero.levelProgress);
             canvas_letter.SetActive(true);
-            is_run = false;
+            is_run2 = false;
+        }
+
+
+        yield return null;
+    }
+
+    private IEnumerator WaitAndadvanced_3(float waitTime, int level)
+    {
+
+        if (is_run3)
+        {
+            black_panel.GetComponent<Animator>().SetBool("is_fade", true);
+            yield return new WaitForSeconds(4f);
+
+            is_run3 = false;
+        }
+
+
+        yield return null;
+    }
+
+    private IEnumerator WaitAndadvanced_4(float waitTime, int level)
+    {
+
+        if (is_run4)
+        {
+            black_panel.GetComponent<Animator>().SetBool("is_fade", true);
+            yield return new WaitForSeconds(4f);
+
+            SceneManager.LoadScene("level2");
+            is_run4 = false;
         }
 
 
@@ -171,7 +223,31 @@ public class sc_lv1_manager : MonoBehaviour
     public void onClickDialogueYes()
     {
         FindObjectOfType<DialogueManager>().DisplayNextSentence();
+        if (sc_hero.levelProgress == 6)
+        {
+            baju1.GetComponent<itemPickup>().pickup();
+        }
+        else if (sc_hero.levelProgress == 7)
+        {
+            baju2.GetComponent<itemPickup>().pickup();
+        }
+        else if (sc_hero.levelProgress == 8)
+        {
+            baju3.GetComponent<itemPickup>().pickup();
+        }
+        else if (sc_hero.levelProgress == 9)
+        {
+            tangga.GetComponent<sc_lv1_tangga>().pickup();
+            kunci.GetComponent<itemPickup>().pickup();
+        }
+        else if (sc_hero.levelProgress == 10)
+        {
+            hatch.GetComponent<sc_lv1_hatch>().pickup();
+        }
+
         Debug.Log("Dialogue Clicked Yes");
+        sc_hero.levelProgress++;
+
     }
 
     public void onClickDialogueNo()
@@ -183,7 +259,10 @@ public class sc_lv1_manager : MonoBehaviour
     public void level1_letter()
     {
         canvas_letter.SetActive(false);
+        FindObjectOfType<AudioManager>().Mute("letter");
+        FindObjectOfType<AudioManager>().Stop("letter");
         sc_hero.levelProgress++;
+        this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
     }
 
 }

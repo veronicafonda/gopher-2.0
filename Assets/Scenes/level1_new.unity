@@ -424,7 +424,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &415895602
 GameObject:
@@ -515,7 +515,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -190.1, z: 0}
 --- !u!1 &511876470
 GameObject:
@@ -641,6 +641,8 @@ MonoBehaviour:
     - 'It''s Nicole''s bed. '
     when: 0
     YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!1 &537904487
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,6 +839,39 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 559025806}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &612853456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612853455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - name: dialog1
+    sentences:
+    - my clothes is hanged up high..
+    when: 5
+    YesNoDialogue: 0
+  - name: dialog2
+    sentences:
+    - Should I put the clothes in the basket?
+    when: 8
+    YesNoDialogue: 1
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: default
+    sentences:
+    - maybe i will collect the other first.
+    when: 0
+    YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!65 &612853458
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -862,13 +897,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe60e693a4e6ca8448cf13ed79930d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 8
+  radius: 10
   counter: 0
   add_progress_when: 
   status_interactable: 0
   hasInteracted: 0
   test: 0
-  item: {fileID: 0}
+  item: {fileID: 612853455}
 --- !u!114 &612853460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -883,6 +918,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GlowColor: {r: 0.39894927, g: 0.990566, b: 0.2756764, a: 0}
   LerpFactor: 10
+--- !u!114 &612853462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612853455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a643939cc2bb8da4fad6cfc8d57539ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: f05f3fc4bed1fc041afcb5e26c7cfe5e, type: 3}
 --- !u!1 &786689655
 GameObject:
   m_ObjectHideFlags: 0
@@ -1133,6 +1181,8 @@ MonoBehaviour:
     - She hasn't turned it off.
     when: 0
     YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!1 &969756325
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,7 +1227,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1156690630
 GameObject:
@@ -1269,6 +1319,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: dcc55058630ac014fb3756735278e3b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: dcc55058630ac014fb3756735278e3b2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1307,7 +1362,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: dcc55058630ac014fb3756735278e3b2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: dcc55058630ac014fb3756735278e3b2,
         type: 3}
@@ -1416,7 +1471,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1409982460
 GameObject:
@@ -1510,7 +1565,7 @@ RectTransform:
   m_Children:
   - {fileID: 69919331}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1569,7 +1624,7 @@ Transform:
   m_Children:
   - {fileID: 366835062}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1577467499
 MonoBehaviour:
@@ -1593,8 +1648,15 @@ MonoBehaviour:
   canvas_tuts1: {fileID: 0}
   canvas_tuts2: {fileID: 0}
   canvas_letter: {fileID: 1409982460}
+  baju1: {fileID: 8296172669431732395}
+  baju2: {fileID: 1766456307}
+  baju3: {fileID: 612853455}
+  tangga: {fileID: 74970862134555047}
+  kunci: {fileID: 4715424664149934567}
+  hatch: {fileID: 1584086609}
   is_run: 0
   is_run2: 0
+  is_run3: 0
 --- !u!114 &1577467500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1611,15 +1673,20 @@ MonoBehaviour:
   - name: event1
     sentences:
     - 'I slept like a log. '
-    - What happend here, why is it so messy?
+    - What happened here, why is it so messy?
     - '......'
     - Let me change my clothes first.
     when: 1
     YesNoDialogue: 0
-  - name: even2
+  - name: event2
     sentences:
     - What's this? A note?
     when: 4
+    YesNoDialogue: 0
+  - name: event3
+    sentences:
+    - Guess I'll have to do what Nicole wants me to do.
+    when: 5
     YesNoDialogue: 0
   status_dialogue: 0
   counter: 0
@@ -1628,6 +1695,8 @@ MonoBehaviour:
     sentences: []
     when: 0
     YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!1 &1584086609
 GameObject:
   m_ObjectHideFlags: 0
@@ -1638,10 +1707,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1584086610}
   - component: {fileID: 1584086614}
-  - component: {fileID: 1584086613}
   - component: {fileID: 1584086612}
   - component: {fileID: 1584086611}
   - component: {fileID: 1584086615}
+  - component: {fileID: 1584086616}
+  - component: {fileID: 1584086613}
   m_Layer: 0
   m_Name: Hatch
   m_TagString: Untagged
@@ -1656,8 +1726,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1584086609}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -10.944408, y: -8.72554, z: 7.3439746}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.51, y: -10.41, z: 7.3439746}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 174854090473017948}
@@ -1675,11 +1745,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 2.2, y: 2.2, z: 0.5}
+  m_Extents: {x: 2.2, y: 2.2, z: 2.2}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 1.53, y: 0, z: -1.13}
+  m_Center: {x: 1, y: 0, z: 0.5}
   m_TimeToStationary: 0.5
 --- !u!65 &1584086612
 BoxCollider:
@@ -1692,8 +1762,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.4, y: 4.4, z: 1}
-  m_Center: {x: 1.53, y: 0, z: -1.13}
+  m_Size: {x: 4.4, y: 4.4, z: 4.09}
+  m_Center: {x: 1, y: 0, z: 0.5}
 --- !u!114 &1584086613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1703,7 +1773,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1584086609}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bef9485c366aff429ee6d9ced51116f, type: 3}
+  m_Script: {fileID: 11500000, guid: c280eec1c98ded940a7ec2cfeed00af1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 7
@@ -1742,7 +1812,7 @@ MonoBehaviour:
   - name: haveKey
     sentences:
     - Open hatch?
-    when: 0
+    when: 10
     YesNoDialogue: 1
   status_dialogue: 0
   counter: 0
@@ -1753,6 +1823,27 @@ MonoBehaviour:
     - The key should be around here somewhere..
     when: 0
     YesNoDialogue: 0
+  update_checker: 0
+  tuker: 1
+--- !u!95 &1584086616
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584086609}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b569f2f9d15041742bf6e04b8970da09, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1609196938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1863,6 +1954,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: f387f2846db9d6b488d498bb3a972270,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f387f2846db9d6b488d498bb3a972270,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1901,7 +1997,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: f387f2846db9d6b488d498bb3a972270,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f387f2846db9d6b488d498bb3a972270,
         type: 3}
@@ -2126,7 +2222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a643939cc2bb8da4fad6cfc8d57539ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 323446537a9dfd44b926d5dda0904390, type: 3}
 --- !u!114 &1766456310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2176,13 +2272,18 @@ MonoBehaviour:
   - name: beforeBasket
     sentences:
     - I need something to hold all this clothes.
-    when: 0
+    when: 5
+    YesNoDialogue: 0
+  - name: before_lower
+    sentences:
+    - I think i will collect it from the floor first
+    when: 6
     YesNoDialogue: 0
   - name: afterBasket
     sentences:
     - Should I put the clothes in the basket?
-    when: 0
-    YesNoDialogue: 0
+    when: 7
+    YesNoDialogue: 1
   status_dialogue: 0
   counter: 0
   default_dialogue:
@@ -2190,6 +2291,8 @@ MonoBehaviour:
     sentences: []
     when: 0
     YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!1 &1824323138
 GameObject:
   m_ObjectHideFlags: 0
@@ -2271,7 +2374,7 @@ PrefabInstance:
     - target: {fileID: 3422041607453941068, guid: 87425c2d2bdf85444b2210c952f9cfd4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3422041607453941068, guid: 87425c2d2bdf85444b2210c952f9cfd4,
         type: 3}
@@ -2355,6 +2458,7 @@ MonoBehaviour:
   focus: {fileID: 0}
   walk_pointer: {fileID: 90660651251131475, guid: 9a24a532b11b44d46b75df4a65451477,
     type: 3}
+  is_walk: 0
 --- !u!65 &1960746311
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2479,7 +2583,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &2015601105
 PrefabInstance:
@@ -2536,7 +2640,7 @@ PrefabInstance:
     - target: {fileID: 2531269765619424377, guid: 0c2f5e622e7879146b59084bb6ae7225,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2531269765619424377, guid: 0c2f5e622e7879146b59084bb6ae7225,
         type: 3}
@@ -2606,6 +2710,175 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 559025806}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2018987674
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1708412023470911998, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708412023470911992, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 81.89596
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708412023470911992, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 79.36464
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708412023470911992, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -292.92853
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708412023470911992, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708412023470911992, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708412023470911992, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708412023470911992, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708412023470911992, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708412023470911992, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708412023470911992, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708412023470911992, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708412023470911993, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: sounds.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708412023470911993, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: sounds.Array.data[0].name
+      value: bgm
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708412023470911993, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: sounds.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6b6645744c52bc440a82dc26536ec0b6, type: 3}
+    - target: {fileID: 1708412023470911993, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: sounds.Array.data[0].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708412023470911993, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: sounds.Array.data[0].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708412023470911993, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: sounds.Array.data[0].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708412023470911993, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: sounds.Array.data[1].name
+      value: snore
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708412023470911993, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: sounds.Array.data[1].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708412023470911993, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: sounds.Array.data[1].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708412023470911993, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: sounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 31cdbb0a1c731d64f903cb1e21d983fc, type: 3}
+    - target: {fileID: 1708412023470911993, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: sounds.Array.data[1].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708412023470911993, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: sounds.Array.data[2].name
+      value: letter
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708412023470911993, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: sounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1ddda89c034febd4688d4dfd385a90ca, type: 3}
+    - target: {fileID: 1708412023470911993, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: sounds.Array.data[2].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708412023470911993, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: sounds.Array.data[2].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708412023470911993, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: sounds.Array.data[3].name
+      value: walk
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708412023470911993, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: sounds.Array.data[3].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708412023470911993, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: sounds.Array.data[3].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708412023470911993, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: sounds.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5f005798601f38343b15f87dcc0fae70, type: 3}
+    - target: {fileID: 1708412023470911993, guid: fc408ad3358adf44d9e00af270bc261a,
+        type: 3}
+      propertyPath: sounds.Array.data[3].loop
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fc408ad3358adf44d9e00af270bc261a, type: 3}
 --- !u!1001 &2068085301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2621,7 +2894,7 @@ PrefabInstance:
     - target: {fileID: 9014665220492185952, guid: 03a02a6ad2a94ed47b38f7809fa3631c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9014665220492185952, guid: 03a02a6ad2a94ed47b38f7809fa3631c,
         type: 3}
@@ -2666,7 +2939,7 @@ PrefabInstance:
     - target: {fileID: 5422861276484707187, guid: 03a02a6ad2a94ed47b38f7809fa3631c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5422861276484707187, guid: 03a02a6ad2a94ed47b38f7809fa3631c,
         type: 3}
@@ -2747,10 +3020,11 @@ GameObject:
   - component: {fileID: 904288142472750404}
   - component: {fileID: 9214201869033839959}
   - component: {fileID: 74970862134555050}
-  - component: {fileID: 74970862134555049}
   - component: {fileID: 74970862134555048}
   - component: {fileID: 74970862134555051}
   - component: {fileID: 74970862134555052}
+  - component: {fileID: 74970862134555053}
+  - component: {fileID: 74970862134555049}
   m_Layer: 0
   m_Name: tangga
   m_TagString: Untagged
@@ -2780,7 +3054,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 74970862134555047}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bef9485c366aff429ee6d9ced51116f, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e608036f5b79d64f897cd59212588a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 7.5
@@ -2834,16 +3108,39 @@ MonoBehaviour:
   dialogue:
   - name: pickLadder
     sentences:
-    - Should I take the ladder?
-    when: 0
+    - SOmething up there, Should I use the ladder?
+    when: 9
     YesNoDialogue: 1
   status_dialogue: 0
   counter: 0
   default_dialogue:
-    name: 
-    sentences: []
+    name: default
+    sentences:
+    - It's my old ladder...
+    - I don't need it right now.
     when: 0
     YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
+--- !u!95 &74970862134555053
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74970862134555047}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5e85f945f385ff943a14ac98a868dc86, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!33 &107146284846066710
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2940,9 +3237,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2018022175942132436}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5938482, y: -0.039964437, z: -1.5821288}
-  m_LocalScale: {x: 0.991551, y: 0.99155146, z: 0.99155146}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 2.15944, y: 0.10233116, z: 0.039964676}
+  m_LocalScale: {x: 0.991551, y: 0.99155337, z: 0.99155337}
   m_Children: []
   m_Father: {fileID: 1584086610}
   m_RootOrder: 0
@@ -3774,6 +4071,7 @@ GameObject:
   - component: {fileID: 1503656548564908543}
   - component: {fileID: 1503656548564908542}
   - component: {fileID: 1503656548564908545}
+  - component: {fileID: 1503656548564908546}
   m_Layer: 0
   m_Name: keranjang baju
   m_TagString: Untagged
@@ -3842,6 +4140,34 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -9.7, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &1503656548564908546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503656548564908541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - name: take basket
+    sentences:
+    - Should i use the basket ?
+    when: 5
+    YesNoDialogue: 1
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: default
+    sentences:
+    - I need to fill the basket
+    when: 0
+    YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!23 &1522777924905739887
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3992,6 +4318,8 @@ MonoBehaviour:
     - 'I don''t remember placing them here. '
     when: 0
     YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!1 &1591789240194667916
 GameObject:
   m_ObjectHideFlags: 0
@@ -4321,7 +4649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bef9485c366aff429ee6d9ced51116f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 6
+  radius: 8
   counter: 0
   add_progress_when: 
   status_interactable: 0
@@ -4378,6 +4706,8 @@ MonoBehaviour:
     - There seems to be nothing here.
     when: 0
     YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!33 &2186410980776471588
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4522,10 +4852,13 @@ MonoBehaviour:
   status_dialogue: 0
   counter: 0
   default_dialogue:
-    name: 
-    sentences: []
+    name: default
+    sentences:
+    - Nicole's letter still hanging, guess i will do it.
     when: 0
     YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!114 &2460645855544154497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4944,25 +5277,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &3166231814729000293
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8296172667891104268}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 45665cb7a625bfd458e3d9f69c401e0d, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!23 &3166507015847486986
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5491,6 +5805,8 @@ MonoBehaviour:
     - I have to fix this later.
     when: 0
     YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!4 &3833594643739789496
 Transform:
   m_ObjectHideFlags: 0
@@ -5982,9 +6298,10 @@ GameObject:
   - component: {fileID: 10175770268516391}
   - component: {fileID: 2056452396305137236}
   - component: {fileID: 4715424664149934570}
-  - component: {fileID: 4715424664149934569}
   - component: {fileID: 4715424664149934568}
   - component: {fileID: 4715424664149934571}
+  - component: {fileID: 4715424664149934569}
+  - component: {fileID: 4715424664149934572}
   m_Layer: 0
   m_Name: kunci
   m_TagString: Untagged
@@ -6014,7 +6331,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4715424664149934567}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bef9485c366aff429ee6d9ced51116f, type: 3}
+  m_Script: {fileID: 11500000, guid: fe60e693a4e6ca8448cf13ed79930d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 9.5
@@ -6023,6 +6340,7 @@ MonoBehaviour:
   status_interactable: 0
   hasInteracted: 0
   test: 0
+  item: {fileID: 4715424664149934567}
 --- !u!114 &4715424664149934570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6056,13 +6374,28 @@ MonoBehaviour:
     when: 0
     YesNoDialogue: 0
   status_dialogue: 0
-  counter: 0
+  counter: 10
   default_dialogue:
     name: noLadder
     sentences:
     - I think there's something on top of it but I can't reach it.
     when: 0
     YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
+--- !u!114 &4715424664149934572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4715424664149934567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a643939cc2bb8da4fad6cfc8d57539ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 57da3c6e6653a4c4c9a715b6103d4779, type: 3}
 --- !u!4 &4732536772195745623
 Transform:
   m_ObjectHideFlags: 0
@@ -7348,7 +7681,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1577467499}
         m_MethodName: onClickDialogueNo
         m_Mode: 1
         m_Arguments:
@@ -7477,7 +7810,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1577467499}
         m_MethodName: onClickDialogueYes
         m_Mode: 1
         m_Arguments:
@@ -7549,7 +7882,7 @@ RectTransform:
   - {fileID: 4938689908807460264}
   - {fileID: 4938689908157049872}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7733,7 +8066,7 @@ Transform:
   - {fileID: 4331664411401269989}
   - {fileID: 1824323139}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &5046414305143183823
 Transform:
@@ -7853,6 +8186,8 @@ MonoBehaviour:
     - 'looks like it''s been used. '
     when: 0
     YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!4 &5074921714708752879
 Transform:
   m_ObjectHideFlags: 0
@@ -8048,6 +8383,8 @@ MonoBehaviour:
     - Did Nicole add some new books?
     when: 0
     YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!23 &5116131249989978811
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8235,6 +8572,8 @@ MonoBehaviour:
     - Nicole must be waiting for me!
     when: 0
     YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!1 &5323674519594324842
 GameObject:
   m_ObjectHideFlags: 0
@@ -8382,13 +8721,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8394344727048989618}
-  m_LocalRotation: {x: -0, y: -0.04288491, z: -0, w: 0.99908}
-  m_LocalPosition: {x: -0.61143875, y: -0.039964437, z: -1.5821288}
-  m_LocalScale: {x: 0.06341007, y: 0.06341004, z: 0.06341012}
+  m_LocalRotation: {x: -0.7064563, y: -0.030324211, z: 0.030324211, w: 0.7064563}
+  m_LocalPosition: {x: -0.04584694, y: 0.10233116, z: 0.039964676}
+  m_LocalScale: {x: 0.06341013, y: 0.06341016, z: 0.0634103}
   m_Children: []
   m_Father: {fileID: 1584086610}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -53.19462, y: -89.99999, z: 90}
 --- !u!1 &5508617932584532788
 GameObject:
   m_ObjectHideFlags: 0
@@ -8478,6 +8817,8 @@ MonoBehaviour:
     - She look so beautiful in it.
     when: 0
     YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!33 &5525190498648714514
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8599,6 +8940,8 @@ MonoBehaviour:
     - The trash can is empty.
     when: 0
     YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!33 &5602475415333379543
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8800,6 +9143,8 @@ MonoBehaviour:
     - I don't need to sleep now.
     when: 0
     YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!33 &5876069876878950595
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9417,7 +9762,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 57da3c6e6653a4c4c9a715b6103d4779, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9519,7 +9864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 6785908393010957611}
-  icon2: {fileID: 0}
+  icon2: {fileID: 6785908391569624471}
   counter: 0
 --- !u!114 &6785908392278638665
 MonoBehaviour:
@@ -9623,7 +9968,7 @@ RectTransform:
   m_Children:
   - {fileID: 6785908392278638660}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9692,7 +10037,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &6785908393098484055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10683,7 +11028,6 @@ GameObject:
   - component: {fileID: 3121488423733126120}
   - component: {fileID: 2642151623650474451}
   - component: {fileID: 8569488872584574258}
-  - component: {fileID: 7892664328302523275}
   m_Layer: 0
   m_Name: keranjang baju 1
   m_TagString: Untagged
@@ -10691,31 +11035,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &7892664328302523275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7892664328302523274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-  - name: pickBasket
-    sentences:
-    - Should I bring the basket with me?
-    when: 0
-    YesNoDialogue: 1
-  status_dialogue: 0
-  counter: 0
-  default_dialogue:
-    name: 
-    sentences: []
-    when: 0
-    YesNoDialogue: 0
 --- !u!33 &7947007909290702659
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10907,6 +11226,8 @@ MonoBehaviour:
     - When did Nicole hung these up?
     when: 0
     YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!1 &8049956833126458359
 GameObject:
   m_ObjectHideFlags: 0
@@ -10996,6 +11317,8 @@ MonoBehaviour:
     - or do I look older?
     when: 0
     YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!1 &8059329055956969934
 GameObject:
   m_ObjectHideFlags: 0
@@ -11045,7 +11368,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5006512736111347743}
-  - component: {fileID: 3166231814729000293}
   m_Layer: 0
   m_Name: level1 RAPI
   m_TagString: Untagged
@@ -11073,7 +11395,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &8296172669431732396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11088,7 +11410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 5.3
   counter: 0
-  add_progress_when: 00000000
+  add_progress_when: 
   status_interactable: 0
   hasInteracted: 0
   test: 0
@@ -11122,13 +11444,13 @@ MonoBehaviour:
   - name: beforeBasket
     sentences:
     - I need something to hold all this clothes.
-    when: 0
+    when: 5
     YesNoDialogue: 0
   - name: afterBasket
     sentences:
     - Should I put the clothes in the basket?
-    when: 0
-    YesNoDialogue: 0
+    when: 6
+    YesNoDialogue: 1
   status_dialogue: 0
   counter: 0
   default_dialogue:
@@ -11136,6 +11458,8 @@ MonoBehaviour:
     sentences: []
     when: 0
     YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!4 &8301614750627518010
 Transform:
   m_ObjectHideFlags: 0

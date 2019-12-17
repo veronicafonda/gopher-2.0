@@ -9,33 +9,23 @@ public class sc_obj : MonoBehaviour
 
     private void Start()
     {
-        if(sc_hero.levelProgress == 0)
-        {
-            sprite = Resources.Load<Sprite>("keranjang_baju_1");
-        }
-        else if (sc_hero.levelProgress == 0)
-        {
-            
-        }
-        else if (sc_hero.levelProgress == 0)
-        {
-
-        }
+        
     }
 
     private void Update()
     {
-        if (sc_hero.levelProgress == 0)
+        /*
+        if (sc_hero.levelProgress == 6)
         {
             sprite = Resources.Load<Sprite>("keranjang_baju_1");
         }
-        else if (sc_hero.levelProgress == 1)
+        else if (sc_hero.levelProgress == 7)
         {
             sprite = Resources.Load<Sprite>("keranjang_baju_2");
         }
-        else if (sc_hero.levelProgress == 2)
+        else if (sc_hero.levelProgress == 8)
         {
             sprite = Resources.Load<Sprite>("keranjang_baju_3");
-        }
+        }*/
     }
 }
