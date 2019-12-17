@@ -15,6 +15,7 @@ public class sc_lv1_manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("level progress = " + sc_hero.levelProgress);
         switch (sc_hero.levelProgress)
         {
             case 0:

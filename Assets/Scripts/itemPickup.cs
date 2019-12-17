@@ -18,11 +18,6 @@ public class itemPickup : Interactable
         Debug.Log("Picking up " + item.name);
         bool wasPickedUp = Inventory.instance.Add(item);
 
-        Debug.Log("afasdfasdf");
-
-        if (wasPickedUp)
-        {
-            gameObject.SetActive(false);
-        }
+        Destroy(item);
     }
 }

@@ -7,7 +7,7 @@ public class InventoryUI : MonoBehaviour
 
     Inventory inventory;
 
-    InventorySlot[] slots;
+    InventorySlot slots;
 
     #region code gw
     /*public Image Slot;
@@ -28,7 +28,7 @@ public class InventoryUI : MonoBehaviour
         inventory = Inventory.instance;
         inventory.onItemChangedCallback += UpdateUI;
 
-        slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+        slots = itemsParent.GetComponent<InventorySlot>();
     }
 
     // Update is called once per frame
@@ -39,17 +39,8 @@ public class InventoryUI : MonoBehaviour
 
     void UpdateUI()
     {
-        Debug.Log("Update UI");
-        for(int i = 0; i < slots.Length; i++)
-        {
-            if(i < inventory.items.Count)
-            {
-                slots[i].AddItem(inventory.items[i]);
-            }
-            else
-            {
-                slots[i].ClearSlot();
-            }
-        } 
+        Debug.Log("Update UI + ");
+
+        slots.AddItem(inventory.items[inventory.items.Count-1]); 
     }
 }
