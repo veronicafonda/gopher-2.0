@@ -10089,6 +10089,8 @@ GameObject:
   - component: {fileID: 7038903536648101708}
   - component: {fileID: 7119466016482484463}
   - component: {fileID: 7119466016482484462}
+  - component: {fileID: 7119466016482484464}
+  - component: {fileID: 7119466016482484465}
   - component: {fileID: 7119466016482484461}
   m_Layer: 0
   m_Name: Teapot
@@ -10142,6 +10144,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GlowColor: {r: 0.39894927, g: 0.990566, b: 0.2756764, a: 0}
   LerpFactor: 10
+--- !u!114 &7119466016482484464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7119466016482484460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12aa02ef95e8619418410a1b5187750d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
+--- !u!114 &7119466016482484465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7119466016482484460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe60e693a4e6ca8448cf13ed79930d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 0
+  counter: 0
+  add_progress_when: 
+  status_interactable: 0
+  hasInteracted: 0
+  test: 0
+  item: {fileID: 7119466016482484460}
 --- !u!23 &7188318668461192213
 MeshRenderer:
   m_ObjectHideFlags: 0
