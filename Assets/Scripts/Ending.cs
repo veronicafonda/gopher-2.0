@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ending : MonoBehaviour
 {
-    public int endingProgress = 0;
+    int endingProgress = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -19,8 +19,10 @@ public class Ending : MonoBehaviour
         switch (endingProgress)
         {
             case 0:
+                
                 //player.GetComponent<Animator>().SetBool("is_lay", true);
                 //StartCoroutine(WaitAndadvanced(2f));
+                
 
                 break;
             case 1:
@@ -46,5 +48,6 @@ public class Ending : MonoBehaviour
     {
         FindObjectOfType<DialogueManager>().DisplayNextSentence();
         Debug.Log("Dialogue Clicked");
+        endingProgress++;
     }
 }

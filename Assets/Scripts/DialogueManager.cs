@@ -26,6 +26,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue (Dialogue dialogue)
     {
+
         if (dialogue.YesNoDialogue)
         {
             Debug.Log("YesNo is now true");
@@ -48,7 +49,6 @@ public class DialogueManager : MonoBehaviour
         foreach(string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
-            Debug.Log("Sentences: " + dialogue.sentences);
         }
 
         DisplayNextSentence();
@@ -63,7 +63,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         string sentence = sentences.Dequeue();
-        //Debug.Log(sentence);
+        Debug.Log("sentence "+sentence);
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
         
