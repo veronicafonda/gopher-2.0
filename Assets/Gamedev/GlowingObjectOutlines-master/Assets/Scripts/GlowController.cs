@@ -75,7 +75,8 @@ public class GlowController : MonoBehaviour
 			for (int j = 0; j < _glowableObjects[i].Renderers.Length; j++)
 			{
                 //debug glowed obj lenght
-				//print(string.Format("{0} length: {1}", _glowableObjects[i].name, _glowableObjects[i].Renderers.Length));
+                //print(string.Format("{0} length: {1}", _glowableObjects[i].name, _glowableObjects[i].Renderers.Length));
+                if(_glowableObjects[i].Renderers[j] !=null)
 				_commandBuffer.DrawRenderer(_glowableObjects[i].Renderers[j], _glowMat);
 			}
 		}

@@ -21,7 +21,7 @@ public class Interactable : MonoBehaviour
 
     public virtual void Interact()
     {
-        Debug.Log("keluar harusnya");
+        Debug.Log("Interacting with " + gameObject.name);
     }
 
     private void Start()
@@ -54,7 +54,7 @@ public class Interactable : MonoBehaviour
 
             }
 
-            Debug.Log(this.gameObject.name +" " + distance + " " + (distance <= radius));
+            //Debug.Log(this.gameObject.name +" " + distance + " " + (distance <= radius));
 
         }
     }

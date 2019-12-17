@@ -16,10 +16,10 @@ public class OpenCloseBag : MonoBehaviour
         bagContent.enabled = false;
         Item1.enabled = false;
         Item2.enabled = false;
-        bagButton.onClick.AddListener(InventoryController);
+        //bagButton.onClick.AddListener(InventoryController);
     }
     
-    void InventoryController()
+    public void InventoryController()
     {
         bagContent.enabled = !bagContent.enabled;
         Item1.enabled = !Item1.enabled;
