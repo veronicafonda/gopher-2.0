@@ -23,4 +23,20 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("level1_new");
         Debug.Log("Start");
     }
+
+    public void optionsClick()
+    {
+
+    }
+
+    public void exitClick()
+    {
+
+    }
+    
+    public void creditsClick()
+    {
+        Debug.Log("Quit Game");
+        Application.Quit();
+    }
 }
