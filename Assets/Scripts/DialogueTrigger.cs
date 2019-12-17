@@ -20,6 +20,7 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerDialogue ()
     {
+        Debug.Log("triggered");
         //FindObjectOfType<DialogueManager>().StartDialogue(dialogue[1]);
 
         if ( status_dialogue < counter)
