@@ -49,7 +49,6 @@ public class sc_lv3_manager : MonoBehaviour
                 if (is_dialog)
                 {
                     this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
-                    //Where is Nicole..? Maybe she left another letter here too.
                     is_dialog = false;
                 }
 
@@ -92,5 +91,35 @@ public class sc_lv3_manager : MonoBehaviour
 
         }
         yield return null;
+    }
+
+    public void onClickDialogueYes()
+    {
+        FindObjectOfType<DialogueManager>().DisplayNextSentence();
+        if (sc_hero.levelProgress == 5)
+        {
+            //FindObjectOfType<AudioManager>().Play("baju1");
+            //keranjang.GetComponent<itemPickup>().pickup();
+        }
+
+        Debug.Log("Dialogue Clicked Yes");
+        sc_hero.levelProgress++;
+
+    }
+
+    public void onClickDialogueNo()
+    {
+        FindObjectOfType<DialogueManager>().DisplayNextSentence();
+        Debug.Log("Dialogue Clicked No");
+    }
+
+
+    public void level3_letter()
+    {
+        canvas_letter.SetActive(false);
+        FindObjectOfType<AudioManager>().Mute("letter");
+        FindObjectOfType<AudioManager>().Stop("letter");
+        sc_hero.levelProgress++;
+
     }
 }

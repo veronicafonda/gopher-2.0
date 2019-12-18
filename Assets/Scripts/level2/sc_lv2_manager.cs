@@ -118,6 +118,27 @@ public class sc_lv2_manager : MonoBehaviour
         yield return null;
     }
 
+    public void onClickDialogueYes()
+    {
+        FindObjectOfType<DialogueManager>().DisplayNextSentence();
+        if (sc_hero.levelProgress == 5)
+        {
+            //FindObjectOfType<AudioManager>().Play("baju1");
+            //keranjang.GetComponent<itemPickup>().pickup();
+        }
+        
+
+        Debug.Log("Dialogue Clicked Yes");
+        sc_hero.levelProgress++;
+
+    }
+
+    public void onClickDialogueNo()
+    {
+        FindObjectOfType<DialogueManager>().DisplayNextSentence();
+        Debug.Log("Dialogue Clicked No");
+    }
+
 
     public void level2_letter()
     {
