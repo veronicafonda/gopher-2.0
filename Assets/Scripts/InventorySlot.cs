@@ -1,18 +1,38 @@
-﻿using UnityEngine;
+﻿    using UnityEngine;
 using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
     public Image icon;
+    public Image icon2;
+
 
     GameObject item;
 
+    public int counter;
+
+    private void Start()
+    {
+        
+    }
+
     public void AddItem(GameObject newItem)
     {
+        //Debug.Log("SLOTS ADDITEM");
         item = newItem;
 
-        icon.sprite = GetComponent<sc_obj>().sprite;
-        icon.enabled = true;
+        
+        //Debug.Log(icon.sprite.name);
+        //icon.enabled = true;
+
+        if(sc_hero.levelProgress == 9)
+        {
+            icon2.sprite = item.GetComponent<sc_obj>().sprite;
+        }
+        else
+        {
+            icon.sprite = item.GetComponent<sc_obj>().sprite;
+        }
     }
 
     public void ClearSlot()

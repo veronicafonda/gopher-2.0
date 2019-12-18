@@ -16,10 +16,14 @@ public class sc_hero : MonoBehaviour
     float distance;
 
     public static int levelProgress;
+
+    public GameObject walk_pointer;
+    public bool is_walk;
     
     // Start is called before the first frame update
     void Start()
     {
+        is_walk = false;
         agent = this.GetComponent<NavMeshAgent>();
         levelProgress = 0;
     }
@@ -27,6 +31,7 @@ public class sc_hero : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(levelProgress);
         //left mouse
         if (Input.GetMouseButtonDown(1))
         {
@@ -41,7 +46,12 @@ public class sc_hero : MonoBehaviour
                     //hit.collider.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
                 }                
 
-                Debug.Log("we hit " + hit.collider.name + " " + hit.point);
+                //Debug.Log("we hit " + hit.collider.name + " " + hit.point);
+                if(hit.collider.name == "floor")
+                {
+                    Instantiate(walk_pointer, hit.point, Quaternion.identity);
+                }
+                
                 if(hit.collider.name == "floor")
                 {
                     agent.stoppingDistance = 0;
@@ -67,15 +77,25 @@ public class sc_hero : MonoBehaviour
         {
             RemoveFocus();
             this.GetComponent<Animator>().SetBool("is_walk", false);
+            FindObjectOfType<AudioManager>().Stop("walk");
+            is_walk = false;
         }
 
         if(agent.velocity.magnitude < 1)
         {
             this.GetComponent<Animator>().SetBool("is_walk", false);
+            FindObjectOfType<AudioManager>().Stop("walk");
+            is_walk = false;
         }
         else
         {
             this.GetComponent<Animator>().SetBool("is_walk", true);
+            if (!is_walk)
+            {
+                FindObjectOfType<AudioManager>().Play("walk");
+                is_walk = true;
+            }
+            
         }
     }
 

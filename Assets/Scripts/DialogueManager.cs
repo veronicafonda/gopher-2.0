@@ -12,9 +12,7 @@ public class DialogueManager : MonoBehaviour
 
     public Animator animator;
 
-    public static bool is_end;
-
-    
+    public static bool is_end;    
 
     private Queue<string> sentences;
     // Start is called before the first frame update
@@ -28,17 +26,16 @@ public class DialogueManager : MonoBehaviour
     {
         if (dialogue.YesNoDialogue)
         {
-            Debug.Log("YesNo is now true");
+            //Debug.Log("YesNo is now true");
             animator.SetBool("DialogueYesNo", true);
         }
         else
         {
-            Debug.Log("Dialogue default");
+            //Debug.Log("Dialogue default");
             animator.SetBool("DialogueOpen", true);
         }
-         
-        animator.SetBool("DialogueOpen", true);
-        Debug.Log("Dialogue: " + dialogue.name);
+
+        //Debug.Log("Dialogue: " + dialogue.name);
         UI_Pause.pauseBool = true;
 
         //Judul dari text (Doesnt work somehow)
@@ -48,6 +45,7 @@ public class DialogueManager : MonoBehaviour
         foreach(string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
+            //Debug.Log("Sentences: " + dialogue.sentences);
         }
 
         DisplayNextSentence();
@@ -70,7 +68,7 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeSentence (string sentence)
     {
-        Debug.Log("Typing Sentence");
+        //Debug.Log("Typing Sentence");
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
@@ -87,7 +85,6 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("DialogueYesNo", false);
         UI_Pause.pauseBool = false;
 
-        Debug.Log("End of Conversation ");
-        
+        //Debug.Log("End of Conversation ");        
     }
 }

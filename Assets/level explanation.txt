@@ -61,9 +61,11 @@ Puzzle:
 1. Open the map, discover an arrow behind it pointing to the right
 2. search around the area in the right for clue to way out
 3. find key under the mug on the table
-4. get water on a pot in the stove to put out the fire in the porch
-5. find door to way out on the porch
-6. use key to go out
+4. get kettle in the stove to put out the fire in the porch
+5. get water in the sink
+6. pour water in the fireplace
+7. repeat step 5-6 three times (nanti uinya jg berubah)
+8. when the fire is dead, unlock the door hidden in the fireplace with the key in inventory
 
 The dialogue when interacting with objects is here: https://docs.google.com/spreadsheets/d/1H1Ino_KrXQVQRYOXtkOtBL-sGlF8R8G3Mquf4zVmxpg/edit?usp=sharing
 
@@ -84,21 +86,20 @@ Keep it up, Cuz this is the last one. If you manage to get out, there is a pleas
 Love, Nicole"
 
 puzzle:
-1. find Nicole's letter (in front of window)
-2. collect 6 pieces of paper:
+1. find Nicole's letter (in front of window), stuart found 1st piece of paper behind the letter
+2. collect 5 other pieces of paper:
 	a. in sofa
 	b. in mug
 	c. in vase
-	d. in carpet
-	e. in bookcase
-	f. in hanger
+	d. in bookcase
+	e. in hanger
 3. go to tape on top of table. press tape = "use tape?" > yes or no
 4. paper become a music score with title song on it
-5. go to gramaphone: "play music?" (3 choices of title, pick the title on the music sheet)
+5. go to gramaphone: "play music?" (4 choices of title, pick the title on the music sheet)
 6. the bars are raised and stuart can go out
 ------------------------------------------------------------------------------------------------------------
 ENDING
 *all white*
-
+ada di google sheet :)
 
 	
