@@ -4940,6 +4940,61 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -179.58
       objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: default_dialogue.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[0].sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[1].sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: default_dialogue.sentences.Array.data[0]
+      value: If I have a container I can get water from here.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[0].name
+      value: Kettle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[1].name
+      value: TeaPot
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[0].YesNoDialogue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[0].sentences.Array.data[0]
+      value: Fill kettle with water?
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[1].YesNoDialogue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[1].sentences.Array.data[0]
+      value: Fill pot with water?
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 658ba54d4eae7544c9bfc35413327da5, type: 3}
 --- !u!1 &301483203
@@ -5282,6 +5337,31 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.46, y: 1.81, z: -6.804592}
   m_TimeToStationary: 0.5
+--- !u!114 &559537905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559537899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: []
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: stove
+    sentences:
+    - 'The stove looks used, '
+    - 'I can smell a bit of sugar. '
+    - 'Did Nicole bake something? '
+    when: 0
+    YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!1 &600284847
 GameObject:
   m_ObjectHideFlags: 0
@@ -5785,6 +5865,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GlowColor: {r: 0.39894927, g: 0.990566, b: 0.2756764, a: 0}
   LerpFactor: 10
+--- !u!114 &1136006711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136006706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: []
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: table
+    sentences:
+    - There are several dents on the table.
+    - Did Nicole accidentally hit it with something?
+    when: 0
+    YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!208 &1136006714
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -6514,6 +6618,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10718c5543178c94c889cf0051fe410e, type: 3}
+--- !u!114 &1505962016 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3244100008524614715, guid: 10718c5543178c94c889cf0051fe410e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1505962015}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad222e50ce1756468fc0d7c86dee428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1887407890
 GameObject:
   m_ObjectHideFlags: 0
@@ -6703,6 +6819,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300818880285118173, guid: fe0bc72abe71a3d498b6c8664fd84364,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1505962016}
+    - target: {fileID: 4300818880285118173, guid: fe0bc72abe71a3d498b6c8664fd84364,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: onClickPause
       objectReference: {fileID: 0}
     - target: {fileID: 4300818881699033876, guid: fe0bc72abe71a3d498b6c8664fd84364,
         type: 3}
@@ -7601,6 +7727,7 @@ GameObject:
   - component: {fileID: 1579003327279282419}
   - component: {fileID: 1579003327279282418}
   - component: {fileID: 1579003327279282421}
+  - component: {fileID: 1579003327279282422}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -7669,6 +7796,30 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &1579003327279282422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579003327279282417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: []
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: chest
+    sentences:
+    - 'There are food stocks inside. '
+    - Huh, when was the last time we stocked up?
+    when: 0
+    YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!23 &1613531806212537717
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8427,6 +8578,7 @@ GameObject:
   - component: {fileID: 2490226124172198730}
   - component: {fileID: 2490226124172198729}
   - component: {fileID: 2490226124172198728}
+  - component: {fileID: 2490226124172198731}
   m_Layer: 0
   m_Name: peta
   m_TagString: Untagged
@@ -8479,6 +8631,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GlowColor: {r: 0.39894927, g: 0.990566, b: 0.2756764, a: 0}
   LerpFactor: 10
+--- !u!114 &2490226124172198731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2490226124172198727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - name: checkMap
+    sentences:
+    - Hm?
+    - There's something behind it...
+    when: 0
+    YesNoDialogue: 0
+  - name: checkMapYesNo
+    sentences:
+    - Look behind map?
+    when: 0
+    YesNoDialogue: 1
+  - name: afterCheckMap
+    sentences:
+    - 'It''s pointing to the right. '
+    - Maybe I could get more clues if I searched around the fireplace.
+    when: 0
+    YesNoDialogue: 1
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: 
+    sentences: []
+    when: 0
+    YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!23 &2514629772660843439
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8927,6 +9118,7 @@ GameObject:
   - component: {fileID: 3580725282792556659}
   - component: {fileID: 3580725282792556658}
   - component: {fileID: 3580725282792556661}
+  - component: {fileID: 3580725282792556662}
   m_Layer: 0
   m_Name: talenan
   m_TagString: Untagged
@@ -8995,6 +9187,30 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -4.1140003, y: 5.8380003, z: -17.789001}
   m_TimeToStationary: 0.5
+--- !u!114 &3580725282792556662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3580725282792556657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: []
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: talenan
+    sentences:
+    - 'The cutting table looks clean, '
+    - 'but I can smell a sweet smell in it. '
+    when: 0
+    YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!23 &3689321764049812189
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9136,6 +9352,7 @@ GameObject:
   - component: {fileID: 3988704082220881984}
   - component: {fileID: 3988704082220881983}
   - component: {fileID: 3988704082220881986}
+  - component: {fileID: 3988704082220881987}
   m_Layer: 0
   m_Name: Table&Chair
   m_TagString: Untagged
@@ -9204,6 +9421,30 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.7, y: 1.05, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &3988704082220881987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3988704082220881982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: []
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: diningTable
+    sentences:
+    - 'Looks new. '
+    - 'Did Nicole buy this? '
+    when: 0
+    YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!33 &4017621593822056942
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9235,6 +9476,7 @@ GameObject:
   - component: {fileID: 4103848124065399675}
   - component: {fileID: 4103848124065399674}
   - component: {fileID: 4103848124065399677}
+  - component: {fileID: 4103848124065399678}
   m_Layer: 0
   m_Name: kayu
   m_TagString: Untagged
@@ -9303,6 +9545,30 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &4103848124065399678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4103848124065399673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: []
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: fireWood
+    sentences:
+    - 'It''s a pile of wood, '
+    - probably for the fireplace.
+    when: 0
+    YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!33 &4123969377103625864
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9817,6 +10083,7 @@ GameObject:
   - component: {fileID: 5315157992972640363}
   - component: {fileID: 5315157992972640362}
   - component: {fileID: 5315157992972640361}
+  - component: {fileID: 5315157992972640364}
   m_Layer: 0
   m_Name: jam
   m_TagString: Untagged
@@ -9869,6 +10136,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GlowColor: {r: 0.39894927, g: 0.990566, b: 0.2756764, a: 0}
   LerpFactor: 10
+--- !u!114 &5315157992972640364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5315157992972640360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: []
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: clock
+    sentences:
+    - The ticking sounds are calming.
+    when: 0
+    YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!23 &5345410989146832324
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9940,6 +10230,7 @@ GameObject:
   - component: {fileID: 5416592041479340056}
   - component: {fileID: 5416592041479340055}
   - component: {fileID: 5416592041479340058}
+  - component: {fileID: 5416592041479340059}
   m_Layer: 0
   m_Name: sandaran_atas
   m_TagString: Untagged
@@ -10008,6 +10299,29 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &5416592041479340059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5416592041479340054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: []
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: sofa
+    sentences:
+    - If I sit on the sofa I might fall asleep again.
+    when: 0
+    YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!23 &5452068789726105181
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10167,6 +10481,7 @@ GameObject:
   - component: {fileID: 6045552479710612281}
   - component: {fileID: 6045552479710612280}
   - component: {fileID: 6045552479710612279}
+  - component: {fileID: 6045552479710612282}
   m_Layer: 0
   m_Name: perapian
   m_TagString: Untagged
@@ -10219,6 +10534,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GlowColor: {r: 0.39894927, g: 0.990566, b: 0.2756764, a: 0}
   LerpFactor: 10
+--- !u!114 &6045552479710612282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6045552479710612278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - name: checkPlaceOnFire
+    sentences:
+    - 'I can''t check it if the fire is still burning, '
+    - maybe I should get some water to put it off.
+    when: 0
+    YesNoDialogue: 0
+  - name: checkPlaceOnFire_PourWater_1
+    sentences:
+    - Pour water?
+    when: 0
+    YesNoDialogue: 1
+  - name: checkPlaceOnFire_AfterWater_1
+    sentences:
+    - 'I couldn''t check it if the fire is still burning, '
+    - maybe I can get some water to put it off.
+    when: 0
+    YesNoDialogue: 0
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: fireplace
+    sentences:
+    - 'I can''t check it if the fire is still burning, '
+    - maybe I should get some water to put it off.
+    when: 0
+    YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!1 &6050567389215938278
 GameObject:
   m_ObjectHideFlags: 0
@@ -10649,6 +11005,7 @@ GameObject:
   - component: {fileID: 6763824362215937616}
   - component: {fileID: 6763824362215937615}
   - component: {fileID: 6763824362215937614}
+  - component: {fileID: 6763824362215937617}
   m_Layer: 0
   m_Name: gelas
   m_TagString: Untagged
@@ -10701,6 +11058,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GlowColor: {r: 0.39894927, g: 0.990566, b: 0.2756764, a: 0}
   LerpFactor: 10
+--- !u!114 &6763824362215937617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6763824362215937613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - name: CheckCup
+    sentences:
+    - There's something under the cup...
+    when: 0
+    YesNoDialogue: 0
+  - name: optionCup
+    sentences:
+    - Lift it up?
+    when: 0
+    YesNoDialogue: 1
+  - name: afterHoldingCup
+    sentences:
+    - It's the key!
+    - Now I just need to find the exit.
+    when: 0
+    YesNoDialogue: 0
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: 
+    sentences: []
+    when: 0
+    YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!23 &6831341965698790040
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10936,6 +11331,7 @@ GameObject:
   - component: {fileID: 7119466016482484464}
   - component: {fileID: 7119466016482484465}
   - component: {fileID: 7119466016482484461}
+  - component: {fileID: 7119466016482484466}
   m_Layer: 0
   m_Name: Teapot
   m_TagString: Untagged
@@ -11020,6 +11416,34 @@ MonoBehaviour:
   hasInteracted: 0
   test: 0
   item: {fileID: 7119466016482484460}
+--- !u!114 &7119466016482484466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7119466016482484460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - name: takeKettle
+    sentences:
+    - Take kettle?
+    when: 0
+    YesNoDialogue: 1
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: largeKettle
+    sentences:
+    - A large kettle.
+    when: 0
+    YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!23 &7188318668461192213
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11606,6 +12030,7 @@ GameObject:
   - component: {fileID: 8033765194550793968}
   - component: {fileID: 8033765194550793967}
   - component: {fileID: 8033765194550793966}
+  - component: {fileID: 8033765194550793969}
   m_Layer: 0
   m_Name: panci
   m_TagString: Untagged
@@ -11658,6 +12083,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GlowColor: {r: 0.39894927, g: 0.990566, b: 0.2756764, a: 0}
   LerpFactor: 10
+--- !u!114 &8033765194550793969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8033765194550793965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - name: takePot
+    sentences:
+    - Take pot?
+    when: 0
+    YesNoDialogue: 1
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: emptyPot
+    sentences:
+    - An empty pot.
+    when: 0
+    YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!33 &8058293835693257429
 MeshFilter:
   m_ObjectHideFlags: 0
