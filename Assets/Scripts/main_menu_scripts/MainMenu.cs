@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public Animator stuartNicole;
+    public Animator mainMenu;
+
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("staraasdasdsa");
+        FindObjectOfType<AudioManager>().Play("mmbgm");
     }
 
     // Update is called once per frame
@@ -38,5 +41,12 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("Quit Game");
         Application.Quit();
+    }
+
+    public void pressAnykey()
+    {
+        stuartNicole.SetBool("afterClick", true);
+        mainMenu.SetBool("afterClick", true);
+
     }
 }
