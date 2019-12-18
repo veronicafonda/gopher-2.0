@@ -59,9 +59,34 @@ public class sc_lv2_manager : MonoBehaviour
                 StartCoroutine(wait_1());
 
                 break;
+            case 2:
+
+                StartCoroutine(wait_1());
+
+                break;
+            case 3:
+
+                StartCoroutine(wait_1());
+
+                break;
+            case 4:
+
+                StartCoroutine(wait_1());
+
+                break;
+            case 5:
+
+                StartCoroutine(wait_1());
+
+                break;
+            case 6:
+
+                StartCoroutine(wait_1());
+
+                break;
 
             default:
-                print("Incorrect intelligence level.");
+                print("default");
                 break;
         }
     }
@@ -84,7 +109,6 @@ public class sc_lv2_manager : MonoBehaviour
             text_letter.SetActive(false);
             yield return new WaitForSeconds(8f);
 
-            sc_hero.levelProgress = 4;
             UI_Pause.pauseBool = false;
             text_letter.SetActive(true);
             button_letter.GetComponent<Button>().interactable = true;
@@ -92,5 +116,15 @@ public class sc_lv2_manager : MonoBehaviour
 
         }
         yield return null;
+    }
+
+
+    public void level2_letter()
+    {
+        canvas_letter.SetActive(false);
+        FindObjectOfType<AudioManager>().Mute("letter");
+        FindObjectOfType<AudioManager>().Stop("letter");
+        sc_hero.levelProgress++;
+
     }
 }
