@@ -12,6 +12,6 @@ public class sc_lv1_tangga : Interactable
 
     public void pickup()
     {
-        this.GetComponent<Animator>().SetBool("is_move", stat);
+        //this.GetComponent<Animator>().SetBool("is_move", stat);
     }
 }

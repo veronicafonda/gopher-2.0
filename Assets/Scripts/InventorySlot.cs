@@ -27,10 +27,12 @@ public class InventorySlot : MonoBehaviour
 
         if(sc_hero.levelProgress == 9)
         {
+            icon2.color = new Color(1f, 1f, 1f, 1f);
             icon2.sprite = item.GetComponent<sc_obj>().sprite;
         }
         else
         {
+            icon.color = new Color(1f, 1f, 1f, 1f);
             icon.sprite = item.GetComponent<sc_obj>().sprite;
         }
     }

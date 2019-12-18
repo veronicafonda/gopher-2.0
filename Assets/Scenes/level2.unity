@@ -5517,6 +5517,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stuart_N_Idle Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 9014665220492185952, guid: 03a02a6ad2a94ed47b38f7809fa3631c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5422861276484707187, guid: 03a02a6ad2a94ed47b38f7809fa3631c,
         type: 3}
       propertyPath: m_LocalPosition.x
