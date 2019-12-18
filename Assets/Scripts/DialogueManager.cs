@@ -8,7 +8,8 @@ public class DialogueManager : MonoBehaviour
 {
     float DisplayText_speed = .05f;
     public TextMeshProUGUI nameText;
-    public TextMeshProUGUI dialogueText;
+    public Text dialogueText;
+    public TextMeshProUGUI dialogueText_UNUSABLE;
 
     public Animator animator;
 
@@ -24,7 +25,6 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue (Dialogue dialogue)
     {
-
         if (dialogue.YesNoDialogue)
         {
             //Debug.Log("YesNo is now true");
@@ -46,6 +46,7 @@ public class DialogueManager : MonoBehaviour
         foreach(string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
+            //Debug.Log("Sentences: " + dialogue.sentences);
         }
 
         DisplayNextSentence();
@@ -60,7 +61,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         string sentence = sentences.Dequeue();
-        Debug.Log("sentence "+sentence);
+        Debug.Log(sentence);
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
         
@@ -68,7 +69,7 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeSentence (string sentence)
     {
-        Debug.Log("Typing Sentence");
+        //Debug.Log("Typing Sentence");
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
@@ -84,7 +85,7 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("DialogueOpen", false);
         animator.SetBool("DialogueYesNo", false);
         UI_Pause.pauseBool = false;
-
-        Debug.Log("End of Conversation ");        
+        sentences.Clear();
+        //Debug.Log("End of Conversation ");        
     }
 }

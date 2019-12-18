@@ -9,11 +9,12 @@ public class itemPickup : Interactable
     public override void Interact()
     {
         base.Interact();
-        pickup();
+
+        //pickup();
     }
 
     // Update is called once per frame
-    void pickup()
+    public void pickup()
     {
         Debug.Log("Picking up " + item.name);
         bool wasPickedUp = Inventory.instance.Add(item);

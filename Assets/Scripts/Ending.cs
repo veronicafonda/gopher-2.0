@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Ending : MonoBehaviour
 {
@@ -44,7 +46,6 @@ public class Ending : MonoBehaviour
                 jeda();
                 break;
             case 3:
-                
                 caseGanjil();
                 break;
             case 4:
@@ -96,6 +97,9 @@ public class Ending : MonoBehaviour
             case 19: 
                 caseGanjil();
                 break;
+            case 20:
+                SceneManager.LoadScene("MainMenu");
+                break;
             default:
                 
                 break;
@@ -104,7 +108,7 @@ public class Ending : MonoBehaviour
 
     private IEnumerator endingProgIncrement(float wait)
     {
-        Debug.Log("WAIT");
+        //Debug.Log("WAIT");
         yield return new WaitForSeconds(wait);
         if (is_nicole == false)
             uiPlace.transform.position = new Vector3(transform.position.x + ui_multiplier, uiPlace.transform.position.y, uiPlace.transform.position.z);
@@ -139,6 +143,7 @@ public class Ending : MonoBehaviour
     {
         if (is_dialog)
         {
+            StopAllCoroutines();
             StartCoroutine(endingProgIncrement(.5f));
 
             is_dialog = false;

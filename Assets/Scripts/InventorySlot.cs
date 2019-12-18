@@ -18,12 +18,21 @@ public class InventorySlot : MonoBehaviour
 
     public void AddItem(GameObject newItem)
     {
-        Debug.Log("SLOTS ADDITEM");
+        //Debug.Log("SLOTS ADDITEM");
         item = newItem;
 
-        icon.sprite = item.GetComponent<sc_obj>().sprite;
-        Debug.Log(icon.sprite.name);
+        
+        //Debug.Log(icon.sprite.name);
         //icon.enabled = true;
+
+        if(sc_hero.levelProgress == 9)
+        {
+            icon2.sprite = item.GetComponent<sc_obj>().sprite;
+        }
+        else
+        {
+            icon.sprite = item.GetComponent<sc_obj>().sprite;
+        }
     }
 
     public void ClearSlot()
