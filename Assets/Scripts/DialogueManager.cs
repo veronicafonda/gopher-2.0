@@ -8,7 +8,8 @@ public class DialogueManager : MonoBehaviour
 {
     float DisplayText_speed = .05f;
     public TextMeshProUGUI nameText;
-    public TextMeshProUGUI dialogueText;
+    public Text dialogueText;
+    public TextMeshProUGUI dialogueText_UNUSABLE;
 
     public Animator animator;
 
@@ -60,7 +61,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         string sentence = sentences.Dequeue();
-        //Debug.Log(sentence);
+        Debug.Log(sentence);
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
         
@@ -84,7 +85,7 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("DialogueOpen", false);
         animator.SetBool("DialogueYesNo", false);
         UI_Pause.pauseBool = false;
-
+        sentences.Clear();
         //Debug.Log("End of Conversation ");        
     }
 }
