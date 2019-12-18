@@ -21,9 +21,9 @@ public class sc_lv1_manager : MonoBehaviour
 
     public GameObject main_camera;
 
-    public GameObject canvas_tuts1;
-    public GameObject canvas_tuts2;
     public GameObject canvas_letter;
+    public GameObject canvas_tuts;
+
 
     public GameObject baju1;
     public GameObject baju2;
@@ -34,13 +34,11 @@ public class sc_lv1_manager : MonoBehaviour
     public GameObject hatch;
 
 
-
-
-
     public bool is_run;
     public bool is_run2;
     public bool is_run3;
     public bool is_run4;
+    public bool is_tuts;
 
 
 
@@ -49,8 +47,8 @@ public class sc_lv1_manager : MonoBehaviour
     void Start()
     {
         FindObjectOfType<AudioManager>().Play("bgm");
-        //stuart_stand.SetActive(false);
-       // player.SetActive(false);
+        stuart_stand.SetActive(false);
+        player.SetActive(false);
         current_prog = 0;
         is_dialog = true;
 
@@ -58,8 +56,7 @@ public class sc_lv1_manager : MonoBehaviour
         is_run2 = true;
         is_run3 = true;
         is_run4 = true;
-
-
+        is_tuts = false;
 
     }
 
@@ -90,15 +87,21 @@ public class sc_lv1_manager : MonoBehaviour
                 break;
             case 1:
 
+                if (!is_tuts)
+                {
+                    canvas_tuts.SetActive(true);
+                    is_tuts = true;
+                }
                 if (is_dialog)
                 {
+                    
                     this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
                     //Debug.Log("Press 'right click' on the floor to move.");
                     is_dialog = false;
                 }
 
                 black_panel.GetComponent<Animator>().SetBool("is_fade", false);
-                black_panel.GetComponent<Animator>().SetBool("is_done", true);
+                black_panel.GetComponent<Animator>().SetBool("is_done", true);                
 
                 sc_hero.levelProgress++;
 
@@ -108,6 +111,7 @@ public class sc_lv1_manager : MonoBehaviour
                 main_camera.GetComponent<GlowController>().enabled = true;
                 if (is_dialog)
                 {
+                    
                     //Debug.Log("Press 'right click' on the glowing to object to interact.");
                     this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
                     is_dialog = false;
@@ -174,6 +178,8 @@ public class sc_lv1_manager : MonoBehaviour
         {
             yield return new WaitForSeconds(waitTime);
             black_panel.GetComponent<Animator>().SetBool("is_fade", true);
+            FindObjectOfType<AudioManager>().Play("surat");
+
             FindObjectOfType<AudioManager>().Play("letter");
             yield return new WaitForSeconds(1f);
             player.SetActive(true);
@@ -212,7 +218,7 @@ public class sc_lv1_manager : MonoBehaviour
             black_panel.GetComponent<Animator>().SetBool("is_fade", true);
             yield return new WaitForSeconds(4f);
 
-            SceneManager.LoadScene("level2");
+            SceneManager.LoadScene("Ending");
             is_run4 = false;
         }
 
@@ -225,10 +231,12 @@ public class sc_lv1_manager : MonoBehaviour
         FindObjectOfType<DialogueManager>().DisplayNextSentence();
         if (sc_hero.levelProgress == 6)
         {
+            FindObjectOfType<AudioManager>().Play("baju1");
             baju1.GetComponent<itemPickup>().pickup();
         }
         else if (sc_hero.levelProgress == 7)
         {
+            FindObjectOfType<AudioManager>().Play("baju1");
             baju2.GetComponent<itemPickup>().pickup();
         }
         else if (sc_hero.levelProgress == 8)
@@ -237,6 +245,8 @@ public class sc_lv1_manager : MonoBehaviour
         }
         else if (sc_hero.levelProgress == 9)
         {
+            FindObjectOfType<AudioManager>().Play("kunci");
+
             tangga.GetComponent<sc_lv1_tangga>().pickup();
             kunci.GetComponent<itemPickup>().pickup();
         }
@@ -263,6 +273,11 @@ public class sc_lv1_manager : MonoBehaviour
         FindObjectOfType<AudioManager>().Stop("letter");
         sc_hero.levelProgress++;
         this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+    }
+
+    public void level_tuts()
+    {
+        canvas_tuts.SetActive(false);
     }
 
 }

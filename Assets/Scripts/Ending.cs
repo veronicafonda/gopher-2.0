@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Ending : MonoBehaviour
 {
@@ -95,6 +97,9 @@ public class Ending : MonoBehaviour
                 break;
             case 19: 
                 caseGanjil();
+                break;
+            case 20:
+                SceneManager.LoadScene("MainMenu");
                 break;
             default:
                 
