@@ -25,27 +25,29 @@ public class Ending : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("level progress = " + endingProgress);
-        switch (endingProgress)
+        Debug.Log("level progress = " + sc_hero.levelProgress);
+        switch (sc_hero.levelProgress)
         {
             case 0:
                 is_dialog = true;
-                endingProgress++;
+                sc_hero.levelProgress++;
                 break;
             case 1:
                 if (is_dialog)
                 {
                     uiPlace.transform.position = new Vector3(transform.position.x + ui_multiplier, uiPlace.transform.position.y, uiPlace.transform.position.z);
                     this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
-                    Debug.Log("cas1");
-                    endingProgress++;
+                    //Debug.Log("cas1");
+                    sc_hero.levelProgress++;
                     is_dialog = false;
                 }
                 break;
             case 2:
+                //Debug.Log("cas2");
                 jeda();
                 break;
             case 3:
+                //Debug.Log("cas3");
                 caseGanjil();
                 break;
             case 4:
@@ -108,18 +110,36 @@ public class Ending : MonoBehaviour
 
     private IEnumerator endingProgIncrement(float wait)
     {
-        //Debug.Log("WAIT");
-        yield return new WaitForSeconds(wait);
-        if (is_nicole == false)
-            uiPlace.transform.position = new Vector3(transform.position.x + ui_multiplier, uiPlace.transform.position.y, uiPlace.transform.position.z);
-        else
-            uiPlace.transform.position = new Vector3(transform.position.x + ui_multiplier2, uiPlace.transform.position.y, uiPlace.transform.position.z);
-
-        if (dialogueBoxAnim.GetBool("DialogueOpen") == false)
+        
+        if (is_dialog)
         {
-            endingProgress++;
+            is_dialog = false;
+            Debug.Log("Masuk Corotin If");
+            this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+            Debug.Log("is-nicole " + is_nicole);
+            if (is_nicole != false)
+            {
+                uiPlace.transform.position = new Vector3(transform.position.x + ui_multiplier, uiPlace.transform.position.y, uiPlace.transform.position.z);
+            }
+            else
+            {
+                uiPlace.transform.position = new Vector3(transform.position.x + ui_multiplier2, uiPlace.transform.position.y, uiPlace.transform.position.z);
+            }
+            sc_hero.levelProgress++;
+
+            yield return new WaitForSeconds(wait);
+            
+
+
         }
-        this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+
+        yield return null;
+    }
+
+    private IEnumerator waitStupid()
+    {
+        //Debug.Log("waitSTupid");
+        yield return new WaitForSeconds(5f);
     }
 
     public void onClickDialogue()
@@ -135,19 +155,15 @@ public class Ending : MonoBehaviour
         is_nicole = !is_nicole;
         if (dialogueBoxAnim.GetBool("DialogueOpen") == false)
         {
-            endingProgress++;
+            StopAllCoroutines();
+            StartCoroutine(waitStupid());
+            sc_hero.levelProgress++;
         }
+        
     }
 
     void caseGanjil()
     {
-        if (is_dialog)
-        {
-            StopAllCoroutines();
-            StartCoroutine(endingProgIncrement(.5f));
-
-            is_dialog = false;
-            
-        }
+        StartCoroutine(endingProgIncrement(.5f));
     }
 }
