@@ -20,12 +20,30 @@ public class sc_lv3_manager : MonoBehaviour
 
     public bool is_run;
 
+    public GameObject letter;
+    public GameObject sofa;
+    public GameObject mug;
+    public GameObject vase;
+    public GameObject bookcase;
+    public GameObject hat;
+
+    public GameObject tape;
+
+
+    public bool is_complete;
+    public int complete;
+    
+
+
     // Start is called before the first frame update
     void Start()
     {
         FindObjectOfType<AudioManager>().Play("bgm");
         current_prog = 0;
         is_dialog = true;
+
+        is_complete = false;
+        complete = 0;
 
         //tambahan
         is_run = true;
@@ -36,10 +54,11 @@ public class sc_lv3_manager : MonoBehaviour
     {
         if (current_prog != sc_hero.levelProgress)
         {
+            Debug.Log("level progress = " + sc_hero.levelProgress);
             current_prog = sc_hero.levelProgress;
             is_dialog = true;
         }
-
+        Debug.Log("level progress = " + sc_hero.levelProgress);
         //Debug.Log("level progress = " + sc_hero.levelProgress);
 
         switch (sc_hero.levelProgress)
@@ -58,6 +77,42 @@ public class sc_lv3_manager : MonoBehaviour
                 StartCoroutine(wait_1());
 
                 break;
+            case 2:
+
+                if (is_dialog)
+                {
+                    this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+                    
+                    FindObjectOfType<AudioManager>().Play("barang");
+                    letter.GetComponent<sc_letterv3>().pickup();
+                    is_dialog = false;
+
+                }
+
+                if (complete > 4 && !is_complete)
+                {
+                    sc_hero.levelProgress++;
+                    is_complete = true;
+                }
+
+
+                break;
+            case 3:
+
+
+                break;
+            case 4:
+
+
+                break;
+            case 5:
+
+
+                break;
+            case 6:
+
+
+                break;
 
             default:
                 print("Incorrect intelligence level.");
@@ -72,18 +127,19 @@ public class sc_lv3_manager : MonoBehaviour
         {
             is_run = false;
             UI_Pause.pauseBool = true;
+            yield return new WaitForSeconds(2f);
             black_panel.GetComponent<Animator>().SetBool("is_fade", true);
+            FindObjectOfType<AudioManager>().Play("surat");
+
             yield return new WaitForSeconds(1f);
 
             FindObjectOfType<AudioManager>().Play("letter");
-            FindObjectOfType<AudioManager>().Play("surat");
 
             canvas_letter.SetActive(true);
             button_letter.GetComponent<Button>().interactable = false;
             text_letter.SetActive(false);
-            yield return new WaitForSeconds(8f);
+            yield return new WaitForSeconds(1f);
 
-            sc_hero.levelProgress = 4;
             UI_Pause.pauseBool = false;
             text_letter.SetActive(true);
             button_letter.GetComponent<Button>().interactable = true;
@@ -96,10 +152,10 @@ public class sc_lv3_manager : MonoBehaviour
     public void onClickDialogueYes()
     {
         FindObjectOfType<DialogueManager>().DisplayNextSentence();
-        if (sc_hero.levelProgress == 5)
+        if (sc_hero.levelProgress == 3)
         {
-            //FindObjectOfType<AudioManager>().Play("baju1");
-            //keranjang.GetComponent<itemPickup>().pickup();
+            FindObjectOfType<AudioManager>().Play("barang");
+            tape.GetComponent<sc_lv3_tape>().pickup();
         }
 
         Debug.Log("Dialogue Clicked Yes");
@@ -122,4 +178,15 @@ public class sc_lv3_manager : MonoBehaviour
         sc_hero.levelProgress++;
 
     }
+
+    public void set_part()
+    {
+        complete++;
+    }
+
+    public int get_part()
+    {
+        return complete;
+    }
+
 }

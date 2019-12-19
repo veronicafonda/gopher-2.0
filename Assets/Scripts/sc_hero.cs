@@ -24,7 +24,7 @@ public class sc_hero : MonoBehaviour
     {
         is_walk = false;
         agent = this.GetComponent<NavMeshAgent>();
-        levelProgress = 0;
+        levelProgress = 2;
     }
 
     // Update is called once per frame

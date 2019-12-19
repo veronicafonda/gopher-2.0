@@ -11737,7 +11737,7 @@ MonoBehaviour:
   dialogue:
   - name: CheckCup
     sentences:
-    - There's something under the cup...
+    - There's something under the mug...
     when: 5
     YesNoDialogue: 0
   - name: optionCup
@@ -11750,7 +11750,7 @@ MonoBehaviour:
   default_dialogue:
     name: default
     sentences:
-    - It's nicole's favorite glass
+    - It's nicole's favorite mug...
     when: 0
     YesNoDialogue: 0
   update_checker: 0
