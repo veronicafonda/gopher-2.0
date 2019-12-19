@@ -171,7 +171,7 @@ public class Ending : MonoBehaviour
                 if (firstime)
                 {
                     firstime = false;
-                    StartCoroutine(waitAnim(16f));
+                    StartCoroutine(waitAnim(17f));
                     buttonDialogue.SetActive(false);
                 }
                 
@@ -183,7 +183,7 @@ public class Ending : MonoBehaviour
                     is_dialog = true;
                     sc_hero.levelProgress = 23;
                     creditsAnim.SetBool("isCredits", false);
-                    StartCoroutine(waitStupid(1f));
+                    StartCoroutine(waitStupid(0f));
                 }
                 break;
             case 23:

@@ -8,18 +8,27 @@ public class MainMenu : MonoBehaviour
 {
     public Animator stuartNicole;
     public Animator mainMenu;
+    public Animator credits;
     public GameObject pressKey;
+    public GameObject creditsBlackScreen;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        creditsBlackScreen.SetActive(false);
         FindObjectOfType<AudioManager>().Play("mmbgm");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.anyKeyDown)
+        {
+            credits.SetBool("isCredits", false);
+            creditsBlackScreen.SetActive(false);
+            StopAllCoroutines();
+        }
     }
 
     public void startClick()
@@ -36,8 +45,17 @@ public class MainMenu : MonoBehaviour
     
     public void creditsClick()
     {
-        Debug.Log("Quit Game");
-        Application.Quit();
+        Debug.Log("Creditss");
+        creditsBlackScreen.SetActive(true);
+        credits.SetBool("isCredits", true);
+        StartCoroutine(waitAnim(17f));
+    }
+
+    private IEnumerator waitAnim(float wait)
+    { 
+        yield return new WaitForSeconds(wait);
+        creditsBlackScreen.SetActive(false);
+        credits.SetBool("isCredits", false);
     }
 
     public void pressAnykey()
