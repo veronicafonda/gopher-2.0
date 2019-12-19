@@ -5957,7 +5957,7 @@ PrefabInstance:
     - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
         type: 3}
       propertyPath: dialogue.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
         type: 3}
@@ -5967,6 +5967,11 @@ PrefabInstance:
     - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
         type: 3}
       propertyPath: dialogue.Array.data[1].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
+        type: 3}
+      propertyPath: dialogue.Array.data[2].sentences.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
@@ -6008,6 +6013,26 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue.Array.data[1].when
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
+        type: 3}
+      propertyPath: dialogue.Array.data[2].name
+      value: event14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
+        type: 3}
+      propertyPath: dialogue.Array.data[2].sentences.Array.data[0]
+      value: There is a door behind the fireplace !
+      objectReference: {fileID: 0}
+    - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
+        type: 3}
+      propertyPath: dialogue.Array.data[2].sentences.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
+        type: 3}
+      propertyPath: dialogue.Array.data[2].when
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6701005310072649715, guid: 73a8ba7a7762f654eac2d6d5c3330f59, type: 3}
@@ -7191,6 +7216,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DisplayNextSentence
       objectReference: {fileID: 0}
+    - target: {fileID: 4300818881699033876, guid: fe0bc72abe71a3d498b6c8664fd84364,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2380768166770405209, guid: fe0bc72abe71a3d498b6c8664fd84364,
         type: 3}
       propertyPath: m_Sprite
@@ -7226,6 +7256,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -39
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300818881699033867, guid: fe0bc72abe71a3d498b6c8664fd84364,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2380768168184226438, guid: fe0bc72abe71a3d498b6c8664fd84364, type: 3}
@@ -7546,7 +7581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ec1c85303ad1674e9e24c5a89c6ed9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5.2
+  radius: 6
   counter: 0
   add_progress_when: 
   status_interactable: 0
@@ -11088,7 +11123,7 @@ MonoBehaviour:
     sentences:
     - 'The fire is still burning fiercely, '
     - maybe I should pour more water to it.
-    when: 11
+    when: 10
     YesNoDialogue: 0
   - name: pourwater2
     sentences:

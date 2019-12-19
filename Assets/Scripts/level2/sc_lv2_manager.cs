@@ -44,11 +44,12 @@ public class sc_lv2_manager : MonoBehaviour
     {
         if (current_prog != sc_hero.levelProgress)
         {
+            Debug.Log("level progress = " + sc_hero.levelProgress);
             current_prog = sc_hero.levelProgress;
             is_dialog = true;
         }
 
-        Debug.Log("level progress = " + sc_hero.levelProgress);
+        
 
         switch (sc_hero.levelProgress)
         {
@@ -98,6 +99,31 @@ public class sc_lv2_manager : MonoBehaviour
                     this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
                     is_dialog = false;
                 }
+                break;
+            case 9:
+
+                break;
+            case 10:
+
+                break;
+            case 11:
+
+                break;
+            case 12:
+
+                break;
+            case 13:
+
+                break;
+            case 14:
+                if (is_dialog)
+                {
+                    this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+                    is_dialog = false;
+                }
+                break;
+            case 15:
+
                 break;
 
             default:
@@ -180,7 +206,7 @@ public class sc_lv2_manager : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("fill");
             faucet.GetComponent<sc_lv2_faucet>().pickup();
         }
-        else if (sc_hero.levelProgress == 12)
+        else if (sc_hero.levelProgress == 13)
         {
             FindObjectOfType<AudioManager>().Play("fill");
             fireplace.GetComponent<sc_lv2_fireplace>().pickup();

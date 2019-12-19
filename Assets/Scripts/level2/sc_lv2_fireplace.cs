@@ -20,5 +20,6 @@ public class sc_lv2_fireplace : Interactable
         bool wasPickedUp = Inventory.instance.Add(item);
 
         FindObjectOfType<OpenCloseBag>().enabled_bag();
+
     }
 }

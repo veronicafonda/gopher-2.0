@@ -15,6 +15,7 @@ public class DialogueTrigger : MonoBehaviour
 
     public void Start()
     {
+        
         status_dialogue = 0;
         counter = dialogue.Count;
         update_checker = sc_hero.levelProgress;
@@ -36,7 +37,7 @@ public class DialogueTrigger : MonoBehaviour
     public void TriggerDialogue ()
     {
         //FindObjectOfType<DialogueManager>().StartDialogue(dialogue[1]);
-
+        FindObjectOfType<inventory_siblings>().raised();
         if ( status_dialogue < counter)
         {   
             if(dialogue[status_dialogue].when == sc_hero.levelProgress)
@@ -45,11 +46,16 @@ public class DialogueTrigger : MonoBehaviour
                 //Debug.Log("keluar +" + status_dialogue );
                 FindObjectOfType<DialogueManager>().StartDialogue(dialogue[status_dialogue]);
             }
+            else
+            {
+                FindObjectOfType<DialogueManager>().StartDialogue(default_dialogue);
+            }
 
         }
         else
         {
             FindObjectOfType<DialogueManager>().StartDialogue(default_dialogue);
         }
+
     }
 }
