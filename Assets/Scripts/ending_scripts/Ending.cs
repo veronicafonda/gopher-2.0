@@ -58,6 +58,7 @@ public class Ending : MonoBehaviour
                 if (is_dialog)
                 {
                     FindObjectOfType<AudioManager>().Play("bgm");
+                    randomStuartSounds();
                     this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
                     is_dialog = false;                    
                 }
@@ -234,6 +235,7 @@ public class Ending : MonoBehaviour
 
     public void onClickDialogue()
     {
+        randomStuartSounds();
         FindObjectOfType<DialogueManager>().DisplayNextSentence();
         //Debug.Log("Dialogue Clicked");
         counter++;
@@ -255,5 +257,26 @@ public class Ending : MonoBehaviour
             dialogBoxSwitch = !dialogBoxSwitch;
         }
         
+    }
+
+    void randomStuartSounds()
+    {
+        int randomInt;
+
+        randomInt = Random.Range(1, 4);
+
+        if (randomInt == 1)
+        {
+            FindObjectOfType<AudioManager>().Play("sfx1");
+        }
+        else if(randomInt == 2)
+        {
+            FindObjectOfType<AudioManager>().Play("sfx2");
+        }
+        else if (randomInt == 3)
+        {
+            FindObjectOfType<AudioManager>().Play("sfx3");
+        }
+        else FindObjectOfType<AudioManager>().Play("sfx4");
     }
 }
