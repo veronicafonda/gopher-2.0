@@ -8,9 +8,15 @@ public class Ending : MonoBehaviour
 {
     int counter = 0;
 
+    public bool credits;
     public bool is_dialog;
     public int current_prog;
     bool firstime;
+
+    public GameObject cameraAfterCreds;
+    public GameObject uiPlaceHolderAfterCreds;
+    public GameObject buttonDialogue;
+
 
     public Animator dialogueBoxAnim;
     public Animator creditsAnim;
@@ -31,10 +37,11 @@ public class Ending : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        credits = true;
         firstime = true;
         current_prog = 0;
         is_dialog = true;
-        counter = 0;
+        counter = 21;
         dialogBoxSwitch = true;
     }
 
@@ -163,12 +170,47 @@ public class Ending : MonoBehaviour
                 if (firstime)
                 {
                     firstime = false;
-                    StartCoroutine(waitAnim());
+                    StartCoroutine(waitAnim(16f));
+                    buttonDialogue.SetActive(false);
                 }
                 
                 break;
             case 22:
-                jeda();
+                if (credits)
+                {
+                    credits = false;
+                    is_dialog = true;
+                    sc_hero.levelProgress = 23;
+                    StartCoroutine(waitStupid(1f));
+                }
+                break;
+            case 23:
+                if (sc_hero.levelProgress == 23)
+                {
+                    if (is_dialog)
+                    {
+                        is_dialog = !is_dialog;
+                        buttonDialogue.SetActive(true);
+                        this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+                    }
+                }
+                break;
+            case 24:
+                if (sc_hero.levelProgress == 24)
+                {
+                    sc_hero.levelProgress = 25 ;
+                }
+                break;
+            case 25:
+                if(sc_hero.levelProgress == 25)
+                {
+                    Debug.Log("masuk case 25");
+                    StartCoroutine(waitAnim(5f));
+                    sc_hero.levelProgress++;
+                }
+                
+                break;
+            case 26:
                 SceneManager.LoadScene("MainMenu");
                 break;
             default:
@@ -178,22 +220,25 @@ public class Ending : MonoBehaviour
 
     }
     
-    private IEnumerator waitAnim()
+    private IEnumerator waitAnim(float wait)
     {
-        creditsAnim.SetBool("isCredits", true);
-        yield return new WaitForSeconds(16f);
+        if(counter == 25)
+        {
+            Debug.Log("isCreidts = false");
+            creditsAnim.SetBool("isCredits", false);
+
+        }
+        else creditsAnim.SetBool("isCredits", true);
+        yield return new WaitForSeconds(wait);
         counter++;
     }
 
-    private IEnumerator waitStupid()
+    private IEnumerator waitStupid(float wait)
     {
-        if (dialogBoxSwitch)
-        {
-            dialogBoxSwitch = false;
-            yield return new WaitForSeconds(1f);
-            sc_hero.levelProgress++;
-        }
-        yield return null;
+        Camera.main.transform.position = cameraAfterCreds.transform.position;
+        uiPlace.transform.position = uiPlaceHolderAfterCreds.transform.position;
+        yield return new WaitForSeconds(wait);
+        counter++;
         
     }
 
