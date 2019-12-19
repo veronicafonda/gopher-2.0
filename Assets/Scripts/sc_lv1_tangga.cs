@@ -2,7 +2,7 @@
 
 public class sc_lv1_tangga : Interactable
 {
-    private bool stat = true;
+
 
     public override void Interact()
     {

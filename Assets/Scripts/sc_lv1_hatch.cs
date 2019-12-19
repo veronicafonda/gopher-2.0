@@ -2,7 +2,7 @@
 
 public class sc_lv1_hatch : Interactable
 {
-    private bool stat = true;
+
 
     public override void Interact()
     {

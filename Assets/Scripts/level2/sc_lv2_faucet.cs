@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class itemPickup : Interactable
+public class sc_lv2_faucet : Interactable
 {
     public GameObject item;
 
@@ -20,7 +20,5 @@ public class itemPickup : Interactable
         bool wasPickedUp = Inventory.instance.Add(item);
 
         FindObjectOfType<OpenCloseBag>().enabled_bag();
-
-        Destroy(item);
     }
 }

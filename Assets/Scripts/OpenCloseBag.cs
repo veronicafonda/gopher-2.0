@@ -26,7 +26,7 @@ public class OpenCloseBag : MonoBehaviour
         Item2.enabled = !Item2.enabled;
     }
 
-    public void enabled()
+    public void enabled_bag()
     {
         bagContent.enabled = true;
         Item1.enabled = true;

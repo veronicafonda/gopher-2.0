@@ -18,6 +18,14 @@ public class sc_lv2_manager : MonoBehaviour
 
     //tambahan
 
+    public GameObject arrow;
+    public GameObject gelas;
+    public GameObject kettle;
+    public GameObject faucet;
+    public GameObject fireplace;
+
+
+
     public bool is_run;
 
     // Start is called before the first frame update
@@ -40,7 +48,7 @@ public class sc_lv2_manager : MonoBehaviour
             is_dialog = true;
         }
 
-        //Debug.Log("level progress = " + sc_hero.levelProgress);
+        Debug.Log("level progress = " + sc_hero.levelProgress);
 
         switch (sc_hero.levelProgress)
         {
@@ -61,28 +69,35 @@ public class sc_lv2_manager : MonoBehaviour
                 break;
             case 2:
 
-                StartCoroutine(wait_1());
 
                 break;
             case 3:
 
-                StartCoroutine(wait_1());
-
                 break;
             case 4:
-
-                StartCoroutine(wait_1());
 
                 break;
             case 5:
 
-                StartCoroutine(wait_1());
-
                 break;
             case 6:
 
-                StartCoroutine(wait_1());
+                break;
+            case 7:
 
+                if (is_dialog)
+                {
+                    this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+                    is_dialog = false;
+                }
+                break;
+            case 8:
+
+                if (is_dialog)
+                {
+                    this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+                    is_dialog = false;
+                }
                 break;
 
             default:
@@ -98,16 +113,18 @@ public class sc_lv2_manager : MonoBehaviour
         {
             is_run = false;
             UI_Pause.pauseBool = true;
+            yield return new WaitForSeconds(2f);
             black_panel.GetComponent<Animator>().SetBool("is_fade", true);
+            FindObjectOfType<AudioManager>().Play("surat");
+
             yield return new WaitForSeconds(1f);
 
             FindObjectOfType<AudioManager>().Play("letter");
-            FindObjectOfType<AudioManager>().Play("surat");
 
             canvas_letter.SetActive(true);
             button_letter.GetComponent<Button>().interactable = false;
             text_letter.SetActive(false);
-            yield return new WaitForSeconds(8f);
+            yield return new WaitForSeconds(1f);
 
             UI_Pause.pauseBool = false;
             text_letter.SetActive(true);
@@ -121,12 +138,54 @@ public class sc_lv2_manager : MonoBehaviour
     public void onClickDialogueYes()
     {
         FindObjectOfType<DialogueManager>().DisplayNextSentence();
-        if (sc_hero.levelProgress == 5)
+        if (sc_hero.levelProgress == 3)
         {
+            arrow.SetActive(true);
+            FindObjectOfType<sc_map>().destroyed();
             //FindObjectOfType<AudioManager>().Play("baju1");
             //keranjang.GetComponent<itemPickup>().pickup();
         }
-        
+        else if (sc_hero.levelProgress == 6)
+        {
+            FindObjectOfType<AudioManager>().Play("kunci");
+            gelas.GetComponent<sc_lv2_gelas>().pickup();
+        }
+        else if (sc_hero.levelProgress == 7)
+        {
+            FindObjectOfType<AudioManager>().Play("kettle");
+            kettle.GetComponent<itemPickup>().pickup();
+        }
+        else if (sc_hero.levelProgress == 8)
+        {
+            FindObjectOfType<AudioManager>().Play("fill");
+            faucet.GetComponent<sc_lv2_faucet>().pickup();
+        }
+        else if (sc_hero.levelProgress == 9)
+        {
+            FindObjectOfType<AudioManager>().Play("fill");
+            fireplace.GetComponent<sc_lv2_fireplace>().pickup();
+        }
+        else if (sc_hero.levelProgress == 10)
+        {
+            FindObjectOfType<AudioManager>().Play("fill");
+            faucet.GetComponent<sc_lv2_faucet>().pickup();
+        }
+        else if (sc_hero.levelProgress == 11)
+        {
+            FindObjectOfType<AudioManager>().Play("fill");
+            fireplace.GetComponent<sc_lv2_fireplace>().pickup();
+        }
+        else if (sc_hero.levelProgress == 12)
+        {
+            FindObjectOfType<AudioManager>().Play("fill");
+            faucet.GetComponent<sc_lv2_faucet>().pickup();
+        }
+        else if (sc_hero.levelProgress == 12)
+        {
+            FindObjectOfType<AudioManager>().Play("fill");
+            fireplace.GetComponent<sc_lv2_fireplace>().pickup();
+        }
+
 
         Debug.Log("Dialogue Clicked Yes");
         sc_hero.levelProgress++;

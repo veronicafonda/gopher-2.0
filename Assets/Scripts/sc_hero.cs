@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class sc_hero : MonoBehaviour
 {
-    float speed = 6f;
 
     public Camera cam;
 
@@ -25,13 +24,13 @@ public class sc_hero : MonoBehaviour
     {
         is_walk = false;
         agent = this.GetComponent<NavMeshAgent>();
-        levelProgress = 0;
+        levelProgress = 6;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(levelProgress);
+        //Debug.Log(levelProgress);
         //left mouse
         if (Input.GetMouseButtonDown(1))
         {
