@@ -48,6 +48,8 @@ public class sc_lv1_manager : MonoBehaviour
     {
         UI_Pause.pauseBool = true;
 
+        FindObjectOfType<SC_PENUTUP2>().bukap2();
+
         FindObjectOfType<AudioManager>().Play("bgm");
         FindObjectOfType<AudioManager>().Play("jem");
         stuart_stand.SetActive(false);
@@ -118,6 +120,7 @@ public class sc_lv1_manager : MonoBehaviour
             case 3:
                 StartCoroutine(WaitAndadvanced_2());
                 UI_Pause.pauseBool = true;
+                FindObjectOfType<SC_PENUTUP2>().bukap2();
                 break;
             case 4:
                 UI_Pause.pauseBool = true;
@@ -291,11 +294,13 @@ public class sc_lv1_manager : MonoBehaviour
         FindObjectOfType<AudioManager>().Mute("letter");
         FindObjectOfType<AudioManager>().Stop("letter");
         sc_hero.levelProgress++;
+        FindObjectOfType<SC_PENUTUP2>().tutupp2();
 
     }
 
     public void level_tuts()
     {
+        FindObjectOfType<SC_PENUTUP2>().tutupp2();
         canvas_tuts.SetActive(false);
         main_camera.GetComponent<GlowController>().enabled = true;
         UI_Pause.pauseBool = false;

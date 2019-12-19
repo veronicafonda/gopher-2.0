@@ -176,6 +176,7 @@ public class sc_lv2_manager : MonoBehaviour
         if (sc_hero.levelProgress == 3)
         {
             arrow.SetActive(true);
+            FindObjectOfType<AudioManager>().Play("kettle");
             FindObjectOfType<sc_map>().destroyed();
             //FindObjectOfType<AudioManager>().Play("baju1");
             //keranjang.GetComponent<itemPickup>().pickup();

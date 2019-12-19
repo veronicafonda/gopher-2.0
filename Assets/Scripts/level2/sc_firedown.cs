@@ -29,6 +29,8 @@ public class sc_firedown : MonoBehaviour
 
     public void reduce3()
     {
+        FindObjectOfType<AudioManager>().Stop("fire");
         Destroy(this.gameObject);
     }
+
 }
