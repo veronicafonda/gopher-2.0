@@ -23,6 +23,8 @@ public class DialogueManager : MonoBehaviour
         is_end = false;
     }
 
+
+
     public void StartDialogue (Dialogue dialogue)
     {
         if (dialogue.YesNoDialogue)
@@ -54,14 +56,17 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-        if(sentences.Count == 0)
+        FindObjectOfType<sc_cacing>().hide();
+        FindObjectOfType<sc_cacing>().empty(true);
+
+        if (sentences.Count == 0)
         {
             EndDialogue();
             return;
         }
 
         string sentence = sentences.Dequeue();
-        Debug.Log(sentence);
+        //Debug.Log(sentence);
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
         
@@ -76,6 +81,7 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text += letter;
             yield return new WaitForSeconds(DisplayText_speed);
         }
+        FindObjectOfType<sc_cacing>().show();
 
     }
 
@@ -84,6 +90,9 @@ public class DialogueManager : MonoBehaviour
         is_end = true;
         animator.SetBool("DialogueOpen", false);
         animator.SetBool("DialogueYesNo", false);
+        FindObjectOfType<sc_cacing>().hide();
+        FindObjectOfType<sc_cacing>().empty(false);
+
         UI_Pause.pauseBool = false;
         sentences.Clear();
         //Debug.Log("End of Conversation ");        

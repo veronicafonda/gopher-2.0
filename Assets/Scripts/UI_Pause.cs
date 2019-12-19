@@ -5,6 +5,7 @@ using UnityEngine;
 public class UI_Pause : MonoBehaviour
 {
     public Animator pauseUI;
+    public Animator optionUI;
     public static bool pauseBool = false;
     
     // Update is called once per frame
@@ -28,6 +29,20 @@ public class UI_Pause : MonoBehaviour
             //Time.timeScale = 1;
         }
         
+    }
+
+    public void onClickOptions()
+    {
+        if (optionUI.GetBool("OptionOpen") == false)
+        {
+            optionUI.SetBool("OptionOpen", true);
+            pauseUI.SetBool("pauseToOption", true);
+        }
+        else
+        {
+            optionUI.SetBool("OptionOpen", false);
+            pauseUI.SetBool("pauseToOption", false);
+        }
     }
     
 }

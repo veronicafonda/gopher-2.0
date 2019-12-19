@@ -19,6 +19,8 @@ public class itemPickup : Interactable
         Debug.Log("Picking up " + item.name);
         bool wasPickedUp = Inventory.instance.Add(item);
 
+        FindObjectOfType<OpenCloseBag>().enabled();
+
         Destroy(item);
     }
 }
