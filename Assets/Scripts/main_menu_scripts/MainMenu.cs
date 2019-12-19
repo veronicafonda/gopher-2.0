@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
 {
     public Animator stuartNicole;
     public Animator mainMenu;
+    public GameObject pressKey;
 
     // Start is called before the first frame update
     void Start()
@@ -27,14 +28,10 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Start");
     }
 
-    public void optionsClick()
-    {
-
-    }
-
     public void exitClick()
     {
-
+        Debug.Log("Quit Game");
+        Application.Quit();
     }
     
     public void creditsClick()
@@ -47,6 +44,7 @@ public class MainMenu : MonoBehaviour
     {
         stuartNicole.SetBool("afterClick", true);
         mainMenu.SetBool("afterClick", true);
+        mainMenu.SetBool("toMainMenu", true);
 
     }
 }
