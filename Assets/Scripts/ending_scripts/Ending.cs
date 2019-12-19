@@ -46,7 +46,7 @@ public class Ending : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void LateUpdate()
     {
         Debug.Log("level progress = " + counter);
 

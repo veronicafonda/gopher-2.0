@@ -9,4 +9,10 @@ public class sc_yes : MonoBehaviour
     {
         this.GetComponent<Button>().interactable = true;
     }
+
+    public void no_clicked()
+    {
+        this.GetComponent<Button>().interactable = false;
+    }
+
 }

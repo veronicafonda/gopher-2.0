@@ -9,6 +9,7 @@ public class sc_firedown : MonoBehaviour
 
     void Start()
     {
+        FindObjectOfType<AudioManager>().Play("fire");
         ps = GetComponent<ParticleSystem>();
     }
 

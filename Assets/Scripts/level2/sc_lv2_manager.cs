@@ -67,6 +67,7 @@ public class sc_lv2_manager : MonoBehaviour
             case 1:
 
                 StartCoroutine(wait_1());
+                UI_Pause.pauseBool = true;
 
                 break;
             case 2:
@@ -154,6 +155,7 @@ public class sc_lv2_manager : MonoBehaviour
             text_letter.SetActive(false);
             //11
             yield return new WaitForSeconds(11f);
+
             FindObjectOfType<AudioManager>().Play("jem");
 
             UI_Pause.pauseBool = false;

@@ -72,6 +72,8 @@ public class sc_lv1_manager : MonoBehaviour
             is_dialog = true;
         }
         Debug.Log("level progress = " + sc_hero.levelProgress);
+        //Debug.Log("level pause = " + UI_Pause.pauseBool);
+        //UI_Pause.pauseBool = true;
         switch (sc_hero.levelProgress)
         {
             
@@ -119,8 +121,10 @@ public class sc_lv1_manager : MonoBehaviour
                 break;
             case 3:
                 StartCoroutine(WaitAndadvanced_2());
+                UI_Pause.pauseBool = true;
                 break;
             case 4:
+                UI_Pause.pauseBool = true;
                 black_panel.GetComponent<Animator>().SetBool("is_fade", false);
                 black_panel.GetComponent<Animator>().SetBool("is_done", true);
                 break;
@@ -131,7 +135,7 @@ public class sc_lv1_manager : MonoBehaviour
                     is_dialog = false;
                 }
       
-                main_camera.GetComponent<GlowController>().enabled = true;
+                
                 break;
             case 10:
                 StartCoroutine(WaitAndadvanced_3());
@@ -179,6 +183,7 @@ public class sc_lv1_manager : MonoBehaviour
             is_run2 = false;
             UI_Pause.pauseBool = true;
             yield return new WaitForSeconds(2f);
+            main_camera.GetComponent<GlowController>().enabled = false;
             black_panel.GetComponent<Animator>().SetBool("is_fade", true);
             yield return new WaitForSeconds(1f);
 
@@ -196,10 +201,10 @@ public class sc_lv1_manager : MonoBehaviour
             yield return new WaitForSeconds(19f);
             FindObjectOfType<AudioManager>().Play("jem");
             sc_hero.levelProgress = 4;
-            UI_Pause.pauseBool = false;
             text_letter.SetActive(true);
             button_letter.GetComponent<Button>().interactable = true;
             this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+            main_camera.GetComponent<GlowController>().enabled = true;
         }
 
 
@@ -227,6 +232,7 @@ public class sc_lv1_manager : MonoBehaviour
         {
             is_run4 = false;
             black_panel.GetComponent<Animator>().SetBool("is_fade", true);
+            FindObjectOfType<AudioManager>().Play("hatch");
             yield return new WaitForSeconds(2f);
 
             SceneManager.LoadScene("level2");

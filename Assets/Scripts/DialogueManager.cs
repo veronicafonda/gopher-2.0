@@ -6,7 +6,7 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    float DisplayText_speed = .05f;
+    //float DisplayText_speed = .05f;
     public TextMeshProUGUI nameText;
     public Text dialogueText;
     public TextMeshProUGUI dialogueText_UNUSABLE;
@@ -30,12 +30,21 @@ public class DialogueManager : MonoBehaviour
         
         if (dialogue.YesNoDialogue)
         {
-            FindObjectOfType<sc_yes>().reset_clicked();
+            if (FindObjectOfType<sc_yes>() != null)
+            {
+                FindObjectOfType<sc_yes>().reset_clicked();
+            }
+            
             //Debug.Log("YesNo is now true");
             animator.SetBool("DialogueYesNo", true);
         }
         else
         {
+            if(FindObjectOfType<sc_yes>() != null)
+            {
+                FindObjectOfType<sc_yes>().no_clicked();
+            }
+            
             //Debug.Log("Dialogue default");
             animator.SetBool("DialogueOpen", true);
         }
