@@ -20,7 +20,7 @@ public class sc_sheet_music : Interactable
         Debug.Log("Picking up " + item.name);
         
 
-        if (!is_taken)
+        if (!is_taken && sc_hero.levelProgress == 2)
         {
             bool wasPickedUp = Inventory.instance.Add(item);
 

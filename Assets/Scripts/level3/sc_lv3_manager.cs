@@ -81,6 +81,7 @@ public class sc_lv3_manager : MonoBehaviour
             case 1:
 
                 StartCoroutine(wait_1());
+                UI_Pause.pauseBool = true;
 
                 break;
             case 2:
@@ -113,7 +114,12 @@ public class sc_lv3_manager : MonoBehaviour
                 break;
             case 5:
 
+                if (is_dialog)
+                {
+                    this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+                    is_dialog = false;
 
+                }
                 break;
             case 6:
 
@@ -144,7 +150,9 @@ public class sc_lv3_manager : MonoBehaviour
             canvas_letter.SetActive(true);
             button_letter.GetComponent<Button>().interactable = false;
             text_letter.SetActive(false);
-            yield return new WaitForSeconds(1f);
+
+            //15
+            yield return new WaitForSeconds(15f);
 
             UI_Pause.pauseBool = false;
             text_letter.SetActive(true);
@@ -188,6 +196,7 @@ public class sc_lv3_manager : MonoBehaviour
         FindObjectOfType<AudioManager>().Mute("letter");
         FindObjectOfType<AudioManager>().Stop("letter");
         sc_hero.levelProgress++;
+        UI_Pause.pauseBool = false;
 
     }
 

@@ -318,7 +318,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 72708653}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -4.895508, y: -4.6944685, z: -9.852051}
+  m_LocalPosition: {x: -4.84, y: -4.6944685, z: -9.852051}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1120601796213770002}
@@ -1767,7 +1767,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 6dd1c9d5312b1ee41b6a44f05be6629e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6dd1c9d5312b1ee41b6a44f05be6629e,
         type: 3}
@@ -2311,6 +2311,156 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1029415213
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1029415214}
+  - component: {fileID: 1029415220}
+  - component: {fileID: 1029415219}
+  - component: {fileID: 1029415218}
+  - component: {fileID: 1029415217}
+  - component: {fileID: 1029415216}
+  - component: {fileID: 1029415215}
+  m_Layer: 0
+  m_Name: vase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1029415214
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029415213}
+  m_LocalRotation: {x: -0.69887716, y: -0.10756743, z: -0.10756743, w: 0.69887716}
+  m_LocalPosition: {x: -5.56, y: -8.082434, z: -8.98}
+  m_LocalScale: {x: 0.031116001, y: 0.031116016, z: 0.049385}
+  m_Children:
+  - {fileID: 4980018812469253446}
+  - {fileID: 2748896741109553317}
+  - {fileID: 1163380187259652539}
+  - {fileID: 4958877735164379196}
+  - {fileID: 1980095192193790619}
+  m_Father: {fileID: 5006512736664158815}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1029415215
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029415213}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 45.75, y: 50.35, z: 26.504002}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!114 &1029415216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029415213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8faaf41f20bad864ab6848f9897a6a24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite:
+  - {fileID: 21300000, guid: fd777d47726043a4d8633db1db751bd4, type: 3}
+  - {fileID: 21300000, guid: 94df6c0b25eee194ab8454ccb24df983, type: 3}
+  - {fileID: 21300000, guid: 30fe51f9706a68145b59d4f6a14f677d, type: 3}
+  - {fileID: 21300000, guid: dfa4809d4f98c1548bfb776146d36cfc, type: 3}
+  - {fileID: 21300000, guid: e9db5291e98b37f4faf251838547d99d, type: 3}
+--- !u!114 &1029415217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029415213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e687a01520fc1984797e8a8bf0e528de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 5
+  counter: 0
+  add_progress_when: 
+  status_interactable: 0
+  hasInteracted: 0
+  test: 0
+  item: {fileID: 1029415213}
+  is_taken: 0
+--- !u!114 &1029415218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029415213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - name: foundPaper
+    sentences:
+    - I found another torn paper!
+    when: 2
+    YesNoDialogue: 0
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: defaultVase
+    sentences:
+    - This plant is growing slowly...
+    when: 0
+    YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
+--- !u!114 &1029415219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029415213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f97577f7490be846abb026b83b52db0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlowColor: {r: 0.39894927, g: 0.990566, b: 0.2756764, a: 0}
+  LerpFactor: 10
+--- !u!65 &1029415220
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029415213}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 73.95384, y: 58.64064, z: 75.73559}
+  m_Center: {x: 8.351011, y: -5.09089, z: 24.825165}
 --- !u!1001 &1071632952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2381,7 +2531,7 @@ PrefabInstance:
     - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
         type: 3}
       propertyPath: dialogue.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
         type: 3}
@@ -2397,6 +2547,11 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue.Array.data[2].sentences.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
+        type: 3}
+      propertyPath: dialogue.Array.data[3].sentences.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
         type: 3}
@@ -2473,6 +2628,31 @@ PrefabInstance:
       propertyPath: dialogue.Array.data[1].sentences.Array.data[4]
       value: Maybe there are more scattered around.
       objectReference: {fileID: 0}
+    - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
+        type: 3}
+      propertyPath: dialogue.Array.data[3].name
+      value: gotcha
+      objectReference: {fileID: 0}
+    - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
+        type: 3}
+      propertyPath: dialogue.Array.data[3].sentences.Array.data[0]
+      value: Oh, Right Twilight ! our favorite song !
+      objectReference: {fileID: 0}
+    - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
+        type: 3}
+      propertyPath: dialogue.Array.data[3].sentences.Array.data[1]
+      value: I heard something opening up just now
+      objectReference: {fileID: 0}
+    - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
+        type: 3}
+      propertyPath: dialogue.Array.data[3].when
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
+        type: 3}
+      propertyPath: dialogue.Array.data[3].sentences.Array.data[2]
+      value: I need to check it out..
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6701005310072649715, guid: 73a8ba7a7762f654eac2d6d5c3330f59, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 73a8ba7a7762f654eac2d6d5c3330f59, type: 3}
@@ -2513,7 +2693,7 @@ MonoBehaviour:
   letter: {fileID: 4410466318853478176}
   sofa: {fileID: 2454119171878827220}
   mug: {fileID: 6763824362805220805}
-  vase: {fileID: 1379116924}
+  vase: {fileID: 0}
   bookcase: {fileID: 2522441753575554323}
   hat: {fileID: 1857294910656585795}
   tape: {fileID: 521373946}
@@ -3006,139 +3186,6 @@ Transform:
   m_Father: {fileID: 5006512736664158815}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1379116924
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1379116925}
-  - component: {fileID: 1379116928}
-  - component: {fileID: 1379116926}
-  - component: {fileID: 1379116929}
-  - component: {fileID: 1379116930}
-  - component: {fileID: 1379116927}
-  m_Layer: 0
-  m_Name: vas_bunga
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1379116925
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1379116924}
-  m_LocalRotation: {x: -0.69887716, y: -0.10756743, z: -0.10756743, w: 0.69887716}
-  m_LocalPosition: {x: -4.8691173, y: -8.082434, z: -9.543305}
-  m_LocalScale: {x: 0.031116001, y: 0.031116009, z: 0.049385}
-  m_Children:
-  - {fileID: 4980018812469253446}
-  - {fileID: 2748896741109553317}
-  - {fileID: 1163380187259652539}
-  - {fileID: 4958877735164379196}
-  - {fileID: 1980095192193790619}
-  m_Father: {fileID: 5006512736664158815}
-  m_RootOrder: 20
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1379116926
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1379116924}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 73.95384, y: 58.64064, z: 75.73559}
-  m_Center: {x: 8.351011, y: -5.09089, z: 24.825165}
---- !u!114 &1379116927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1379116924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8faaf41f20bad864ab6848f9897a6a24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprite:
-  - {fileID: 21300000, guid: fd777d47726043a4d8633db1db751bd4, type: 3}
-  - {fileID: 21300000, guid: 94df6c0b25eee194ab8454ccb24df983, type: 3}
-  - {fileID: 21300000, guid: 30fe51f9706a68145b59d4f6a14f677d, type: 3}
-  - {fileID: 21300000, guid: dfa4809d4f98c1548bfb776146d36cfc, type: 3}
-  - {fileID: 21300000, guid: e9db5291e98b37f4faf251838547d99d, type: 3}
---- !u!114 &1379116928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1379116924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f97577f7490be846abb026b83b52db0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlowColor: {r: 0.39894927, g: 0.990566, b: 0.2756764, a: 0}
-  LerpFactor: 10
---- !u!114 &1379116929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1379116924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-  - name: foundPaper
-    sentences:
-    - I found another torn paper!
-    when: 0
-    YesNoDialogue: 0
-  status_dialogue: 0
-  counter: 0
-  default_dialogue:
-    name: defaultVase
-    sentences:
-    - This plant is growing slowly...
-    when: 0
-    YesNoDialogue: 0
-  update_checker: 0
-  tuker: 0
---- !u!114 &1379116930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1379116924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e687a01520fc1984797e8a8bf0e528de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 5
-  counter: 0
-  add_progress_when: 
-  status_interactable: 0
-  hasInteracted: 0
-  test: 0
-  item: {fileID: 1379116924}
-  is_taken: 0
 --- !u!1 &1405828278
 GameObject:
   m_ObjectHideFlags: 0
@@ -4303,7 +4350,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5090565828618712619}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.008229342, y: -3.483506, z: -12.1}
+  m_LocalPosition: {x: 0.37, y: -3.483506, z: -12.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6190646405879941307}
@@ -4550,11 +4597,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3087362742720303402}
-  m_LocalRotation: {x: 0.29019025, y: 0.05340468, z: -0.17699324, w: -0.9389414}
-  m_LocalPosition: {x: 16.616829, y: -19.32047, z: 26.300276}
-  m_LocalScale: {x: 1.2030439, y: 1.0615563, z: 0.89949626}
+  m_LocalRotation: {x: 0.29019025, y: 0.053404678, z: -0.17699324, w: -0.9389414}
+  m_LocalPosition: {x: 16.616829, y: -19.320465, z: 26.300276}
+  m_LocalScale: {x: 1.2030439, y: 1.0615568, z: 0.8994966}
   m_Children: []
-  m_Father: {fileID: 1379116925}
+  m_Father: {fileID: 1029415214}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1196985902452412541
@@ -4772,6 +4819,7 @@ GameObject:
   - component: {fileID: 1857294910656585796}
   - component: {fileID: 1857294910656585799}
   - component: {fileID: 1857294910656585797}
+  - component: {fileID: 1857294910656585800}
   m_Layer: 0
   m_Name: topi
   m_TagString: Untagged
@@ -4844,6 +4892,35 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 30fe51f9706a68145b59d4f6a14f677d, type: 3}
   - {fileID: 21300000, guid: dfa4809d4f98c1548bfb776146d36cfc, type: 3}
   - {fileID: 21300000, guid: e9db5291e98b37f4faf251838547d99d, type: 3}
+--- !u!114 &1857294910656585800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857294910656585795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - name: event2
+    sentences:
+    - It's my hat ! Where did nicole found it ..?
+    - i found another torn paper here..
+    when: 2
+    YesNoDialogue: 0
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: default
+    sentences:
+    - It's my hat ! Where did nicole found it ..?
+    when: 0
+    YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!4 &1980095192193790619
 Transform:
   m_ObjectHideFlags: 0
@@ -4851,11 +4928,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7354750519975087504}
-  m_LocalRotation: {x: 0.2336041, y: 0.2336042, z: -0.45880944, w: -0.8248346}
-  m_LocalPosition: {x: 22.657087, y: -4.520466, z: 30.046003}
-  m_LocalScale: {x: 1.1900313, y: 1.0429758, z: 0.9310893}
+  m_LocalRotation: {x: 0.2336041, y: 0.23360422, z: -0.45880947, w: -0.8248346}
+  m_LocalPosition: {x: 22.657087, y: -4.520465, z: 30.046003}
+  m_LocalScale: {x: 1.1900314, y: 1.0429757, z: 0.93108916}
   m_Children: []
-  m_Father: {fileID: 1379116925}
+  m_Father: {fileID: 1029415214}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2035051577643567700
@@ -4960,7 +5037,7 @@ GameObject:
   - component: {fileID: 2454119171878827224}
   - component: {fileID: 2454119171878827226}
   - component: {fileID: 2454119171878827222}
-  - component: {fileID: 2454119171878827227}
+  - component: {fileID: 2454119171878827225}
   m_Layer: 0
   m_Name: sandaran001
   m_TagString: Untagged
@@ -5029,6 +5106,35 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &2454119171878827225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2454119171878827220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - name: event2
+    sentences:
+    - It's my favorite spot !
+    - i found another torn paper here..
+    when: 2
+    YesNoDialogue: 0
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: default
+    sentences:
+    - It's my favorite spot !
+    when: 0
+    YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!114 &2454119171878827226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5049,35 +5155,6 @@ MonoBehaviour:
   test: 0
   item: {fileID: 2454119171878827220}
   is_taken: 0
---- !u!114 &2454119171878827227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2454119171878827220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c6ae696202318345857aa3932111ade, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-  - name: just chair
-    sentences:
-    - This is my favorite sofa...hmm ?
-    - I found another torn paper!
-    when: 2
-    YesNoDialogue: 0
-  status_dialogue: 0
-  counter: 0
-  default_dialogue:
-    name: default
-    sentences:
-    - This is my favorite sofa...
-    when: 0
-    YesNoDialogue: 0
-  update_checker: 0
-  tuker: 0
 --- !u!33 &2481331870407182445
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5297,7 +5374,7 @@ MonoBehaviour:
   - name: foundPaper
     sentences:
     - I found another torn paper!
-    when: 0
+    when: 2
     YesNoDialogue: 0
   status_dialogue: 0
   counter: 0
@@ -5356,7 +5433,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1379116925}
+  m_Father: {fileID: 1029415214}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2811586556068843758
@@ -6140,11 +6217,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3729361870657474653}
-  m_LocalRotation: {x: 0.2942651, y: -0.021691602, z: 0.06612514, w: -0.9531868}
-  m_LocalPosition: {x: -0.6870711, y: -8.805138, z: 26.455324}
-  m_LocalScale: {x: 1.2030438, y: 1.0615566, z: 0.8994963}
+  m_LocalRotation: {x: 0.29426512, y: -0.0216916, z: 0.06612515, w: -0.95318675}
+  m_LocalPosition: {x: -0.6870711, y: -8.805136, z: 26.455324}
+  m_LocalScale: {x: 1.2030438, y: 1.061557, z: 0.89949685}
   m_Children: []
-  m_Father: {fileID: 1379116925}
+  m_Father: {fileID: 1029415214}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4980018812469253446
@@ -6154,11 +6231,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6134924794466726131}
-  m_LocalRotation: {x: -0.122626856, y: -0.26837498, z: 0.8707618, w: 0.39333382}
-  m_LocalPosition: {x: 6.8415346, y: 11.589503, z: 26.455324}
-  m_LocalScale: {x: 1.2030442, y: 1.0615566, z: 0.8994961}
+  m_LocalRotation: {x: -0.12262684, y: -0.26837507, z: 0.8707618, w: 0.39333373}
+  m_LocalPosition: {x: 6.8415346, y: 11.5895, z: 26.455324}
+  m_LocalScale: {x: 1.2030456, y: 1.0615581, z: 0.8994963}
   m_Children: []
-  m_Father: {fileID: 1379116925}
+  m_Father: {fileID: 1029415214}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &5006512736664158815
@@ -6192,7 +6269,7 @@ Transform:
   - {fileID: 4156169831336285127}
   - {fileID: 711168984441470199}
   - {fileID: 821002414015885231}
-  - {fileID: 1379116925}
+  - {fileID: 1029415214}
   - {fileID: 521373947}
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -6320,6 +6397,7 @@ GameObject:
   - component: {fileID: 5337383934155253768}
   - component: {fileID: 5337383934155253767}
   - component: {fileID: 5337383934155253770}
+  - component: {fileID: 5337383934155253771}
   m_Layer: 0
   m_Name: bolongan002
   m_TagString: Untagged
@@ -6388,6 +6466,29 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &5337383934155253771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5337383934155253766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: []
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: default
+    sentences:
+    - I need to be hurry outside!
+    when: 0
+    YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!33 &5450378355676067951
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6721,7 +6822,7 @@ MonoBehaviour:
   - name: foundPaper
     sentences:
     - I found another torn paper!
-    when: 0
+    when: 2
     YesNoDialogue: 0
   status_dialogue: 0
   counter: 0
@@ -7486,6 +7587,7 @@ GameObject:
   - component: {fileID: 8346314400322815309}
   - component: {fileID: 8346314400322815308}
   - component: {fileID: 8346314400322815307}
+  - component: {fileID: 8346314400322815310}
   m_Layer: 0
   m_Name: PIRING
   m_TagString: Untagged
@@ -7538,6 +7640,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GlowColor: {r: 0.39894927, g: 0.990566, b: 0.2756764, a: 0}
   LerpFactor: 10
+--- !u!114 &8346314400322815310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8346314400322815306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc656f7dfdc07742a0173cecfaad502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: []
+  status_dialogue: 0
+  counter: 0
+  default_dialogue:
+    name: default
+    sentences:
+    - There is some snacks there..
+    when: 0
+    YesNoDialogue: 0
+  update_checker: 0
+  tuker: 0
 --- !u!33 &8536022806965665623
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -7557,7 +7682,6 @@ GameObject:
   - component: {fileID: 2748896741109553317}
   - component: {fileID: 8839161040278601570}
   - component: {fileID: 4428962067978158882}
-  - component: {fileID: 8550062734591502003}
   m_Layer: 0
   m_Name: pot
   m_TagString: Untagged
@@ -7565,22 +7689,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!208 &8550062734591502003
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8550062734591502002}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 45.75, y: 50.35, z: 26.504002}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!23 &8597974719689632112
 MeshRenderer:
   m_ObjectHideFlags: 0
