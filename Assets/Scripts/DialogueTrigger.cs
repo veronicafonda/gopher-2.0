@@ -37,7 +37,8 @@ public class DialogueTrigger : MonoBehaviour
     public void TriggerDialogue ()
     {
         //FindObjectOfType<DialogueManager>().StartDialogue(dialogue[1]);
-        FindObjectOfType<inventory_siblings>().raised();
+        if(FindObjectOfType<inventory_siblings>() !=null)
+            FindObjectOfType<inventory_siblings>().raised();
         if ( status_dialogue < counter)
         {   
             if(dialogue[status_dialogue].when == sc_hero.levelProgress)

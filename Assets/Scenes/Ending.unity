@@ -718,7 +718,6 @@ GameObject:
   - component: {fileID: 190322661}
   - component: {fileID: 190322660}
   - component: {fileID: 190322659}
-  - component: {fileID: 190322662}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -791,18 +790,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 36.230003, y: 180.00002, z: 0}
---- !u!114 &190322662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 190322658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad7dccb914be5f64498e1c1f84df88cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &200400685
 GameObject:
   m_ObjectHideFlags: 0
@@ -1962,6 +1949,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2222475876996267608, guid: f86dad8d52d96934f8fc0b180a5e2bff,
+        type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 3934813858314342389}
+    - target: {fileID: 2222475876996267608, guid: f86dad8d52d96934f8fc0b180a5e2bff,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 3934813857753217588}
     - target: {fileID: 2222475876996267609, guid: f86dad8d52d96934f8fc0b180a5e2bff,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2017,16 +2014,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2222475876996267608, guid: f86dad8d52d96934f8fc0b180a5e2bff,
-        type: 3}
-      propertyPath: dialogueText
-      value: 
-      objectReference: {fileID: 3934813858314342389}
-    - target: {fileID: 2222475876996267608, guid: f86dad8d52d96934f8fc0b180a5e2bff,
-        type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 3934813857753217588}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f86dad8d52d96934f8fc0b180a5e2bff, type: 3}
 --- !u!1 &483261939
@@ -2215,6 +2202,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf839016428c4d4197dcf86dbbee83c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  is_dialog: 0
+  current_prog: 0
   dialogueBoxAnim: {fileID: 3934813857753217588}
   uiPlace: {fileID: 525834052}
 --- !u!114 &493097358
@@ -2245,7 +2234,7 @@ MonoBehaviour:
   - name: ending_3
     sentences:
     - It's a celebration for our 1 year wedding anniversary!
-    when: 0
+    when: 2
     YesNoDialogue: 0
   - name: ending_4
     sentences:
@@ -4455,11 +4444,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stuart_N_Idle
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: fd0d7a020c799dc4a8b7493cd45b02a5,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: b4c5cf29b1b482346b731e271e85745b, type: 2}
     - target: {fileID: -4216859302048453862, guid: fd0d7a020c799dc4a8b7493cd45b02a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4530,6 +4514,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: fd0d7a020c799dc4a8b7493cd45b02a5,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b4c5cf29b1b482346b731e271e85745b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd0d7a020c799dc4a8b7493cd45b02a5, type: 3}
 --- !u!1 &833476272

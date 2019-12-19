@@ -87,7 +87,8 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
-        FindObjectOfType<inventory_siblings>().lower();
+        if(FindObjectOfType<inventory_siblings>() != null)
+            FindObjectOfType<inventory_siblings>().lower();
         is_end = true;
         animator.SetBool("DialogueOpen", false);
         animator.SetBool("DialogueYesNo", false);

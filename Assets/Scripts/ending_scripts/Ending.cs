@@ -6,45 +6,74 @@ using UnityEngine.SceneManagement;
 
 public class Ending : MonoBehaviour
 {
-    int endingProgress = 0;
+
+    public bool is_dialog;
+    public int current_prog;
 
     public Animator dialogueBoxAnim;
 
     int ui_multiplier = -5;
     int ui_multiplier2 = -12;
+
     public GameObject uiPlace;
-    bool is_dialog = false;
+
     bool is_nicole = true;
+
+
+    //tambahan bego
+    public bool is_run;
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        current_prog = 0;
+        is_dialog = true;
+
+        is_run = true;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        if (current_prog != sc_hero.levelProgress)
+        {
+            //Debug.Log("level progress = " + sc_hero.levelProgress);
+            current_prog = sc_hero.levelProgress;
+            is_dialog = true;
+        }
+
         Debug.Log("level progress = " + sc_hero.levelProgress);
+
         switch (sc_hero.levelProgress)
         {
             case 0:
-                is_dialog = true;
-                sc_hero.levelProgress++;
+
+                if (is_dialog)
+                {
+                    FindObjectOfType<AudioManager>().Play("bgm");
+                    this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+                    is_dialog = false;                    
+                }
+                jeda();
+
                 break;
             case 1:
+
                 if (is_dialog)
                 {
                     uiPlace.transform.position = new Vector3(transform.position.x + ui_multiplier, uiPlace.transform.position.y, uiPlace.transform.position.z);
                     this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
-                    //Debug.Log("cas1");
-                    sc_hero.levelProgress++;
                     is_dialog = false;
                 }
+                jeda();
                 break;
             case 2:
-                //Debug.Log("cas2");
-                jeda();
+                if (is_dialog)
+                {
+                    this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+                    is_dialog = false;
+                }
+                //jeda();
                 break;
             case 3:
                 //Debug.Log("cas3");
@@ -138,8 +167,14 @@ public class Ending : MonoBehaviour
 
     private IEnumerator waitStupid()
     {
-        //Debug.Log("waitSTupid");
-        yield return new WaitForSeconds(5f);
+        if (is_run)
+        {
+            is_run = false;
+            yield return new WaitForSeconds(1f);
+            sc_hero.levelProgress++;
+        }
+        yield return null;
+        
     }
 
     public void onClickDialogue()
@@ -151,13 +186,11 @@ public class Ending : MonoBehaviour
 
     void jeda()
     {
-        is_dialog = true;
-        is_nicole = !is_nicole;
-        if (dialogueBoxAnim.GetBool("DialogueOpen") == false)
+        //is_nicole = !is_nicole;
+        Debug.Log(dialogueBoxAnim.GetBool("DialogueOpen"));
+        if (!dialogueBoxAnim.GetBool("DialogueOpen"))
         {
-            StopAllCoroutines();
             StartCoroutine(waitStupid());
-            sc_hero.levelProgress++;
         }
         
     }
