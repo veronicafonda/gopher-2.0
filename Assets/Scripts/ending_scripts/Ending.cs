@@ -41,7 +41,7 @@ public class Ending : MonoBehaviour
         firstime = true;
         current_prog = 0;
         is_dialog = true;
-        counter = 21;
+        counter = 0;
         dialogBoxSwitch = true;
     }
 
@@ -181,32 +181,28 @@ public class Ending : MonoBehaviour
                     credits = false;
                     is_dialog = true;
                     sc_hero.levelProgress = 23;
+                    creditsAnim.SetBool("isCredits", false);
                     StartCoroutine(waitStupid(1f));
                 }
                 break;
             case 23:
-                if (sc_hero.levelProgress == 23)
-                {
                     if (is_dialog)
                     {
                         is_dialog = !is_dialog;
                         buttonDialogue.SetActive(true);
                         this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
                     }
-                }
+                
                 break;
             case 24:
-                if (sc_hero.levelProgress == 24)
-                {
-                    sc_hero.levelProgress = 25 ;
-                }
+                is_dialog = true;
                 break;
             case 25:
-                if(sc_hero.levelProgress == 25)
+                Debug.Log("masuk case 25");
+                if (is_dialog)
                 {
-                    Debug.Log("masuk case 25");
-                    StartCoroutine(waitAnim(5f));
-                    sc_hero.levelProgress++;
+                    is_dialog = !is_dialog;
+                    StartCoroutine(waitAnim(3f));
                 }
                 
                 break;
@@ -222,13 +218,7 @@ public class Ending : MonoBehaviour
     
     private IEnumerator waitAnim(float wait)
     {
-        if(counter == 25)
-        {
-            Debug.Log("isCreidts = false");
-            creditsAnim.SetBool("isCredits", false);
-
-        }
-        else creditsAnim.SetBool("isCredits", true);
+        creditsAnim.SetBool("isCredits", true);
         yield return new WaitForSeconds(wait);
         counter++;
     }
