@@ -6,11 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class Ending : MonoBehaviour
 {
+    int counter = 0;
 
     public bool is_dialog;
     public int current_prog;
+    bool firstime;
 
     public Animator dialogueBoxAnim;
+    public Animator creditsAnim;
+
+    public bool afterCredits;
 
     int ui_multiplier = -5;
     int ui_multiplier2 = -12;
@@ -21,155 +26,170 @@ public class Ending : MonoBehaviour
 
 
     //tambahan bego
-    public bool is_run;
+    public bool dialogBoxSwitch;
 
     // Start is called before the first frame update
     void Start()
     {
+        firstime = true;
         current_prog = 0;
         is_dialog = true;
-
-        is_run = true;
+        counter = 0;
+        dialogBoxSwitch = true;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (current_prog != sc_hero.levelProgress)
-        {
-            //Debug.Log("level progress = " + sc_hero.levelProgress);
-            current_prog = sc_hero.levelProgress;
-            is_dialog = true;
-        }
+        Debug.Log("level progress = " + counter);
 
-        Debug.Log("level progress = " + sc_hero.levelProgress);
-
-        switch (sc_hero.levelProgress)
+        switch (counter)
         {
             case 0:
-
+                Debug.Log("NICOLE");
+                
                 if (is_dialog)
                 {
                     FindObjectOfType<AudioManager>().Play("bgm");
                     this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
                     is_dialog = false;                    
                 }
-                jeda();
-
                 break;
             case 1:
-
-                if (is_dialog)
-                {
-                    uiPlace.transform.position = new Vector3(transform.position.x + ui_multiplier, uiPlace.transform.position.y, uiPlace.transform.position.z);
-                    this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
-                    is_dialog = false;
-                }
-                jeda();
+                dialogBoxSwitch = false;
                 break;
             case 2:
-                if (is_dialog)
-                {
-                    this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
-                    is_dialog = false;
-                }
-                //jeda();
+                
+                is_nicole = !is_nicole;
+                Debug.Log(counter + " STUART");
+                jeda();
+                is_dialog = true;
                 break;
             case 3:
-                //Debug.Log("cas3");
-                caseGanjil();
+                dialogBoxSwitch = false;
                 break;
             case 4:
+                is_nicole = !is_nicole;
+                Debug.Log(counter + " NICOLE");
                 jeda();
+                
                 break;
-            case 5: 
-                caseGanjil();
+            case 5:
+                if (is_dialog)
+                {
+                    is_dialog = !is_dialog;
+                    dialogBoxSwitch = false;
+                    uiPlace.transform.position = new Vector3(transform.position.x + ui_multiplier2, uiPlace.transform.position.y, uiPlace.transform.position.z);
+                }
+                is_nicole = !is_nicole;
+                Debug.Log(counter + " STUART");
+                
                 break;
             case 6:
-                jeda();
+                dialogBoxSwitch = false;
                 break;
-            case 7: 
-                caseGanjil();
+            case 7:
+                is_nicole = !is_nicole;
+                Debug.Log(counter + " NICOLE");
+                jeda();
                 break;
             case 8:
-                jeda();
+                is_dialog = true;
                 break;
-            case 9: 
-                caseGanjil();
+            case 9:
+                if (is_dialog)
+                {
+                    is_dialog = !is_dialog;
+                    dialogBoxSwitch = false;
+                    uiPlace.transform.position = new Vector3(transform.position.x + ui_multiplier2, uiPlace.transform.position.y, uiPlace.transform.position.z);
+                }
+                is_nicole = !is_nicole;
+                Debug.Log(counter + " STUART");
                 break;
             case 10:
-                jeda();
+                dialogBoxSwitch = false;
                 break;
-            case 11: 
-                caseGanjil();
+            case 11:
+                is_nicole = !is_nicole;
+                Debug.Log(counter + " NICOLE");
+                jeda();
                 break;
             case 12:
-                jeda();
+                is_dialog = true;
                 break;
-            case 13: 
-                caseGanjil();
+            case 13:
+                is_dialog = true;
                 break;
             case 14:
+                if (is_dialog)
+                {
+                    is_dialog = !is_dialog;
+                    dialogBoxSwitch = false;
+                    uiPlace.transform.position = new Vector3(transform.position.x + ui_multiplier2, uiPlace.transform.position.y, uiPlace.transform.position.z);
+                }
+                is_nicole = !is_nicole;
+                Debug.Log(counter + " STUART");
                 jeda();
                 break;
-            case 15: 
-                caseGanjil();
+            case 15:
+                dialogBoxSwitch = false;
                 break;
             case 16:
-                uiPlace.transform.position = new Vector3(transform.position.x + ui_multiplier2, uiPlace.transform.position.y, uiPlace.transform.position.z);
+                is_nicole = !is_nicole;
+                Debug.Log(counter + " NICOLE");
                 jeda();
                 break;
             case 17: 
-                caseGanjil();
+
                 break;
             case 18:
+                is_dialog = true;
+                break;
+            case 19:
+                if (is_dialog)
+                {
+                    is_dialog = !is_dialog;
+                    dialogBoxSwitch = false;
+                    uiPlace.transform.position = new Vector3(transform.position.x + ui_multiplier2, uiPlace.transform.position.y, uiPlace.transform.position.z);
+                }
+                is_nicole = !is_nicole;
+                Debug.Log(counter + " STUART");
                 jeda();
                 break;
-            case 19: 
-                caseGanjil();
-                break;
             case 20:
+                jeda();
+                break;
+            case 21:
+                if (firstime)
+                {
+                    firstime = false;
+                    StartCoroutine(waitAnim());
+                }
+                
+                break;
+            case 22:
+                jeda();
                 SceneManager.LoadScene("MainMenu");
                 break;
             default:
                 
                 break;
         }
+
     }
-
-    private IEnumerator endingProgIncrement(float wait)
+    
+    private IEnumerator waitAnim()
     {
-        
-        if (is_dialog)
-        {
-            is_dialog = false;
-            Debug.Log("Masuk Corotin If");
-            this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
-            Debug.Log("is-nicole " + is_nicole);
-            if (is_nicole != false)
-            {
-                uiPlace.transform.position = new Vector3(transform.position.x + ui_multiplier, uiPlace.transform.position.y, uiPlace.transform.position.z);
-            }
-            else
-            {
-                uiPlace.transform.position = new Vector3(transform.position.x + ui_multiplier2, uiPlace.transform.position.y, uiPlace.transform.position.z);
-            }
-            sc_hero.levelProgress++;
-
-            yield return new WaitForSeconds(wait);
-            
-
-
-        }
-
-        yield return null;
+        creditsAnim.SetBool("isCredits", true);
+        yield return new WaitForSeconds(16f);
+        counter++;
     }
 
     private IEnumerator waitStupid()
     {
-        if (is_run)
+        if (dialogBoxSwitch)
         {
-            is_run = false;
+            dialogBoxSwitch = false;
             yield return new WaitForSeconds(1f);
             sc_hero.levelProgress++;
         }
@@ -180,23 +200,25 @@ public class Ending : MonoBehaviour
     public void onClickDialogue()
     {
         FindObjectOfType<DialogueManager>().DisplayNextSentence();
-        Debug.Log("Dialogue Clicked");
-        //endingProgress++;
+        //Debug.Log("Dialogue Clicked");
+        counter++;
     }
 
     void jeda()
     {
-        //is_nicole = !is_nicole;
-        Debug.Log(dialogueBoxAnim.GetBool("DialogueOpen"));
-        if (!dialogueBoxAnim.GetBool("DialogueOpen"))
+        Debug.Log("Masuk Jeda");
+        if (!dialogBoxSwitch)
         {
-            StartCoroutine(waitStupid());
+            if (is_nicole != false || counter == 4 || counter == 7 || counter == 11 || counter == 16)
+            {
+                uiPlace.transform.position = new Vector3(transform.position.x + ui_multiplier, uiPlace.transform.position.y, uiPlace.transform.position.z);
+            }
+            else if (is_nicole == false || counter == 2 || counter == 5 || counter == 9 || counter == 14 || counter == 19)
+            {
+                uiPlace.transform.position = new Vector3(transform.position.x + ui_multiplier2, uiPlace.transform.position.y, uiPlace.transform.position.z);
+            }
+            dialogBoxSwitch = !dialogBoxSwitch;
         }
         
-    }
-
-    void caseGanjil()
-    {
-        StartCoroutine(endingProgIncrement(.5f));
     }
 }
