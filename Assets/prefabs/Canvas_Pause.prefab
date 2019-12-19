@@ -522,7 +522,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3244100008487539955}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5434200532646500214}
+        m_MethodName: text_fast
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3244100008524614688
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,7 +763,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3244100008760942248}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5434200532646500214}
+        m_MethodName: text_norm
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3244100008866527301
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,7 +1514,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3244100009510507719}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5434200532646500214}
+        m_MethodName: sound_off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3244100009562016169
 GameObject:
   m_ObjectHideFlags: 0
@@ -1815,6 +1848,7 @@ GameObject:
   - component: {fileID: 3244100009774011550}
   - component: {fileID: 3244100009774011551}
   - component: {fileID: 3244100009774011520}
+  - component: {fileID: 5434200532646500214}
   m_Layer: 5
   m_Name: Canvas_Pause
   m_TagString: Untagged
@@ -1903,6 +1937,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5434200532646500214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3244100009774011521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34b809e793ff63242a7caec31a694486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3244100009923226031
 GameObject:
   m_ObjectHideFlags: 0
@@ -2175,7 +2221,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3244100009946816561}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5434200532646500214}
+        m_MethodName: sound_on
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3244100009970889611
 GameObject:
   m_ObjectHideFlags: 0
@@ -2411,7 +2468,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3244100010113819827}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5434200532646500214}
+        m_MethodName: text_slow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3244100010216996522
 GameObject:
   m_ObjectHideFlags: 0
@@ -2934,8 +3002,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3244100008524614715}
-        m_MethodName: onClickPause
+      - m_Target: {fileID: 5434200532646500214}
+        m_MethodName: to_menu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

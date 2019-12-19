@@ -18,12 +18,13 @@ public class sc_sheet_music : Interactable
     public void pickup()
     {
         Debug.Log("Picking up " + item.name);
-        bool wasPickedUp = Inventory.instance.Add(item);
-
-        FindObjectOfType<OpenCloseBag>().enabled_bag();
+        
 
         if (!is_taken)
         {
+            bool wasPickedUp = Inventory.instance.Add(item);
+
+            FindObjectOfType<OpenCloseBag>().enabled_bag();
             is_taken = true;
             FindObjectOfType<AudioManager>().Play("surat");
             FindObjectOfType<sc_lv3_manager>().set_part();
