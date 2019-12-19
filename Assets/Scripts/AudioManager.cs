@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+
         /*
         if(instance == null)
         {
@@ -22,6 +23,7 @@ public class AudioManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
         */
+
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -64,5 +66,31 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.source.mute = true;
+    }
+
+    public void Unmute(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.Log("Sound " + name + " wasn't found");
+            return;
+        }
+        s.source.mute = false;
+    }
+
+    public void Muteall()
+    {
+        foreach(Sound s in sounds)
+        {
+            s.source.mute = true;
+        }
+    }
+    public void Unmuteall()
+    {
+        foreach (Sound s in sounds)
+        {
+            s.source.mute = false;
+        }
     }
 }

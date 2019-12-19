@@ -49,6 +49,7 @@ public class sc_lv1_manager : MonoBehaviour
         UI_Pause.pauseBool = true;
 
         FindObjectOfType<AudioManager>().Play("bgm");
+        FindObjectOfType<AudioManager>().Play("jem");
         stuart_stand.SetActive(false);
         player.SetActive(false);
         current_prog = 0;
@@ -185,6 +186,7 @@ public class sc_lv1_manager : MonoBehaviour
             player.SetActive(true);          
             
             FindObjectOfType<DialogueManager>().DisplayNextSentence();
+            FindObjectOfType<AudioManager>().Stop("jem");
             FindObjectOfType<AudioManager>().Play("letter");
             FindObjectOfType<AudioManager>().Play("surat");
             
@@ -192,6 +194,7 @@ public class sc_lv1_manager : MonoBehaviour
             button_letter.GetComponent<Button>().interactable = false;
             text_letter.SetActive(false);
             yield return new WaitForSeconds(19f);
+            FindObjectOfType<AudioManager>().Play("jem");
             sc_hero.levelProgress = 4;
             UI_Pause.pauseBool = false;
             text_letter.SetActive(true);
@@ -224,7 +227,7 @@ public class sc_lv1_manager : MonoBehaviour
         {
             is_run4 = false;
             black_panel.GetComponent<Animator>().SetBool("is_fade", true);
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(2f);
 
             SceneManager.LoadScene("level2");
 

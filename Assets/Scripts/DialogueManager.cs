@@ -81,7 +81,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return new WaitForSeconds(DisplayText_speed);
+            yield return new WaitForSeconds(PlayerPrefs.GetFloat("txt"));
         }
         FindObjectOfType<sc_cacing>().show();
 

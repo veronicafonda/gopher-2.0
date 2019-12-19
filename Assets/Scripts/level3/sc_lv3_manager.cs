@@ -16,6 +16,11 @@ public class sc_lv3_manager : MonoBehaviour
     public GameObject button_letter;
     public GameObject text_letter;
 
+    public GameObject lagu;
+    public GameObject twilight;
+
+
+
     //tambahan
 
     public bool is_run;
@@ -39,6 +44,7 @@ public class sc_lv3_manager : MonoBehaviour
     void Start()
     {
         FindObjectOfType<AudioManager>().Play("bgm");
+        //FindObjectOfType<AudioManager>().Play("jem");
         current_prog = 0;
         is_dialog = true;
 
@@ -158,7 +164,13 @@ public class sc_lv3_manager : MonoBehaviour
             tape.GetComponent<sc_lv3_tape>().pickup();
         }
 
-        Debug.Log("Dialogue Clicked Yes");
+        if (sc_hero.levelProgress == 5)
+        {
+            SceneManager.LoadScene("Ending");
+
+        }
+
+        //Debug.Log("Dialogue Clicked Yes");
         sc_hero.levelProgress++;
 
     }
@@ -166,7 +178,7 @@ public class sc_lv3_manager : MonoBehaviour
     public void onClickDialogueNo()
     {
         FindObjectOfType<DialogueManager>().DisplayNextSentence();
-        Debug.Log("Dialogue Clicked No");
+        //Debug.Log("Dialogue Clicked No");
     }
 
 
@@ -187,6 +199,84 @@ public class sc_lv3_manager : MonoBehaviour
     public int get_part()
     {
         return complete;
+    }
+
+    //dawn
+    //daylight
+    //dusk
+    //twilight
+
+    public void play_dawn()
+    {
+        FindObjectOfType<AudioManager>().Stop("bgm");
+        FindObjectOfType<AudioManager>().Stop("lagu1");
+        FindObjectOfType<AudioManager>().Stop("lagu2");
+        FindObjectOfType<AudioManager>().Stop("lagu3");
+        FindObjectOfType<AudioManager>().Stop("lagu4");
+        FindObjectOfType<AudioManager>().Play("lagu1");
+
+        lagu.SetActive(false);
+
+}
+    public void play_daylight()
+    {
+        FindObjectOfType<AudioManager>().Stop("bgm");
+        FindObjectOfType<AudioManager>().Stop("lagu1");
+        FindObjectOfType<AudioManager>().Stop("lagu2");
+        FindObjectOfType<AudioManager>().Stop("lagu3");
+        FindObjectOfType<AudioManager>().Stop("lagu4");
+        FindObjectOfType<AudioManager>().Play("lagu2");
+
+        lagu.SetActive(false);
+
+    }
+    public void play_dusk()
+    {
+        FindObjectOfType<AudioManager>().Stop("bgm");
+        FindObjectOfType<AudioManager>().Stop("lagu1");
+        FindObjectOfType<AudioManager>().Stop("lagu2");
+        FindObjectOfType<AudioManager>().Stop("lagu3");
+        FindObjectOfType<AudioManager>().Stop("lagu4");
+        FindObjectOfType<AudioManager>().Play("lagu3");
+
+        lagu.SetActive(false);
+
+    }
+    public void play_twilight()
+    {
+        FindObjectOfType<AudioManager>().Stop("bgm");
+        FindObjectOfType<AudioManager>().Stop("lagu1");
+        FindObjectOfType<AudioManager>().Stop("lagu2");
+        FindObjectOfType<AudioManager>().Stop("lagu3");
+        FindObjectOfType<AudioManager>().Stop("lagu4");
+        FindObjectOfType<AudioManager>().Play("lagu4");
+
+        if (sc_hero.levelProgress == 4)
+        {
+            FindObjectOfType<AudioManager>().Play("jeruji");
+            FindObjectOfType<sc_jeruji>().jeruji_open();
+            sc_hero.levelProgress++;
+        }
+
+        lagu.SetActive(false);
+    }
+
+    public void play_back()
+    {
+        lagu.SetActive(false);
+    }
+
+    public void canvas_lagu_display()
+    {
+        lagu.SetActive(true);
+        if(sc_hero.levelProgress >= 4)
+        {
+            twilight.SetActive(true);
+        }
+        else
+        {
+            twilight.SetActive(false);
+        }
     }
 
 }

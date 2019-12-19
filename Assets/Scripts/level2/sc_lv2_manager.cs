@@ -32,6 +32,7 @@ public class sc_lv2_manager : MonoBehaviour
     void Start()
     {
         FindObjectOfType<AudioManager>().Play("bgm");
+        FindObjectOfType<AudioManager>().Play("jem");
         current_prog = 0;
         is_dialog = true;
 
@@ -140,6 +141,7 @@ public class sc_lv2_manager : MonoBehaviour
             is_run = false;
             UI_Pause.pauseBool = true;
             yield return new WaitForSeconds(2f);
+            FindObjectOfType<AudioManager>().Stop("jem");
             black_panel.GetComponent<Animator>().SetBool("is_fade", true);
             FindObjectOfType<AudioManager>().Play("surat");
 
@@ -150,7 +152,9 @@ public class sc_lv2_manager : MonoBehaviour
             canvas_letter.SetActive(true);
             button_letter.GetComponent<Button>().interactable = false;
             text_letter.SetActive(false);
-            yield return new WaitForSeconds(1f);
+            //11
+            yield return new WaitForSeconds(11f);
+            FindObjectOfType<AudioManager>().Play("jem");
 
             UI_Pause.pauseBool = false;
             text_letter.SetActive(true);
