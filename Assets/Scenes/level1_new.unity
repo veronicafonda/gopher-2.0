@@ -1409,7 +1409,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: f387f2846db9d6b488d498bb3a972270,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f387f2846db9d6b488d498bb3a972270,
         type: 3}
@@ -5652,6 +5652,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas_Pause
       objectReference: {fileID: 0}
+    - target: {fileID: 3244100009774011521, guid: 10718c5543178c94c889cf0051fe410e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3244100009774011549, guid: 10718c5543178c94c889cf0051fe410e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6226,7 +6231,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4715424664149934567}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f97577f7490be846abb026b83b52db0, type: 3}
   m_Name: 

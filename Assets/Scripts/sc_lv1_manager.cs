@@ -72,7 +72,7 @@ public class sc_lv1_manager : MonoBehaviour
             is_dialog = true;
         }
         Debug.Log("level progress = " + sc_hero.levelProgress);
-        //Debug.Log("level pause = " + UI_Pause.pauseBool);
+        Debug.Log("level pause = " + UI_Pause.pauseBool);
         //UI_Pause.pauseBool = true;
         switch (sc_hero.levelProgress)
         {
@@ -96,27 +96,23 @@ public class sc_lv1_manager : MonoBehaviour
                 {
                     canvas_tuts.SetActive(true);
                     is_tuts = true;
+                    
                 }
                 if (is_dialog)
                 {                    
                     this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
                     //Debug.Log("Press 'right click' on the floor to move.");
                     is_dialog = false;
+                    sc_hero.levelProgress++;
                 }
 
                 black_panel.GetComponent<Animator>().SetBool("is_fade", false);
                 black_panel.GetComponent<Animator>().SetBool("is_done", true);                
 
-                sc_hero.levelProgress++;
+                //sc_hero.levelProgress++;
 
                 break;
             case 2:
-
-                
-                if (is_dialog)
-                {                    
-                    is_dialog = false;
-                }
 
                 break;
             case 3:

@@ -402,6 +402,7 @@ GameObject:
   - component: {fileID: 232043346}
   - component: {fileID: 232043345}
   - component: {fileID: 232043349}
+  - component: {fileID: 232043350}
   m_Layer: 5
   m_Name: OptionCANVAS
   m_TagString: Untagged
@@ -503,6 +504,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseUI: {fileID: 1821932958}
   optionUI: {fileID: 8234733535554270479}
+--- !u!114 &232043350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232043344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34b809e793ff63242a7caec31a694486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &332365033
 GameObject:
   m_ObjectHideFlags: 0
@@ -12006,7 +12019,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8234733533963885952}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 232043350}
+        m_MethodName: text_slow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8234733534000337052
 GameObject:
   m_ObjectHideFlags: 0
@@ -12224,7 +12248,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8234733534065875202}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 232043350}
+        m_MethodName: sound_on
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8234733534065875202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12790,7 +12825,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8234733534434160116}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 232043350}
+        m_MethodName: sound_off
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8234733534444515476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13961,7 +14007,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8234733535525285312}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 232043350}
+        m_MethodName: text_fast
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8234733535554270472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14447,7 +14504,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8234733535832795035}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 232043350}
+        m_MethodName: text_norm
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8234733535832795035
 MonoBehaviour:
   m_ObjectHideFlags: 0
