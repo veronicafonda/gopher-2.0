@@ -161,9 +161,12 @@ public class sc_lv2_manager : MonoBehaviour
         yield return null;
     }
 
+
     public void onClickDialogueYes()
     {
         FindObjectOfType<DialogueManager>().DisplayNextSentence();
+
+
         if (sc_hero.levelProgress == 3)
         {
             arrow.SetActive(true);
@@ -189,6 +192,7 @@ public class sc_lv2_manager : MonoBehaviour
         else if (sc_hero.levelProgress == 9)
         {
             FindObjectOfType<AudioManager>().Play("fill");
+            FindObjectOfType<sc_firedown>().reduce1();
             fireplace.GetComponent<sc_lv2_fireplace>().pickup();
         }
         else if (sc_hero.levelProgress == 10)
@@ -199,6 +203,7 @@ public class sc_lv2_manager : MonoBehaviour
         else if (sc_hero.levelProgress == 11)
         {
             FindObjectOfType<AudioManager>().Play("fill");
+            FindObjectOfType<sc_firedown>().reduce2();
             fireplace.GetComponent<sc_lv2_fireplace>().pickup();
         }
         else if (sc_hero.levelProgress == 12)
@@ -209,7 +214,18 @@ public class sc_lv2_manager : MonoBehaviour
         else if (sc_hero.levelProgress == 13)
         {
             FindObjectOfType<AudioManager>().Play("fill");
+            FindObjectOfType<sc_firedown>().reduce3();
             fireplace.GetComponent<sc_lv2_fireplace>().pickup();
+        }
+        else if (sc_hero.levelProgress == 13)
+        {
+            FindObjectOfType<AudioManager>().Play("fill");
+            FindObjectOfType<sc_firedown>().reduce3();
+            fireplace.GetComponent<sc_lv2_fireplace>().pickup();
+        }
+        else if (sc_hero.levelProgress == 14)
+        {
+            SceneManager.LoadScene("level3");
         }
 
 

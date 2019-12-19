@@ -27,8 +27,10 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue (Dialogue dialogue)
     {
+        
         if (dialogue.YesNoDialogue)
         {
+            FindObjectOfType<sc_yes>().reset_clicked();
             //Debug.Log("YesNo is now true");
             animator.SetBool("DialogueYesNo", true);
         }

@@ -120,6 +120,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: b409be016ddf75c4bbafc82c0eb84b6a, type: 2}
+--- !u!114 &35542569 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4300818881103631287, guid: fe0bc72abe71a3d498b6c8664fd84364,
+    type: 3}
+  m_PrefabInstance: {fileID: 1930183289}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &66065746
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,6 +143,7 @@ GameObject:
   - component: {fileID: 66065749}
   - component: {fileID: 66065748}
   - component: {fileID: 66065747}
+  - component: {fileID: 66065750}
   m_Layer: 0
   m_Name: fire(particle system)
   m_TagString: Untagged
@@ -4873,6 +4886,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &66065750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66065746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 024671f4af7a32c43b743ff0fdd3a0ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hSliderValue: 1
 --- !u!1001 &81719793
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5972,7 +5998,7 @@ PrefabInstance:
     - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
         type: 3}
       propertyPath: dialogue.Array.data[2].sentences.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
         type: 3}
@@ -7188,6 +7214,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4300818881103631287, guid: fe0bc72abe71a3d498b6c8664fd84364,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300818881103631287, guid: fe0bc72abe71a3d498b6c8664fd84364,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1034939582}
@@ -7195,6 +7226,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: onClickDialogueYes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300818881103631287, guid: fe0bc72abe71a3d498b6c8664fd84364,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300818881103631287, guid: fe0bc72abe71a3d498b6c8664fd84364,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300818881103631287, guid: fe0bc72abe71a3d498b6c8664fd84364,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300818881103631287, guid: fe0bc72abe71a3d498b6c8664fd84364,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 35542569}
+    - target: {fileID: 4300818881103631287, guid: fe0bc72abe71a3d498b6c8664fd84364,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: set_interactable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300818881103631287, guid: fe0bc72abe71a3d498b6c8664fd84364,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4300818881502904715, guid: fe0bc72abe71a3d498b6c8664fd84364,
         type: 3}

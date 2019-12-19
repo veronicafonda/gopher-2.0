@@ -5,20 +5,29 @@ using UnityEngine;
 public class sc_firedown : MonoBehaviour
 {
     private ParticleSystem ps;
+    public float hSliderValue = 1.0F;
 
-    private void Start()
+    void Start()
     {
-        this.ps = this.GetComponent<ParticleSystem>();
+        ps = GetComponent<ParticleSystem>();
     }
 
     public void reduce1()
     {
-        //ps.main.startSpeedMultiplier(5f);
+        var main = ps.main;
+        main.startSpeed = .4f;
     }
 
     public void reduce2()
     {
-        //ps.startSpeed = 0.3f;
-        // ps.emissionRate = 10f;
+        var main = ps.main;
+        var main2 = ps.emission;
+        main.startSpeed = .3f;
+        main2.rateOverTime = 10;
+    }
+
+    public void reduce3()
+    {
+        Destroy(this.gameObject);
     }
 }

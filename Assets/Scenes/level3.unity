@@ -135,7 +135,7 @@ PrefabInstance:
     - target: {fileID: 4042925557606795464, guid: 50ea2d8438acff647b11a90760756c69,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.44
+      value: 9.64
       objectReference: {fileID: 0}
     - target: {fileID: 4042925557606795464, guid: 50ea2d8438acff647b11a90760756c69,
         type: 3}
@@ -150,22 +150,22 @@ PrefabInstance:
     - target: {fileID: 4042925557606795464, guid: 50ea2d8438acff647b11a90760756c69,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4042925557606795464, guid: 50ea2d8438acff647b11a90760756c69,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.50359964
       objectReference: {fileID: 0}
     - target: {fileID: 4042925557606795464, guid: 50ea2d8438acff647b11a90760756c69,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4042925557606795464, guid: 50ea2d8438acff647b11a90760756c69,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.8639372
       objectReference: {fileID: 0}
     - target: {fileID: 4042925557606795464, guid: 50ea2d8438acff647b11a90760756c69,
         type: 3}
@@ -180,7 +180,7 @@ PrefabInstance:
     - target: {fileID: 4042925557606795464, guid: 50ea2d8438acff647b11a90760756c69,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -60.477
       objectReference: {fileID: 0}
     - target: {fileID: 4042925557606795464, guid: 50ea2d8438acff647b11a90760756c69,
         type: 3}
@@ -1972,7 +1972,7 @@ PrefabInstance:
     - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
         type: 3}
       propertyPath: dialogue.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
         type: 3}
@@ -1981,13 +1981,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
         type: 3}
+      propertyPath: dialogue.Array.data[1].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
+        type: 3}
       propertyPath: dialogue.Array.data[0].name
-      value: afterAllPaper
+      value: event0
       objectReference: {fileID: 0}
     - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
         type: 3}
       propertyPath: dialogue.Array.data[0].sentences.Array.data[0]
-      value: 'This should be the last one! '
+      value: I'm starting to get hungry..
       objectReference: {fileID: 0}
     - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
         type: 3}
@@ -1997,7 +2002,27 @@ PrefabInstance:
     - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
         type: 3}
       propertyPath: dialogue.Array.data[0].sentences.Array.data[1]
+      value: I have to finish the riddle soon to find Nicole.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
+        type: 3}
+      propertyPath: dialogue.Array.data[1].name
+      value: afterAllPaper
+      objectReference: {fileID: 0}
+    - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
+        type: 3}
+      propertyPath: dialogue.Array.data[1].sentences.Array.data[0]
+      value: 'This should be the last one! '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
+        type: 3}
+      propertyPath: dialogue.Array.data[1].sentences.Array.data[1]
       value: Now I need something to assemble them together.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6701005310072649716, guid: 73a8ba7a7762f654eac2d6d5c3330f59,
+        type: 3}
+      propertyPath: dialogue.Array.data[1].when
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6701005310072649715, guid: 73a8ba7a7762f654eac2d6d5c3330f59, type: 3}
@@ -3096,6 +3121,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2222475876996267608, guid: f86dad8d52d96934f8fc0b180a5e2bff,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1483229037}
+    - target: {fileID: 2222475876996267608, guid: f86dad8d52d96934f8fc0b180a5e2bff,
+        type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 1483229036}
     - target: {fileID: 2222475876996267609, guid: f86dad8d52d96934f8fc0b180a5e2bff,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3151,16 +3186,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2222475876996267608, guid: f86dad8d52d96934f8fc0b180a5e2bff,
-        type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1483229037}
-    - target: {fileID: 2222475876996267608, guid: f86dad8d52d96934f8fc0b180a5e2bff,
-        type: 3}
-      propertyPath: dialogueText
-      value: 
-      objectReference: {fileID: 1483229036}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f86dad8d52d96934f8fc0b180a5e2bff, type: 3}
 --- !u!1001 &1877719656

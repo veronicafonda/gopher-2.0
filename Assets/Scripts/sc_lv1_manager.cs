@@ -70,7 +70,7 @@ public class sc_lv1_manager : MonoBehaviour
             current_prog = sc_hero.levelProgress;
             is_dialog = true;
         }
-        //Debug.Log("level progress = " + sc_hero.levelProgress);
+        Debug.Log("level progress = " + sc_hero.levelProgress);
         switch (sc_hero.levelProgress)
         {
             
@@ -93,11 +93,9 @@ public class sc_lv1_manager : MonoBehaviour
                 {
                     canvas_tuts.SetActive(true);
                     is_tuts = true;
-                    UI_Pause.pauseBool = false;
                 }
                 if (is_dialog)
-                {
-                    
+                {                    
                     this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
                     //Debug.Log("Press 'right click' on the floor to move.");
                     is_dialog = false;
@@ -111,11 +109,9 @@ public class sc_lv1_manager : MonoBehaviour
                 break;
             case 2:
 
-                main_camera.GetComponent<GlowController>().enabled = true;
+                
                 if (is_dialog)
                 {                    
-                    //Debug.Log("Press 'right click' on the glowing to object to interact.");
-                    this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
                     is_dialog = false;
                 }
 
@@ -141,7 +137,7 @@ public class sc_lv1_manager : MonoBehaviour
                 break;
             case 11:
                 StartCoroutine(WaitAndadvanced_4());
-                SceneManager.LoadScene("level2");
+                
                 break;
             default:
                 print("Incorrect intelligence level.");
@@ -155,11 +151,11 @@ public class sc_lv1_manager : MonoBehaviour
         if (is_run)
         {
             is_run = false;
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(8f);
             FindObjectOfType<AudioManager>().Stop("snore");
             FindObjectOfType<AudioManager>().Mute("snore");
 
-            yield return new WaitForSeconds(1f);            
+            yield return new WaitForSeconds(3f);            
             black_panel.GetComponent<Animator>().SetBool("is_fade", true);
             yield return new WaitForSeconds(1f);
             stuart_stand.SetActive(true);
@@ -195,7 +191,7 @@ public class sc_lv1_manager : MonoBehaviour
             canvas_letter.SetActive(true);
             button_letter.GetComponent<Button>().interactable = false;
             text_letter.SetActive(false);
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(19f);
             sc_hero.levelProgress = 4;
             UI_Pause.pauseBool = false;
             text_letter.SetActive(true);
@@ -230,8 +226,8 @@ public class sc_lv1_manager : MonoBehaviour
             black_panel.GetComponent<Animator>().SetBool("is_fade", true);
             yield return new WaitForSeconds(4f);
 
-            SceneManager.LoadScene("Ending");
-            
+            SceneManager.LoadScene("level2");
+
         }
 
 
@@ -296,6 +292,8 @@ public class sc_lv1_manager : MonoBehaviour
     public void level_tuts()
     {
         canvas_tuts.SetActive(false);
+        main_camera.GetComponent<GlowController>().enabled = true;
+        UI_Pause.pauseBool = false;
     }
 
 }
