@@ -31,8 +31,13 @@ public class sc_lv2_manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FindObjectOfType<AudioManager>().Play("bgm");
-        FindObjectOfType<AudioManager>().Play("jem");
+        if(FindObjectOfType<AudioManager>() != null)
+        {
+            FindObjectOfType<AudioManager>().Play("bgm");
+            FindObjectOfType<AudioManager>().Play("jem");
+        }
+        
+        
         current_prog = 0;
         is_dialog = true;
 
@@ -50,17 +55,21 @@ public class sc_lv2_manager : MonoBehaviour
             is_dialog = true;
         }
 
-        
 
+        //Debug.Log("level progress = " + sc_hero.levelProgress);
         switch (sc_hero.levelProgress)
         {
             case 0:
 
                 if (is_dialog)
                 {
-                    this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
-                    //Where is Nicole..? Maybe she left another letter here too.
-                    is_dialog = false;
+                    if (FindObjectOfType<DialogueTrigger>() != null)
+                    {
+                        this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+                        //Where is Nicole..? Maybe she left another letter here too.
+                        is_dialog = false;
+                    }
+                        
                 }
 
                 break;
@@ -90,16 +99,22 @@ public class sc_lv2_manager : MonoBehaviour
 
                 if (is_dialog)
                 {
-                    this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
-                    is_dialog = false;
+                    if (FindObjectOfType<DialogueTrigger>() != null)
+                    {
+                        this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+                        is_dialog = false;
+                    }
                 }
                 break;
             case 8:
 
                 if (is_dialog)
                 {
-                    this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
-                    is_dialog = false;
+                    if (FindObjectOfType<DialogueTrigger>() != null)
+                    {
+                        this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+                        is_dialog = false;
+                    }
                 }
                 break;
             case 9:
@@ -120,8 +135,8 @@ public class sc_lv2_manager : MonoBehaviour
             case 14:
                 if (is_dialog)
                 {
-                    this.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
-                    is_dialog = false;
+                    
+                        
                 }
                 break;
             case 15:

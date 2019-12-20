@@ -155,6 +155,7 @@ public class sc_lv1_manager : MonoBehaviour
         if (is_run)
         {
             is_run = false;
+            //8F
             yield return new WaitForSeconds(8f);
             FindObjectOfType<AudioManager>().Stop("snore");
             FindObjectOfType<AudioManager>().Mute("snore");
@@ -197,6 +198,7 @@ public class sc_lv1_manager : MonoBehaviour
             canvas_letter.SetActive(true);
             button_letter.GetComponent<Button>().interactable = false;
             text_letter.SetActive(false);
+            //19
             yield return new WaitForSeconds(19f);
             FindObjectOfType<AudioManager>().Play("jem");
             sc_hero.levelProgress = 4;
@@ -234,7 +236,7 @@ public class sc_lv1_manager : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("hatch");
             yield return new WaitForSeconds(2f);
 
-            SceneManager.LoadScene("level2");
+            SceneManager.LoadScene("level2_new");
 
         }
 

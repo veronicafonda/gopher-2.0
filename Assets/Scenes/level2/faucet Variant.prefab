@@ -1,0 +1,320 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &2050345988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5901640458179856040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a643939cc2bb8da4fad6cfc8d57539ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 2ecf933ee67aac746931acf7855eb920, type: 3}
+--- !u!114 &2050345989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5901640458179856040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec1c85303ad1674e9e24c5a89c6ed9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 6
+  counter: 0
+  add_progress_when: 
+  status_interactable: 0
+  hasInteracted: 0
+  test: 0
+  item: {fileID: 5901640458179856040}
+--- !u!1001 &7453665349832407870
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3933449653160754582, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: m_Name
+      value: faucet
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486868384088072646, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486868384088072646, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486868384088072646, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486868384088072646, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0025885485
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486868384088072646, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.70710206
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486868384088072646, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.70710206
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486868384088072646, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.0025885485
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486868384088072646, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486868384088072646, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486868384088072646, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486868384088072646, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -179.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754581, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 13.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754581, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 5.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754581, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: default_dialogue.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[0].sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[1].sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[2].sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[3].sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[4].sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[5].sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[6].sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: default_dialogue.sentences.Array.data[0]
+      value: It's our brand new faucet..
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[0].name
+      value: Kettle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[1].name
+      value: full
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[0].YesNoDialogue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[0].sentences.Array.data[0]
+      value: Fill the kettle with water?
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[1].YesNoDialogue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[1].sentences.Array.data[0]
+      value: The kettle is already full...
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: default_dialogue.sentences.Array.data[1]
+      value: Maybe i can fill something with it..
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[2].name
+      value: Kettle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[2].sentences.Array.data[0]
+      value: Fill the kettle with water?
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[2].YesNoDialogue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[3].name
+      value: full
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[3].sentences.Array.data[0]
+      value: The kettle is already full...
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[3].YesNoDialogue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[4].name
+      value: Kettle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[4].sentences.Array.data[0]
+      value: Fill the kettle with water?
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[4].YesNoDialogue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[5].name
+      value: full
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[5].sentences.Array.data[0]
+      value: The kettle is already full...
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[5].YesNoDialogue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[0].when
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[2].when
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[4].when
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[5].when
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[6].name
+      value: it's done
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[6].sentences.Array.data[0]
+      value: It's our brand new faucet..
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[6].when
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[6].YesNoDialogue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[1].when
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933449653160754585, guid: 658ba54d4eae7544c9bfc35413327da5,
+        type: 3}
+      propertyPath: dialogue.Array.data[3].when
+      value: 11
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3933449653160754580, guid: 658ba54d4eae7544c9bfc35413327da5, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 658ba54d4eae7544c9bfc35413327da5, type: 3}
+--- !u!1 &5901640458179856040 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3933449653160754582, guid: 658ba54d4eae7544c9bfc35413327da5,
+    type: 3}
+  m_PrefabInstance: {fileID: 7453665349832407870}
+  m_PrefabAsset: {fileID: 0}
